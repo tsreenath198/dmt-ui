@@ -8,15 +8,10 @@ export const AppRoutes: Routes = [
     redirectTo: 'technology',
     pathMatch: 'full',
   }, {
-    path: '',
-    component: AdminLayoutComponent,
-    children: [
-        {
-      path: '',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-  }]},
+    path: '',component: AdminLayoutComponent,children: [{path: '',loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'}]},
   {
-    path: '**',
+    path: '**', 
     redirectTo: 'technology'
   }
+
 ]
