@@ -15,6 +15,22 @@ import { NotificationsComponent }   from '../../pages/notifications/notification
 import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TrainerComponent } from 'app/pages/trainer/trainer.component';
+import { BatchComponent } from 'app/pages/batch/batch.component';
+import { ClientComponent } from 'app/pages/client/client.component';
+import { InterviewComponent } from 'app/pages/interview/interview.component';
+import { SupportComponent } from 'app/pages/support/support.component';
+import { ResumeComponent } from 'app/pages/resume/resume.component';
+import { EmployeeComponent } from 'app/pages/employee/employee.component';
+import { TaskComponent } from 'app/pages/task/task.component';
+import { QuetionComponent } from 'app/pages/quetion/quetion.component';
+import { CourseComponent } from 'app/pages/course/course.component';
+import { PipelineComponent } from 'app/pages/pipeline/pipeline.component';
+import { SalaryComponent } from 'app/pages/salary/salary.component';
+import { SupportInteractionComponent } from 'app/pages/support-interaction/support-interaction.component';
+import { EmployeePaymentComponent } from 'app/pages/employee-payment/employee-payment.component';
+import { InvoiceComponent } from 'app/pages/invoice/invoice.component';
+import { TraineeComponent } from 'app/pages/trainee/trainee.component';
 
 @NgModule({
   imports: [
@@ -32,6 +48,22 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
+    TraineeComponent,    
+    TrainerComponent,
+    BatchComponent,
+    ClientComponent,
+    InterviewComponent,
+    SupportComponent,
+    ResumeComponent,
+    EmployeeComponent,
+    TaskComponent,
+    QuetionComponent,
+    CourseComponent,
+    PipelineComponent,
+    SalaryComponent,
+    SupportInteractionComponent,
+    EmployeePaymentComponent,
+    InvoiceComponent
   ]
 })
 

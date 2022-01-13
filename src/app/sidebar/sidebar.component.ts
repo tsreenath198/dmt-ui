@@ -9,7 +9,23 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-    { path: '/technology',     title: 'Technology',         icon:'nc-bank',       class: '' }
+    { path: '/technology',     title: 'technology',         icon:'nc-image',       class: '' },
+    { path: '/trainee',     title: 'Trainee',         icon:'',       class: '' },
+    { path: '/trainer',     title: 'Trainer',         icon:'',       class: '' },
+    { path: '/batch',     title: 'batch',         icon:'',       class: '' },
+    { path: '/client',     title: 'client',         icon:'',       class: '' },
+    { path: '/interview',     title: 'interview',         icon:'',       class: '' },
+    { path: '/support',     title: 'support',         icon:'',       class: '' },
+    { path: '/resume',     title: 'resume',         icon:'',       class: '' },
+    { path: '/employee',     title: 'employee',         icon:'',       class: '' },
+    { path: '/task',     title: 'task',         icon:'',       class: '' },
+    { path: '/quetion',     title: 'quetion',         icon:'',       class: '' },
+    { path: '/course',     title: 'course',         icon:'',       class: '' },
+    { path: '/pipeline',     title: 'pipeline',         icon:'',       class: '' },
+    { path: '/salary',     title: 'salary',         icon:'',       class: '' },
+    { path: '/supportinteraction',     title: 'supportinteraction',         icon:'',       class: '' },
+    { path: '/employeepayment',     title: 'employeepayment',         icon:'',       class: '' },
+    { path: '/invoice',     title: 'invoice',         icon:'',       class: '' }
    
 ];
 
