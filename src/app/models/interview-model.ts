@@ -1,7 +1,7 @@
 export interface InterviewModel{
     employeeId:number,
     traineeId:number,
-    interviewDate:number,
+    interviewDate:string,
     clientId:number,
     endclient:string,
     allotedtime:number,
