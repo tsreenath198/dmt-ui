@@ -29,6 +29,7 @@ import { SalaryComponent } from './pages/salary/salary.component';
 import { SupportInteractionComponent } from './pages/support-interaction/support-interaction.component';
 import { EmployeePaymentComponent } from './pages/employee-payment/employee-payment.component';
 import { InvoiceComponent } from './pages/invoice/invoice.component';
+import { TechnologyFormComponent } from './pages/technology/technology-form/technology-form.component';
 
 
 @NgModule({

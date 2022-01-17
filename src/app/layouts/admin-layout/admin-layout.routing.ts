@@ -24,6 +24,7 @@ import { SupportInteractionComponent } from 'app/pages/support-interaction/suppo
 import { EmployeePaymentComponent } from 'app/pages/employee-payment/employee-payment.component';
 import { InvoiceComponent } from 'app/pages/invoice/invoice.component';
 import { TrainerComponent } from 'app/pages/trainer/trainer.component';
+import { QuetionComponent } from 'app/pages/quetion/quetion.component';
 
 export const AdminLayoutRoutes: Routes = [
 
@@ -43,6 +44,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'interview', component: InterviewComponent },
     { path: 'resume', component: ResumeComponent },
     { path: 'support', component: SupportComponent },
+    { path: 'quetion', component: QuetionComponent },
     { path: 'employee', component: EmployeeComponent },
     { path: 'task', component: TaskComponent },
     { path: 'course', component: CourseComponent },

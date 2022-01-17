@@ -11,5 +11,13 @@ export class SupportComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+ onAddClick() {
+    console.log("Add")
+  }
+  onDeleteClick() {
+    console.log("delete")
+  }
+  onUpdateClick() {
+    console.log("update")
+  }
 }
