@@ -25,6 +25,7 @@ import { EmployeePaymentComponent } from 'app/pages/employee-payment/employee-pa
 import { InvoiceComponent } from 'app/pages/invoice/invoice.component';
 import { TrainerComponent } from 'app/pages/trainer/trainer.component';
 import { QuetionComponent } from 'app/pages/quetion/quetion.component';
+import { TechnologyFormComponent } from 'app/pages/technology/technology-form/technology-form.component';
 
 export const AdminLayoutRoutes: Routes = [
 
@@ -36,7 +37,14 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps', component: MapsComponent },
     { path: 'notifications', component: NotificationsComponent },
     { path: 'upgrade', component: UpgradeComponent },
-    { path: 'technology', component: TechnologyComponent },
+    {
+        path: 'technology',
+        children: [
+            { path: '', component: TechnologyComponent },
+            { path: 'create', component: TechnologyFormComponent },
+            { path: 'update/:id', component: TechnologyFormComponent }
+        ]
+    },
     { path: 'trainer', component: TrainerComponent },
     { path: 'trainee', component: TraineeComponent },
     { path: 'batch', component: BatchComponent },
