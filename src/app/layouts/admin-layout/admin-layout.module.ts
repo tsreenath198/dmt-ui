@@ -31,6 +31,7 @@ import { SupportInteractionComponent } from 'app/pages/support-interaction/suppo
 import { EmployeePaymentComponent } from 'app/pages/employee-payment/employee-payment.component';
 import { InvoiceComponent } from 'app/pages/invoice/invoice.component';
 import { TraineeComponent } from 'app/pages/trainee/trainee.component';
+import { TechnologyFormComponent } from 'app/pages/technology/technology-form/technology-form.component';
 
 @NgModule({
   imports: [
@@ -63,7 +64,9 @@ import { TraineeComponent } from 'app/pages/trainee/trainee.component';
     SalaryComponent,
     SupportInteractionComponent,
     EmployeePaymentComponent,
-    InvoiceComponent
+    InvoiceComponent,
+
+    TechnologyFormComponent
   ]
 })
 
