@@ -39,6 +39,7 @@ import { ClientFormComponent } from 'app/pages/client/client-form/client-form.co
 import { InterviewFormComponent } from 'app/pages/interview/interview-form/interview-form.component';
 import { SupportFormComponent } from 'app/pages/support/support-form/support-form.component';
 import { ResumeFormComponent } from 'app/pages/resume/resume-form/resume-form.component';
+import { TaskFormComponent } from 'app/pages/task/task-form/task-form.component';
 
 @NgModule({
   imports: [
@@ -85,7 +86,8 @@ import { ResumeFormComponent } from 'app/pages/resume/resume-form/resume-form.co
     QuetionComponent,
     CourseComponent,
     EmployeePaymentComponent,
-    InvoiceComponent
+    InvoiceComponent,
+    TaskFormComponent
       
   ]
 })
