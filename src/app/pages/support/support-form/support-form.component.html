@@ -1,1 +1,96 @@
-<p>support-form works!</p>
+<div class="container">
+    <form [formGroup]="supportForm" (ngSubmit)="createForm()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="employee">Employee</label>
+                    <select class="custom-select" formControlName="employeeId">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="trainee">Trainee</label>
+                    <select class="custom-select" formControlName="traineeId">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="client">Client</label>
+                    <select class="custom-select" formControlName="clientId">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="startdate">Start Date</label>
+                    <input type="text" class="form-control" formControlName="startDate" id="startdate"
+                        aria-describedby="Help" placeholder="Enter start Date ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="enddate">End Date</label>
+                    <input type="text" class="form-control" formControlName="endDate" id="enddate"
+                        aria-describedby="Help" placeholder="Enter end Date ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="endclient">End Client</label>
+                    <input type="text" class="form-control" formControlName="endClient" id="endclient"
+                        aria-describedby="Help" placeholder="Enter End client ">
+                </div>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="allotedtime">Alloted Time</label>
+                    <input type="text" class="form-control" formControlName="allotedtime" id="allotedtime"
+                        aria-describedby="Help" placeholder="Enter alloted time">
+                </div>
+            </div>  
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="durationfield">Duration Field</label>
+                    <input type="text" class="form-control" formControlName="durationField" id="durationfield"
+                        aria-describedby="Help" placeholder="Enter Duration time ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="technologyused">technologyUsed</label>
+                    <input type="text" class="form-control" formControlName="technologyUsed" id="technologyused"
+                        aria-describedby="Help" placeholder="Enter Duration time ">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" class="form-control" formControlName="description"
+                        placeholder="Enter description" id="description" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
