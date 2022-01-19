@@ -1,1 +1,29 @@
-<button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
+<div class="container">
+    <button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+               
+                <th scope="col">Name </th>
+                <th scope="col">Address</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+                <td>Marj</td>
+                <td>Brookoliyn</td>
+                <td>2154516456</td>
+                <td>
+                    <i class="nc-icon nc-simple-add"></i>
+                    <i class="nc-icon nc-share-66"></i>
+                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                </td>
+            </tr>
+            <tr>    
+            </tr>
+        </tbody>
+    </table>
+</div>
