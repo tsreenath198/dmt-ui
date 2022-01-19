@@ -1,1 +1,95 @@
-<p>trainee-form works!</p>
+<div class="container">
+    <form [formGroup]="traineeForm" (ngSubmit)="createForm()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
+                        placeholder="Enter name" formControlName="name">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" formControlName="email" id="email"
+                        aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" formControlName="phone" id="phone"
+                        aria-describedby="phoneHelp" placeholder="Enter phone">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="client">Client</label>
+                    <select class="custom-select" formControlName="clientId">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="technology">Technology</label>
+                    <select class="custom-select" formControlName="technologyId">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="alternativephone">AlternativePhone</label>
+                    <input type="text" class="form-control" formControlName="Alternativephone" id="phone"
+                        aria-describedby="phoneHelp" placeholder="Enter Alternatie phone">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="batch">Batch</label>
+                    <select class="custom-select" formControlName="technologyId">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="skypeid">Skype Id</label>
+                    <input type="text" class="form-control" formControlName="skypeid" id="SkypeId"
+                        aria-describedby="phoneHelp" placeholder="Enter Skype id">
+                </div>
+            </div>  
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="timezone">Timezone</label>
+                    <input type="text" class="form-control" formControlName="phone" id="timezone"
+                        aria-describedby="Help" placeholder="Enter timezone">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" class="form-control" formControlName="description"
+                        placeholder="Enter description" id="description" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
