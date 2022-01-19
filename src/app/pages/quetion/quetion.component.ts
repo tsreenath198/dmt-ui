@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quetion',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuetionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -20,5 +21,11 @@ export class QuetionComponent implements OnInit {
   }
   onUpdateClick() {
     console.log("update")
+  }
+  navigateToCreateForm(){
+    this.router.navigate(['/quetion/create'])
+  }
+  navigateToUpdateForm(){
+    this.router.navigate(['/quetion/update',1])
   }
 }

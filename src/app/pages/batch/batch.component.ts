@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-batch',
@@ -6,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./batch.component.css']
 })
 export class BatchComponent implements OnInit {
-
-  constructor() { }
-
+  
+ constructor(private router:Router) { }
   ngOnInit(): void {
   }
   onAddClick() {
@@ -19,5 +19,11 @@ export class BatchComponent implements OnInit {
   }
   onUpdateClick() {
     console.log("update")
+  }
+  navigateToCreateForm(){
+    this.router.navigate(['/batch/create'])
+  }
+  navigateToUpdateForm(){
+    this.router.navigate(['/batch/update',1])
   }
 }

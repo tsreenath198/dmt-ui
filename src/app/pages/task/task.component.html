@@ -1,1 +1,35 @@
-<p>task works!</p>
+<div class="container">
+    <button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Status</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Estimated Time</th>
+                <th scope="col"> Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>technology</td>
+                <td>active</td>
+                <td>mike</td>
+                <td>1 month</td>
+                <td>10/05/2021</td>
+                <td>Active</td>
+                <td>
+                    <i class="nc-icon nc-simple-add"></i>
+                    <i class="nc-icon nc-share-66"></i>
+                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                </td>
+            </tr>
+            <tr>
+                
+               
+            </tr>
+        </tbody>
+    </table>
+</div>z

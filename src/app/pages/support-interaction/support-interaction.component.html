@@ -1,1 +1,35 @@
-<p>support-interaction works!</p>
+<div class="container">
+    <button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Trainer</th>
+                <th scope="col">Lead</th>
+                <th scope="col">Trainee</th>
+                <th scope="col"> Date</th>
+                <th scope="col">Count</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>Mike</td>
+                <td>Michel</td>
+                <td>wood</td>
+                <td>10/04/2021</td>
+                <td>3</td>
+                <td>
+                    <i class="nc-icon nc-simple-add"></i>
+                    <i class="nc-icon nc-share-66"></i>
+                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                </td>
+            </tr>
+            <tr>
+                
+               
+            </tr>
+        </tbody>
+    </table>
+</div>z

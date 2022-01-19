@@ -32,6 +32,14 @@ import { EmployeePaymentComponent } from 'app/pages/employee-payment/employee-pa
 import { InvoiceComponent } from 'app/pages/invoice/invoice.component';
 import { TraineeComponent } from 'app/pages/trainee/trainee.component';
 import { TechnologyFormComponent } from 'app/pages/technology/technology-form/technology-form.component';
+import { TraineeFormComponent } from 'app/pages/trainee/trainee-form/trainee-form.component';
+import { TrainerFormComponent } from 'app/pages/trainer/trainer-form/trainer-form.component';
+import { BatchformComponent } from 'app/pages/batch/batchform/batchform.component';
+import { ClientFormComponent } from 'app/pages/client/client-form/client-form.component';
+import { InterviewFormComponent } from 'app/pages/interview/interview-form/interview-form.component';
+import { SupportFormComponent } from 'app/pages/support/support-form/support-form.component';
+import { ResumeFormComponent } from 'app/pages/resume/resume-form/resume-form.component';
+import { TaskFormComponent } from 'app/pages/task/task-form/task-form.component';
 
 @NgModule({
   imports: [
@@ -66,7 +74,21 @@ import { TechnologyFormComponent } from 'app/pages/technology/technology-form/te
     EmployeePaymentComponent,
     InvoiceComponent,
 
-    TechnologyFormComponent
+    TechnologyFormComponent,
+    TraineeFormComponent,
+    TrainerFormComponent,
+    BatchformComponent,
+    ClientFormComponent,
+    InterviewFormComponent,
+    SupportFormComponent,
+    ResumeFormComponent,
+    EmployeeComponent,
+    QuetionComponent,
+    CourseComponent,
+    EmployeePaymentComponent,
+    InvoiceComponent,
+    TaskFormComponent
+      
   ]
 })
 

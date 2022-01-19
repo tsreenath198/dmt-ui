@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trainee',
@@ -6,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trainee.component.css']
 })
 export class TraineeComponent implements OnInit {
-
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,4 +22,11 @@ export class TraineeComponent implements OnInit {
   onUpdateClick() {
     console.log("update")
   }
+  navigateToCreateForm(){
+    this.router.navigate(['/trainee/create'])
+  }
+  navigateToUpdateForm(){
+    this.router.navigate(['/trainee/update',1])
+  }
+  
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-support',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupportComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -19,5 +20,11 @@ export class SupportComponent implements OnInit {
   }
   onUpdateClick() {
     console.log("update")
+  }
+  navigateToCreateForm(){
+    this.router.navigate(['/support/create'])
+  }
+  navigateToUpdateForm(){
+    this.router.navigate(['/support/update',1])
   }
 }

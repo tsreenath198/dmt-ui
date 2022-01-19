@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-support-interaction',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupportInteractionComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private router:Router) { }
   ngOnInit(): void {
   }
-
+  onAddClick() {
+    console.log("Add")
+  }
+  onDeleteClick() {
+    console.log("delete")
+  }
+  onUpdateClick() {
+    console.log("update")
+  }
+  navigateToCreateForm(){
+    this.router.navigate(['/supportinteraction/create'])
+  }
+  navigateToUpdateForm(){
+    this.router.navigate(['/supportinteraction/update',1])
+  }
 }

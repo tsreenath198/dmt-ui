@@ -1,1 +1,39 @@
-<p>invoice works!</p>
+<div class="container">
+    <button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Invoise No</th>
+                <th scope="col">Trainee Name</th>
+                <th scope="col">Actual Amount</th>
+                <th scope="col">Received Amount</th>
+                <th scope="col">Received Date</th>
+                <th scope="col">Support Start Date</th>
+                <th scope="col">Support End Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>Mike</td>
+                <td>2000</td>
+                <td>1500</td>
+                <td>10/05/2021</td>
+                <td>10/04/2021</td>
+                <td>10/05/2021</td>
+                <td>Paid</td>
+                <td>
+                    <i class="nc-icon nc-simple-add"></i>
+                    <i class="nc-icon nc-share-66"></i>
+                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                </td>
+            </tr>
+            <tr>
+                
+               
+            </tr>
+        </tbody>
+    </table>
+</div>z
