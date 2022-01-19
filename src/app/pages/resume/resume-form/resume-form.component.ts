@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-resume-form',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumeFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+  public resumeForm: FormGroup;
 
   ngOnInit(): void {
+    this.buildForm();
+  }
+
+  buildForm() {
+    this.resumeForm = this.fb.group({
+      technologyId: [''],
+      employeeId: [''],
+      traineeId: [''],
+      attachment: [''],
+      description: [''],
+    });
+  }
+
+  createForm() {
+    console.log(this.resumeForm.value);
   }
 
 }
