@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-technology-form',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechnologyFormComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private fb:FormBuilder) { }
+  public technologyForm:FormGroup
   ngOnInit(): void {
+    this.buildForm();
   }
-
+  buildForm() {
+    this.technologyForm = this.fb.group({
+      name: ['', Validators.required],
+      description: ['']
+    });
+  }
+createForm(){
+  console.log(this.technologyForm.value)
+}
 }
