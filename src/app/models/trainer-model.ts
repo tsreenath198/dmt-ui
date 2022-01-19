@@ -3,8 +3,8 @@ export interface TrainerModel{
     technologyId:number,
     employeeId:number,
     phone:string,
-    email:string,
+    email: string,
+    description: string,
     id:number,
-    description:string,
     activeFlag:string
 }
