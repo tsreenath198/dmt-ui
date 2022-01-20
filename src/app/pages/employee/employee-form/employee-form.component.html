@@ -1,1 +1,67 @@
-<p>employee-form works!</p>
+<div class="container">
+    <form [formGroup]="employeeForm" (ngSubmit)="createForm()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" aria-describedby="nameHelp"
+                        placeholder="Enter first name" formControlName="fname">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" aria-describedby="nameHelp"
+                        placeholder="Enter Last name" formControlName="lname">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" formControlName="phone" id="phone"
+                        aria-describedby="phoneHelp" placeholder="Enter phone">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" formControlName="email" id="email"
+                        aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" class="form-control" formControlName="role" id="role"
+                        aria-describedby="phoneHelp" placeholder="Enter Role">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="salary">Salary</label>
+                    <input type="text" class="form-control" formControlName="salary" id="salary"
+                        aria-describedby="phoneHelp" placeholder="Enter salary">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea name="address" class="form-control" formControlName="address" id="address"
+                        aria-describedby="phoneHelp" placeholder="Enter address"  cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" class="form-control" formControlName="description"
+                        placeholder="Enter description" id="description" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
