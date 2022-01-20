@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-support-form',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupportFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+  public supportForm: FormGroup;
 
   ngOnInit(): void {
+    this.buildForm();
   }
+  buildForm() {
+    this.supportForm = this.fb.group({
 
+      employeeId: [''],
+      traineeId: [''],
+      clientId: [''],
+      startDate: [''],
+      durationField: [''],
+      endDate: [''],
+      endClient: [''],
+      allotedTime: [''],
+      technologyUsed: [''],
+      description: [''],
+    });
+  }
+  createForm() {
+    console.log(this.supportForm.value)
+  }
 }
+

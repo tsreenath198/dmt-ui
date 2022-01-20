@@ -3,8 +3,8 @@ export interface InterviewModel{
     traineeId:number,
     interviewDate:string,
     clientId:number,
-    endclient:string,
-    allotedtime:number,
+    endClient:string,
+    allotedTime:number,
     status:string
     id:number,
     description:string,

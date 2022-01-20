@@ -40,6 +40,9 @@ import { InterviewFormComponent } from 'app/pages/interview/interview-form/inter
 import { SupportFormComponent } from 'app/pages/support/support-form/support-form.component';
 import { ResumeFormComponent } from 'app/pages/resume/resume-form/resume-form.component';
 import { TaskFormComponent } from 'app/pages/task/task-form/task-form.component';
+import { CourseFormComponent } from 'app/pages/course/course-form/course-form.component';
+import { QuetionFormComponent } from 'app/pages/quetion/quetion-form/quetion-form.component';
+import { EmployeeFormComponent } from 'app/pages/employee/employee-form/employee-form.component';
 
 @NgModule({
   imports: [
@@ -81,15 +84,13 @@ import { TaskFormComponent } from 'app/pages/task/task-form/task-form.component'
     BatchformComponent,
     ClientFormComponent,
     InterviewFormComponent,
+    CourseFormComponent,
     SupportFormComponent,
     ResumeFormComponent,
-    EmployeeComponent,
-    QuetionComponent,
-    CourseComponent,
-    EmployeePaymentComponent,
-    InvoiceComponent,
-    TaskFormComponent
-
+    TaskFormComponent,
+    CourseFormComponent,
+    QuetionFormComponent,
+    EmployeeFormComponent
   ]
 })
 
