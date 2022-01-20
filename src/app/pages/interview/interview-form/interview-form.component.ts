@@ -21,8 +21,8 @@ export class InterviewFormComponent implements OnInit {
       traineeId: [''],
       clientId: [''],
       interviewDate: [''],
-      endclient: [''],
-      allotedtime  : [''],
+      endClient: [''],
+      allotedTime  : [''],
       status: [''],
       description: [''],
     });
