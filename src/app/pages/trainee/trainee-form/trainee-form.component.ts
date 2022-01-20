@@ -19,7 +19,7 @@ export class TraineeFormComponent implements OnInit {
       name: ['', Validators.required],
       clientId: [''],
       skypeId: [''],
-      Alternativephone: [''],
+      alternativePhone: [''],
       email: [''],
       technologyId: [''],
       timezone  : [''],
