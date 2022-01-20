@@ -5,7 +5,7 @@ export interface SupportModel{
     endDate:number,
     durationField:number,
     clientId:number,
-    allottedtime:number,
+    allottedTime:number,
     endClient:string,
     technologyUsed:string,
     id:number,
