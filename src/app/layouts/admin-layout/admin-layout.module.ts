@@ -43,6 +43,7 @@ import { TaskFormComponent } from 'app/pages/task/task-form/task-form.component'
 import { CourseFormComponent } from 'app/pages/course/course-form/course-form.component';
 import { QuetionFormComponent } from 'app/pages/quetion/quetion-form/quetion-form.component';
 import { EmployeeFormComponent } from 'app/pages/employee/employee-form/employee-form.component';
+import { PipelineFormComponent } from 'app/pages/pipeline/pipeline-form/pipeline-form.component';
 
 @NgModule({
   imports: [
@@ -90,7 +91,8 @@ import { EmployeeFormComponent } from 'app/pages/employee/employee-form/employee
     TaskFormComponent,
     CourseFormComponent,
     QuetionFormComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    PipelineFormComponent
   ]
 })
 
