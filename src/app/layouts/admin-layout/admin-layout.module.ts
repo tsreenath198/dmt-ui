@@ -45,6 +45,7 @@ import { QuetionFormComponent } from 'app/pages/quetion/quetion-form/quetion-for
 import { EmployeeFormComponent } from 'app/pages/employee/employee-form/employee-form.component';
 import { PipelineFormComponent } from 'app/pages/pipeline/pipeline-form/pipeline-form.component';
 import { SalaryFormComponent } from 'app/pages/salary/salary-form/salary-form.component';
+import { SupportinteractionFormComponent } from 'app/pages/support-interaction/supportinteraction-form/supportinteraction-form.component';
 
 @NgModule({
   imports: [
@@ -94,7 +95,8 @@ import { SalaryFormComponent } from 'app/pages/salary/salary-form/salary-form.co
     QuetionFormComponent,
     EmployeeFormComponent,
     PipelineFormComponent,
-    SalaryFormComponent
+    SalaryFormComponent,
+    SupportinteractionFormComponent
   ]
 })
 
