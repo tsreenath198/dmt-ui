@@ -47,6 +47,7 @@ import { PipelineFormComponent } from 'app/pages/pipeline/pipeline-form/pipeline
 import { SalaryFormComponent } from 'app/pages/salary/salary-form/salary-form.component';
 import { SupportinteractionFormComponent } from 'app/pages/support-interaction/supportinteraction-form/supportinteraction-form.component';
 import { EmployeepaymentFormComponent } from 'app/pages/employee-payment/employeepayment-form/employeepayment-form.component';
+import { InvoiceFormComponent } from 'app/pages/invoice/invoice-form/invoice-form.component';
 
 @NgModule({
   imports: [
@@ -98,7 +99,8 @@ import { EmployeepaymentFormComponent } from 'app/pages/employee-payment/employe
     PipelineFormComponent,
     SalaryFormComponent,
     SupportinteractionFormComponent,
-    EmployeepaymentFormComponent
+    EmployeepaymentFormComponent,
+    InvoiceFormComponent
   ]
 })
 

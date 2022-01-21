@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-invoice-form',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoiceFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb:FormBuilder) { }
+  public invoiceForm:FormGroup;
 
   ngOnInit(): void {
+    this.buildForm();
   }
-
+  buildForm() {
+    this.invoiceForm = this.fb.group({
+      
+      no: [''],
+      traineeId: [''],
+      actualAmount: [''],
+      receivedAmount: [''],
+      receivedDate: [''],
+      supportStartDate: [''],
+      supportEndDate: [''],
+      description: [''],
+    });
+  }
+createForm(){
+  console.log(this.invoiceForm.value)
 }
+}
+
