@@ -1,1 +1,64 @@
-<p>employeepayment-form works!</p>
+<div class="container">
+    <form [formGroup]="employeePaymentForm" (ngSubmit)="createForm()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="employee">Employee</label>
+                    <select class="custom-select" formControlName="employeeId">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="monthYear">Month Year</label>
+                    <input type="text" class="form-control" formControlName="monthYear" id="monthYear"
+                        aria-describedby="Help" placeholder="Enter Month Year ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="trainingPeriod">Training Period</label>
+                    <input type="text" class="form-control" formControlName="trainingPeriod" id="trainingPeriod"
+                        aria-describedby="Help" placeholder="Enter Training Period ">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="supportPeriod">Support Period</label>
+                    <input type="text" class="form-control" formControlName="supportPeriod" id="supportPeriod"
+                        aria-describedby="Help" placeholder="Enter Support Period ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="preparation">Preparation</label>
+                    <input type="text" class="form-control" formControlName="preparation" id="preparation"
+                        aria-describedby="Help" placeholder="Enter Preparation ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="misc">Misc</label>
+                    <input type="text" class="form-control" formControlName="misc" id="misc"
+                        aria-describedby="Help" placeholder="Enter misc">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" class="form-control" formControlName="description"
+                        placeholder="Enter description" id="description" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
