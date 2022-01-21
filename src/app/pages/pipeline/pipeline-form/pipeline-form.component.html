@@ -1,1 +1,44 @@
-<p>pipeline-form works!</p>
+<div class="container">
+    <form [formGroup]="pipelineForm" (ngSubmit)="createForm()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
+                        placeholder="Enter name" formControlName="name">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" formControlName="phone" id="phone"
+                        aria-describedby="phoneHelp" placeholder="Enter phone">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" formControlName="email" id="email"
+                        aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+            </div>    
+        </div> 
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="requirements">Requirements</label>
+                    <input type="text" class="form-control" id="requirements" aria-describedby="Help"
+                        placeholder="Enter the requirements" formControlName="requirements">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" class="form-control" formControlName="description"
+                        placeholder="Enter description" id="description" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

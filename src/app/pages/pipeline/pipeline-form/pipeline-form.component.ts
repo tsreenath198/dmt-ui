@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pipeline-form',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipelineFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+  public pipelineForm: FormGroup;
 
   ngOnInit(): void {
+    this.buildForm();
+  }
+
+  buildForm() {
+    this.pipelineForm = this.fb.group({
+      name: ['', Validators.required],
+      phone: [''],
+      email: [''],
+      requirements: [''],
+      description: [''],
+    });
+  }
+
+  createForm() {
+    console.log(this.pipelineForm.value);
   }
 
 }
+
