@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-salary-form',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalaryFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb:FormBuilder) { }
+  public salaryForm:FormGroup;
 
   ngOnInit(): void {
+    this.buildForm();
   }
-
+  buildForm() {
+    this.salaryForm = this.fb.group({
+      
+      employeeId: [''],
+      month: [''],
+      year: [''],
+      salary  : [''],
+      description: [''],
+    });
+  }
+createForm(){
+  console.log(this.salaryForm.value)
+}
 }
