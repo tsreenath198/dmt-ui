@@ -44,6 +44,10 @@ import { CourseFormComponent } from 'app/pages/course/course-form/course-form.co
 import { QuetionFormComponent } from 'app/pages/quetion/quetion-form/quetion-form.component';
 import { EmployeeFormComponent } from 'app/pages/employee/employee-form/employee-form.component';
 import { PipelineFormComponent } from 'app/pages/pipeline/pipeline-form/pipeline-form.component';
+import { SalaryFormComponent } from 'app/pages/salary/salary-form/salary-form.component';
+import { SupportinteractionFormComponent } from 'app/pages/support-interaction/supportinteraction-form/supportinteraction-form.component';
+import { EmployeepaymentFormComponent } from 'app/pages/employee-payment/employeepayment-form/employeepayment-form.component';
+import { InvoiceFormComponent } from 'app/pages/invoice/invoice-form/invoice-form.component';
 
 @NgModule({
   imports: [
@@ -92,7 +96,11 @@ import { PipelineFormComponent } from 'app/pages/pipeline/pipeline-form/pipeline
     CourseFormComponent,
     QuetionFormComponent,
     EmployeeFormComponent,
-    PipelineFormComponent
+    PipelineFormComponent,
+    SalaryFormComponent,
+    SupportinteractionFormComponent,
+    EmployeepaymentFormComponent,
+    InvoiceFormComponent
   ]
 })
 

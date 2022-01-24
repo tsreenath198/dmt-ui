@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-employeepayment-form',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeepaymentFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb:FormBuilder) { }
+  public employeePaymentForm:FormGroup;
 
   ngOnInit(): void {
+    this.buildForm();
   }
-
+  buildForm() {
+    this.employeePaymentForm = this.fb.group({
+      
+      employeeId: [''],
+      monthYear: [''],
+      trainingPeriod: [''],
+      supportPeriod: [''],
+      preparation: [''],
+      misc: [''],
+      description: [''],
+    });
+  }
+createForm(){
+  console.log(this.employeePaymentForm.value)
 }
+}
+

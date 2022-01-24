@@ -1,1 +1,71 @@
-<p>invoice-form works!</p>
+<div class="container">
+    <form [formGroup]="invoiceForm" (ngSubmit)="createForm()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="no">Invoise No </label>
+                    <input type="text" class="form-control" formControlName="no" id="no"
+                        aria-describedby="Help" placeholder="Enter Invoise No ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="trainee">Trainee</label>
+                    <select class="custom-select" formControlName="traineeId">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="actualAmount">Actual Amount</label>
+                    <input type="text" class="form-control" formControlName="actualAmount" id="interviewDate"
+                        aria-describedby="Help" placeholder="Enter Actual Amount ">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="receivedAmount">Received Amount</label>
+                    <input type="text" class="form-control" formControlName="receivedAmount" id="receivedAmount"
+                        aria-describedby="Help" placeholder="Enter Received Amount ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="receivedDate">Received Date</label>
+                    <input type="text" class="form-control" formControlName="receivedDate" id="receivedDate"
+                        aria-describedby="Help" placeholder="Enter Received Date">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="supportStartDate">Support Start Date</label>
+                    <input type="text" class="form-control" formControlName="supportStartDate" id="supportStartDate" aria-describedby="Help"
+                        placeholder="Enter Support Started Date">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="supportEndDate">Support End Date</label>
+                    <input type="text" class="form-control" formControlName="supportEndDate" id="supportEndDate" aria-describedby="Help"
+                        placeholder="Enter Support Ended Date">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" class="form-control" formControlName="description"
+                        placeholder="Enter description" id="description" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

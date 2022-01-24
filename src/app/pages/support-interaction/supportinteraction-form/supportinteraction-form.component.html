@@ -1,1 +1,59 @@
-<p>supportinteraction-form works!</p>
+<div class="container">
+    <form [formGroup]="supportinteractionForm" (ngSubmit)="createForm()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="trainer">Trainer</label>
+                    <select class="custom-select" formControlName="trainerId">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="trainee">Trainee</label>
+                    <select class="custom-select" formControlName="traineeId">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="lead">Lead</label>
+                    <input type="text" class="form-control" formControlName="lead" id="lead"
+                        aria-describedby="Help" placeholder="Enter Lead ">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="text" class="form-control" formControlName="date" id="date"
+                        aria-describedby="Help" placeholder="Enter Date ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="count">Count</label>
+                    <input type="text" class="form-control" formControlName="count" id="count"
+                        aria-describedby="Help" placeholder="Enter count ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" class="form-control" formControlName="description"
+                        placeholder="Enter description" id="description" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
