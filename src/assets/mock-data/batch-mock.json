@@ -1,0 +1,26 @@
+[
+    {
+        "batch": 1,
+        "technologyid": 1,
+        "trainerId": 1,
+        "startDate": "23-12-2021",
+        "endDate": "24-01-2022",
+        "durationField": "",
+        "allotedTime": "02:30",
+        "id": 1,
+        "description": "description",
+        "activeFlag": "0"
+    },
+    {
+        "batch": 2,
+        "technologyid": 2,
+        "trainerId": 2,
+        "startDate": "23-12-2021",
+        "endDate": "24-01-2022",
+        "durationField": "",
+        "allotedTime": "03:30",
+        "id": 2,
+        "description": "description",
+        "activeFlag": "0"
+    }
+]
