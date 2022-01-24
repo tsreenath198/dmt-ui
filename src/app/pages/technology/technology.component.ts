@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TechnologyModel } from 'app/models/technology-model';
+import { TechnologyService } from 'app/services/technology/technology.service';
 
 @Component({
   selector: 'app-technology',
@@ -8,9 +10,19 @@ import { Router } from '@angular/router';
 })
 export class TechnologyComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  public technologyDataSource: TechnologyModel[];
+
+  constructor(private router: Router,
+    private technologyService: TechnologyService) { }
 
   ngOnInit(): void {
+    this.getTechnologyData();
+  }
+
+  getTechnologyData() {
+    this.technologyService.getMockData().subscribe((result: TechnologyModel[]) => {
+      this.technologyDataSource = result;
+    })
   }
 
   onAddClick() {
@@ -22,10 +34,10 @@ export class TechnologyComponent implements OnInit {
   onUpdateClick() {
     console.log("update")
   }
-  navigateToCreateForm(){
+  navigateToCreateForm() {
     this.router.navigate(['/technology/create'])
   }
-  navigateToUpdateForm(){
-    this.router.navigate(['/technology/update',1])
+  navigateToUpdateForm() {
+    this.router.navigate(['/technology/update', 1])
   }
 }

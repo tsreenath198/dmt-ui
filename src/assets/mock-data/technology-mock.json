@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Angular",
+        "description": "Angular",
+        "activeFlag": "0"
+    },
+    {
+        "id": 2,
+        "name": "Java",
+        "description": "Java",
+        "activeFlag": "0"
+    },
+    {
+        "id": 3,
+        "name": "Html",
+        "description": "Html",
+        "activeFlag": "0"
+    }
+]
