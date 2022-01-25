@@ -1,0 +1,72 @@
+[
+    {
+        "employeeId": "1",
+        "traineeId": "1",
+        "startDate": "10/03/2022",
+        "endDate": "15/04/2022",
+        "durationField": "number",
+        "clientId": "1",
+        "allottedTime": "4",
+        "endClient": "Client name",
+        "technologyUsed": "Angular",
+        "id": "1",
+        "description": "support",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "2",
+        "traineeId": "2",
+        "startDate": "10/05/2022",
+        "endDate": "15/07/2022",
+        "durationField": "number",
+        "clientId": "2",
+        "allottedTime": "4",
+        "endClient": "Client name",
+        "technologyUsed": "JavaScript",
+        "id": "2",
+        "description": "support",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "3",
+        "traineeId": "3",
+        "startDate": "10/08/2022",
+        "endDate": "15/09/2022",
+        "durationField": "number",
+        "clientId": "3",
+        "allottedTime": "4",
+        "endClient": "Client name",
+        "technologyUsed": "NodeJs",
+        "id": "3",
+        "description": "support",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "4",
+        "traineeId": "4",
+        "startDate": "10/09/2022",
+        "endDate": "15/10/2022",
+        "durationField": "number",
+        "clientId": "4",
+        "allottedTime": "4",
+        "endClient": "Client name",
+        "technologyUsed": "java",
+        "id": "4",
+        "description": "support",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "5",
+        "traineeId": "5",
+        "startDate": "10/11/2022",
+        "endDate": "15/12/2022",
+        "durationField": "number",
+        "clientId": "5",
+        "allottedTime": "4",
+        "endClient": "Client name",
+        "technologyUsed": "Angular",
+        "id": "5",
+        "description": "support",
+        "activeFlag": "0"
+    }
+]

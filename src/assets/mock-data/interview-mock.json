@@ -1,0 +1,62 @@
+[
+    {
+        "employeeId": "1",
+        "traineeId": "1",
+        "interviewDate": "10/02/2022",
+        "clientId": "1",
+        "endClient": "Maek",
+        "allotedTime": "10:00 AM",
+        "status": "active",
+        "id": "1",
+        "description": "interview",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "2",
+        "traineeId": "2",
+        "interviewDate": "27/02/2022",
+        "clientId": "2",
+        "endClient": "kill",
+        "allotedTime": "12:00 AM",
+        "status": "active",
+        "id": "2",
+        "description": "interview",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "3",
+        "traineeId": "3",
+        "interviewDate": "28/02/2022",
+        "clientId": "3",
+        "endClient": "Wood",
+        "allotedTime": "12:00 AM",
+        "status": "active",
+        "id": "3",
+        "description": "interview",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "4",
+        "traineeId": "4",
+        "interviewDate": "29/02/2022",
+        "clientId": "4",
+        "endClient": "HazalWood",
+        "allotedTime": "09:00 AM",
+        "status": "active",
+        "id": "4",
+        "description": "interview",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "5",
+        "traineeId": "5",
+        "interviewDate": "09/02/2022",
+        "clientId": "5",
+        "endClient": "Peerson",
+        "allotedTime": "08:00 AM",
+        "status": "active",
+        "id": "5",
+        "description": "interview",
+        "activeFlag": "0"
+    }
+]
