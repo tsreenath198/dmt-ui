@@ -13,11 +13,14 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { SigninComponent } from "./pages/signin/signin.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    SigninComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -29,7 +32,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ToastrModule.forRoot(),
     FooterModule,
     HttpClientModule,
-    FixedPluginModule
+    FixedPluginModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
