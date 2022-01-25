@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TaskModel } from 'app/models/task-model';
+import { TaskService } from 'app/services/task/task.service';
 
 @Component({
   selector: 'app-task',
@@ -8,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class TaskComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  public taskDataSource:TaskModel[];
+
+  constructor(private router:Router,
+    private taskService:TaskService) { }
 
   ngOnInit(): void {
+    this.getTaskData();
+  }
+  getTaskData() {
+    this.taskService.getMockData().subscribe((result:TaskModel[]) =>{
+      this.taskDataSource = result ;
+    })
   }
   onDeleteClick() {
     console.log("delete")
