@@ -1,0 +1,47 @@
+[
+    {
+        "employeeId": "1",
+        "month": "January",
+        "year": "2022",
+        "salary": "24000",
+        "id": "1",
+        "description": "salary",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "",
+        "month": "Feb",
+        "year": "2022",
+        "salary": "25000",
+        "id": "2",
+        "description": "salary",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "3",
+        "month": "May",
+        "year": "2022",
+        "salary": "24000",
+        "id": "3",
+        "description": "salary",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "4",
+        "month": "March",
+        "year": "2022",
+        "salary": "27000",
+        "id": "4",
+        "description": "salary",
+        "activeFlag": "0"
+    },
+    {
+        "employeeId": "5",
+        "month": "Jun",
+        "year": "2022",
+        "salary": "30000",
+        "id": "5",
+        "description": "salary",
+        "activeFlag": "0"
+    }
+]

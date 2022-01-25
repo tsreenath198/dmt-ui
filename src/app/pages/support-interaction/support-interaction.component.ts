@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { supportInteractionModel } from 'app/models/supportInteraction-model';
+import { SupportinteractionService } from 'app/services/supportinteraction/supportinteraction.service';
 
 @Component({
   selector: 'app-support-interaction',
@@ -8,9 +10,19 @@ import { Router } from '@angular/router';
 })
 export class SupportInteractionComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  public supportinteractionDataSource: supportInteractionModel[];
+
+  constructor(private router: Router,
+    private supportinteractionService: SupportinteractionService) { }
   ngOnInit(): void {
+    this.getSupportinteractionData();
   }
+  getSupportinteractionData() {
+    this.supportinteractionService.getMockData().subscribe((result: supportInteractionModel[]) => {
+      this.supportinteractionDataSource = result;
+    })
+  }
+
   onAddClick() {
     console.log("Add")
   }
@@ -20,10 +32,10 @@ export class SupportInteractionComponent implements OnInit {
   onUpdateClick() {
     console.log("update")
   }
-  navigateToCreateForm(){
+  navigateToCreateForm() {
     this.router.navigate(['/supportinteraction/create'])
   }
-  navigateToUpdateForm(){
-    this.router.navigate(['/supportinteraction/update',1])
+  navigateToUpdateForm() {
+    this.router.navigate(['/supportinteraction/update', 1])
   }
 }
