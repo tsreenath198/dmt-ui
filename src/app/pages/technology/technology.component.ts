@@ -35,9 +35,9 @@ export class TechnologyComponent implements OnInit {
     console.log("update")
   }
   navigateToCreateForm() {
-    this.router.navigate(['/technology/technology/create'])
+    this.router.navigate(['/dmt/technology/create'])
   }
   navigateToUpdateForm() {
-    this.router.navigate(['/technology/technology/update', 1])
+    this.router.navigate(['/dmt/technology/update', 1])
   }
 }

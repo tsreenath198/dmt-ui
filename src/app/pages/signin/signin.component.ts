@@ -48,6 +48,6 @@ export class SigninComponent implements OnInit {
 
     this.authenticationService.login(this.f.username.value, this.f.password.value);
     this.loading = false;
-    this.router.navigate(['/technology/technology']);
+    this.router.navigate(['/dmt/technology']);
   }
 }
