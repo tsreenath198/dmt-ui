@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TraineeModel } from 'app/models/trainee-model';
 import { TrainerModel } from 'app/models/trainer-model';
-import { TraineeService } from 'app/services/trainee.service';
+import { TraineeService } from 'app/services/trainee/trainee.service';
 
 @Component({
   selector: 'app-trainee',

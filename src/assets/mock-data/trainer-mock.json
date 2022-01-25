@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Kiran",
+        "technologyId": "1",
+        "employeeId": "1",
+        "phone":"2345566788",
+        "email": "kiran@gmail.com",
+        "description": "Traner",
+        "id":"1",
+        "activeFlag":"0"
+    },
+    {
+        "name": "Raj",
+        "technologyId": "2",
+        "employeeId": "2",
+        "phone":"23455345788",
+        "email": "raj@gmail.com",
+        "description": "Traner",
+        "id":"2",
+        "activeFlag":"0"
+    },
+    {
+        "name": "Mark",
+        "technologyId": "3",
+        "employeeId": "3",
+        "phone":"2343456788",
+        "email": "mark@gmail.com",
+        "description": "Traner",
+        "id":"2",
+        "activeFlag":"0"
+    },
+    {
+        "name": "Wood",
+        "technologyId": "4",
+        "employeeId": "4",
+        "phone":"23425566788",
+        "email": "wood@gmail.com",
+        "description": "Traner",
+        "id":"4",
+        "activeFlag":"0"
+    },
+    {
+        "name": "Mark Wood",
+        "technologyId": "5",
+        "employeeId": "5",
+        "phone":"23454563788",
+        "email": "maekwood@gmail.com",
+        "description": "Traner",
+        "id":"5",
+        "activeFlag":"0"
+    }
+]

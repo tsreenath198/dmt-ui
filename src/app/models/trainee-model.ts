@@ -3,7 +3,7 @@ export interface TraineeModel{
     email:string,
     clientId:number,
     technologyId:number,
-    batchid:number,
+    batchId:number,
     phone:string,
     alternatePhone:string,
     skipeId:number,
