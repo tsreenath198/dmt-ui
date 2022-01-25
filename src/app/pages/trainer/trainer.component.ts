@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TraineeModel } from 'app/models/trainee-model';
+import { TrainerModel } from 'app/models/trainer-model';
+import { TrainerService } from 'app/services/trainer/trainer.service';
 
 @Component({
   selector: 'app-trainer',
@@ -8,9 +11,20 @@ import { Router } from '@angular/router';
 })
 export class TrainerComponent implements OnInit {
 
-  constructor(private router:Router) { }
+    public trainerDataSource:TrainerModel[];
+  
+  constructor(private router:Router ,
+    private trainerService:TrainerService) { }
   ngOnInit(): void {
+    this.getTrainerData()
   }
+
+  getTrainerData() {
+    this.trainerService.getMockData().subscribe((result:TrainerModel[]) =>{
+      this.trainerDataSource = result ;
+    })
+  }
+
   onAddClick() {
     console.log("Add")
   }

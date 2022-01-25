@@ -4,11 +4,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class BatchService {
+export class ClientService {
 
   constructor(private httpClient:HttpClient) { }
-
-  getMockData() {
-    return this.httpClient.get('assets/mock-data/batch-mock.json');
+  
+  getMockData(){
+    return this.httpClient.get('assets/mock-data/client-mock.json')
   }
 }

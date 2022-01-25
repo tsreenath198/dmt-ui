@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ClientModel } from 'app/models/client-model';
+import { ClientService } from 'app/services/client/client.service';
 
 @Component({
   selector: 'app-client',
@@ -8,10 +10,20 @@ import { Router } from '@angular/router';
 })
 export class ClientComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  public clientDataSource:ClientModel[];
+
+  constructor(private router:Router,
+    private clientService:ClientService) { }
 
   ngOnInit(): void {
+    this.getClientData()
   }
+  getClientData() {
+    this.clientService.getMockData().subscribe((result:ClientModel[]) =>{
+      this.clientDataSource = result;
+    })
+  }
+
   onDeleteClick() {
     console.log("delete")
   }
