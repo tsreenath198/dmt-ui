@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { QuetionModel } from 'app/models/quetion-model';
+import { QuetionService } from 'app/services/quetion/quetion.service';
 
 @Component({
   selector: 'app-quetion',
@@ -8,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class QuetionComponent implements OnInit {
 
-  constructor(private router:Router) { }
+public quetionDataSource:QuetionModel[];
+
+  constructor(private router:Router,
+    private quetionService:QuetionService) { }
 
   ngOnInit(): void {
+    this.getQuetionData();
+  }
+  getQuetionData() {
+    this.quetionService.getMockData().subscribe((result:QuetionModel[]) =>{
+      this.quetionDataSource = result ;
+    })
   }
 
   onAddClick() {

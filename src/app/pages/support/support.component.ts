@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SupportModel } from 'app/models/support-model';
+import { SupportService } from 'app/services/support/support.service';
 
 @Component({
   selector: 'app-support',
@@ -8,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class SupportComponent implements OnInit {
 
-  constructor(private router:Router) { }
+ public supportDataSource: SupportModel[];
+
+  constructor(private router:Router,
+    private supportService:SupportService) { }
 
   ngOnInit(): void {
+    this.getSupportData();
+  }
+  getSupportData() {
+    this.supportService.getMockData().subscribe((result:SupportModel[]) =>{
+      this.supportDataSource = result ;
+    })
   }
  onAddClick() {
     console.log("Add")

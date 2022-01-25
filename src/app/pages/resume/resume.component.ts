@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ResumeModel } from 'app/models/resume-model';
+import { ResumeService } from 'app/services/resume/resume.service';
 
 @Component({
   selector: 'app-resume',
@@ -8,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class ResumeComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  public resumeDataSource:ResumeModel[];
+
+  constructor(private router:Router,
+    private resumeService:ResumeService) { }
 
   ngOnInit(): void {
+    this.getResumeData();
+  }
+  getResumeData() {
+    this.resumeService.getMockData().subscribe((result:ResumeModel[]) =>{
+      this.resumeDataSource = result;
+    })
   }
   onAddClick() {
     console.log("Add")

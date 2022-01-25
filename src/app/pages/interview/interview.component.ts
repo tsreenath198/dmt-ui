@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { InterviewModel } from 'app/models/interview-model';
+import { InterviewService } from 'app/services/interview/interview.service';
 
 @Component({
   selector: 'app-interview',
@@ -8,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class InterviewComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  public interviewDataSource:InterviewModel[];
+
+  constructor(private router:Router,
+    private interviewService:InterviewService) { }
 
   ngOnInit(): void {
+    this.getInterviewData();
+  }
+  getInterviewData() {
+    this.interviewService.getMockData().subscribe((result:InterviewModel[]) =>{
+      this.interviewDataSource = result ;
+    })
   }
 
   onAddClick() {

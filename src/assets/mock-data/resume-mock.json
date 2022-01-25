@@ -1,0 +1,47 @@
+[
+    {
+        "technologyId": "1",
+        "traineeId": "1",
+        "employeeId": "1",
+        "attachments": "file",
+        "id": "1",
+        "description": "resume",
+        "activeFlag": "0"
+    },
+    {
+        "technologyId": "2",
+        "traineeId": "2",
+        "employeeId": "2",
+        "attachments": "file",
+        "id": "2",
+        "description": "resume",
+        "activeFlag": "0"
+    },
+    {
+        "technologyId": "3",
+        "traineeId": "3",
+        "employeeId": "3",
+        "attachments": "file",
+        "id": "3",
+        "description": "resume",
+        "activeFlag": "0"
+    },
+    {
+        "technologyId": "4",
+        "traineeId": "4",
+        "employeeId": "4",
+        "attachments": "file",
+        "id": "4",
+        "description": "resume",
+        "activeFlag": "0"
+    },
+    {
+        "technologyId": "5",
+        "traineeId": "5",
+        "employeeId": "5",
+        "attachments": "file",
+        "id": "5",
+        "description": "resume",
+        "activeFlag": "0"
+    }
+]
