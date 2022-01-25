@@ -10,16 +10,15 @@ import { ClientService } from 'app/services/client/client.service';
 })
 export class ClientComponent implements OnInit {
 
-  public clientDataSource:ClientModel[];
-
-  constructor(private router:Router,
-    private clientService:ClientService) { }
+  public clientDataSource: ClientModel[];
+  constructor(private router: Router,
+    private clientService: ClientService) { }
 
   ngOnInit(): void {
     this.getClientData()
   }
   getClientData() {
-    this.clientService.getMockData().subscribe((result:ClientModel[]) =>{
+    this.clientService.getMockData().subscribe((result: ClientModel[]) => {
       this.clientDataSource = result;
     })
   }
@@ -30,10 +29,10 @@ export class ClientComponent implements OnInit {
   onUpdateClick() {
     console.log("update")
   }
-  navigateToCreateForm(){
+  navigateToCreateForm() {
     this.router.navigate(['/client/create'])
   }
-  navigateToUpdateForm(){
-    this.router.navigate(['/client/update',1])
+  navigateToUpdateForm() {
+    this.router.navigate(['/client/update', 1])
   }
 }
