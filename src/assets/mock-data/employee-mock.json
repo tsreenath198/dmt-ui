@@ -1,0 +1,62 @@
+[
+    {
+        "fname": "kiran",
+        "lname": "akula",
+        "phone": "1234536587",
+        "email": "raj@gmail.com",
+        "role": "Developer",
+        "salary": "20000",
+        "address": "Address",
+        "id": "1",
+        "description": "Employee",
+        "activeFlag": "0"
+    },
+    {
+        "fname": "akula",
+        "lname": "kiran",
+        "phone": "12332436587",
+        "email": "kiran@gmail.com",
+        "role": "Developer",
+        "salary": "20800",
+        "address": "Address",
+        "id": "2",
+        "description": "Employee",
+        "activeFlag": "0"
+    },
+    {
+        "fname": "akineni",
+        "lname": "arjun",
+        "phone": "23434536587",
+        "email": "arjun@gmail.com",
+        "role": "Developer",
+        "salary": "22000",
+        "address": "Address",
+        "id": "3",
+        "description": "Employee",
+        "activeFlag": "0"
+    },
+    {
+        "fname": "rebel",
+        "lname": "star",
+        "phone": "1234234536587",
+        "email": "rebel@gmail.com",
+        "role": "Developer",
+        "salary": "40000",
+        "address": "Address",
+        "id": "4",
+        "description": "Employee",
+        "activeFlag": "0"
+    },
+    {
+        "fname": "power",
+        "lname": "star",
+        "phone": "14545536587",
+        "email": "star@gmail.com",
+        "role": "Developer",
+        "salary": "20200",
+        "address": "Address",
+        "id": "5",
+        "description": "Employee",
+        "activeFlag": "0"
+    }
+]

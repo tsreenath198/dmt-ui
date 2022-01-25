@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EmployeeModel } from 'app/models/employee-model';
+import { EmployeeService } from 'app/services/employee/employee.service';
 
 @Component({
   selector: 'app-employee',
@@ -8,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  public employeeDataSource:EmployeeModel[];
+
+  constructor(private router:Router,
+    private employeeService:EmployeeService) { }
 
   ngOnInit(): void {
+    this.getEmployeeData();
+  }
+  getEmployeeData() {
+    this.employeeService.getMockData().subscribe((result:EmployeeModel[]) =>{
+      this.employeeDataSource = result;
+    })
   }
 
   onAddClick() {
