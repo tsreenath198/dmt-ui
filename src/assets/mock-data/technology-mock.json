@@ -16,5 +16,17 @@
         "name": "Html",
         "description": "Html",
         "activeFlag": "0"
+    },
+    {
+        "id": 4,
+        "name": "ReactJs",
+        "description": "ReactJs",
+        "activeFlag": "0"
+    },
+    {
+        "id": 5,
+        "name": "NodeJs",
+        "description": "ReactJs",
+        "activeFlag": "0"
     }
 ]

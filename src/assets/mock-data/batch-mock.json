@@ -22,5 +22,41 @@
         "id": 2,
         "description": "description",
         "activeFlag": "0"
+    },
+    {
+        "batch": 3,
+        "technologyid": 3,
+        "trainerId": 3,
+        "startDate": "24-12-2021",
+        "endDate": "25-05-2022",
+        "durationField": "",
+        "allotedTime": "04:30",
+        "id": 3,
+        "description": "description",
+        "activeFlag": "0"
+    },
+    {
+        "batch": 4,
+        "technologyid": 4,
+        "trainerId": 4,
+        "startDate": "23-12-2021",
+        "endDate": "24-01-2022",
+        "durationField": "",
+        "allotedTime": "05:30",
+        "id": 4,
+        "description": "description",
+        "activeFlag": "0"
+    },
+    {
+        "batch": 5,
+        "technologyid": 5,
+        "trainerId": 5,
+        "startDate": "23-07-2021",
+        "endDate": "24-09-2022",
+        "durationField": "",
+        "allotedTime": "06:30",
+        "id": 5,
+        "description": "description",
+        "activeFlag": "0"
     }
 ]

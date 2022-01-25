@@ -1,0 +1,72 @@
+[
+    {
+        "name": "kiran",
+        "email": "raj@gmail.com",
+        "clientId": "1",
+        "technologyId": "1",
+        "batchid": "1",
+        "phone": "123456778",
+        "alternatePhone": "0887676554",
+        "skipeId": "kiran098",
+        "timeZone": "5:30 SGT",
+        "id": "1",
+        "description": "Trainee",
+        "activeFlag": "0"
+    },
+    {
+        "name": "Raj",
+        "email": "raj@gmail.com",
+        "clientId": "2",
+        "technologyId": "2",
+        "batchid": "2",
+        "phone": "145456778",
+        "alternatePhone": "0890676554",
+        "skipeId": "kin098",
+        "timeZone": "5:30 SGT",
+        "id": "2",
+        "description": "Trainee",
+        "activeFlag": "0"
+    },
+    {
+        "name": "Ramesh",
+        "email": "ramesh@gmail.com",
+        "clientId": "3",
+        "technologyId": "3",
+        "batchid": "3",
+        "phone": "1456456778",
+        "alternatePhone": "08872346554",
+        "skipeId": "ramesh098",
+        "timeZone": "5:30 SGT",
+        "id": "3",
+        "description": "Trainee",
+        "activeFlag": "0"
+    },
+    {
+        "name": "Vamshi",
+        "email": "vamshi@gmail.com",
+        "clientId": "4",
+        "technologyId": "4",
+        "batchid": "4",
+        "phone": "1345456778",
+        "alternatePhone": "0887676554",
+        "skipeId": "vamshi098",
+        "timeZone": "5:30 SGT",
+        "id": "4",
+        "description": "Trainee",
+        "activeFlag": "0"
+    },
+    {
+        "name": "Brijesh",
+        "email": "brijesh@gmail.com",
+        "clientId": "5",
+        "technologyId": "5",
+        "batchid": "5",
+        "phone": "123487778",
+        "alternatePhone": "0834576554",
+        "skipeId": "kiran098",
+        "timeZone": "5:30 SGT",
+        "id": "5",
+        "description": "Trainee",
+        "activeFlag": "0"
+    }
+]
