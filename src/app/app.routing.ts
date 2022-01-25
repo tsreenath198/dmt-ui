@@ -9,7 +9,7 @@ export const AppRoutes: Routes = [
     redirectTo: 'signin',
     pathMatch: 'full',
   }, {
-    path: 'technology', component: AdminLayoutComponent, children: [{ path: '', loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule' }]
+    path: 'dmt', component: AdminLayoutComponent, children: [{ path: '', loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule' }]
   },
   {
     path: '**',
