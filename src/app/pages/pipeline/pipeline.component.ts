@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PipelineModel } from 'app/models/pipeline-model';
+import { PipelineService } from 'app/services/pipeline/pipeline.service';
 
 @Component({
   selector: 'app-pipeline',
@@ -8,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class PipelineComponent implements OnInit {
 
-  constructor(private router:Router) { }
+public pipelineDataSource:PipelineModel[];
+
+  constructor(private router:Router,
+    private pipelineService:PipelineService) { }
 
   ngOnInit(): void {
+    this.getPipelineData();
+  }
+  getPipelineData() {
+    this.pipelineService.getMockData().subscribe((result:PipelineModel[]) =>{
+      this.pipelineDataSource = result;
+    })
   }
   onDeleteClick() {
     console.log("delete")

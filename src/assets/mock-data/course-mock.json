@@ -1,0 +1,47 @@
+[
+    {
+        "technologyId": "1",
+        "name": "Course name",
+        "estimatedHours": "1 HRS",
+        "action": "action",
+        "id": "1",
+        "description": "course",
+        "activeFlag": "0"
+    },
+    {
+        "technologyId": "2",
+        "name": "Course name",
+        "estimatedHours": "2 HRS",
+        "action": "action",
+        "id": "2",
+        "description": "course",
+        "activeFlag": "0"
+    },
+    {
+        "technologyId": "3",
+        "name": "Course name",
+        "estimatedHours": "3 HRS",
+        "action": "action",
+        "id": "3",
+        "description": "course",
+        "activeFlag": "0"
+    },
+    {
+        "technologyId": "4",
+        "name": "Course name",
+        "estimatedHours": "4 HRS",
+        "action": "action",
+        "id": "4",
+        "description": "course",
+        "activeFlag": "0"
+    },
+    {
+        "technologyId": "5",
+        "name": "Course name",
+        "estimatedHours": "5 HRS",
+        "action": "action",
+        "id": "5",
+        "description": "course",
+        "activeFlag": "0"
+    }
+]
