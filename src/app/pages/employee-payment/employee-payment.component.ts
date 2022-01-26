@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EmployeePaymentModel } from 'app/models/employeePayment-model';
+import { EmployeepaymentService } from 'app/services/employeepayment/employeepayment.service';
 
 @Component({
   selector: 'app-employee-payment',
@@ -8,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class EmployeePaymentComponent implements OnInit {
 
-  constructor(private router:Router) { }
+public employeepaymentDataSource:EmployeePaymentModel[];
+
+  constructor(private router:Router,
+    private employeepaymentService:EmployeepaymentService) { }
 
   ngOnInit(): void {
+    this.getEmployeepaymentData();
+  }
+  getEmployeepaymentData() {
+    this.employeepaymentService.getMockData().subscribe((result:EmployeePaymentModel[]) =>{
+      this.employeepaymentDataSource = result;
+    })
   }
   onAddClick() {
     console.log("Add")

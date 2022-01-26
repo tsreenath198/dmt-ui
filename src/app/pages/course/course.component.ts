@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CourseModel } from 'app/models/course-model';
+import { CourseService } from 'app/services/course/course.service';
 
 @Component({
   selector: 'app-course',
@@ -8,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class CourseComponent implements OnInit {
 
-  constructor(private router:Router) { }
+public courseDataSourse:CourseModel[];
+
+  constructor(private router:Router,
+    private courseService:CourseService) { }
 
   ngOnInit(): void {
+    this.getCourseData();
+  }
+  getCourseData() {
+    this.courseService.getMockData().subscribe((result:CourseModel[]) =>{
+      this.courseDataSourse = result;
+    })
   }
 
   onAddClick() {

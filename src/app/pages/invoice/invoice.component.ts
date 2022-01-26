@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { InvoiceModel } from 'app/models/invoice-model';
+import { InvoiceService } from 'app/services/invoice/invoice.service';
 
 @Component({
   selector: 'app-invoice',
@@ -8,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class InvoiceComponent implements OnInit {
 
-  constructor(private router:Router) { }
+public invoiceDataSource:InvoiceModel[];
+
+  constructor(private router:Router,
+    private invoiceService:InvoiceService) { }
 
   ngOnInit(): void {
+    this.getInvoiceData();
+  }
+  getInvoiceData() {
+    this.invoiceService.getMockData().subscribe((result:InvoiceModel[]) =>{
+      this.invoiceDataSource = result;
+    })
   }
   onAddClick() {
     console.log("Add")
