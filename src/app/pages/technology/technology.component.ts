@@ -39,7 +39,7 @@ export class TechnologyComponent implements OnInit {
   navigateToCreateForm() {
     this.router.navigate([this.routeConstants.TECHNOLOGY_CREATE])
   }
-  navigateToUpdateForm() {
-    this.router.navigate([this.routeConstants.TECHNOLOGY_UPDATE, 1])
+  navigateToUpdateForm(id:number) {
+    this.router.navigate([this.routeConstants.TECHNOLOGY_UPDATE, id])
   }
 }

@@ -48,6 +48,7 @@ import { SalaryFormComponent } from 'app/pages/salary/salary-form/salary-form.co
 import { SupportinteractionFormComponent } from 'app/pages/support-interaction/supportinteraction-form/supportinteraction-form.component';
 import { EmployeepaymentFormComponent } from 'app/pages/employee-payment/employeepayment-form/employeepayment-form.component';
 import { InvoiceFormComponent } from 'app/pages/invoice/invoice-form/invoice-form.component';
+import { TechnologyComponent } from 'app/pages/technology/technology.component';
 
 @NgModule({
   imports: [
@@ -82,6 +83,7 @@ import { InvoiceFormComponent } from 'app/pages/invoice/invoice-form/invoice-for
     SupportInteractionComponent,
     EmployeePaymentComponent,
     InvoiceComponent,
+    TechnologyComponent,
 
     TechnologyFormComponent,
     TraineeFormComponent,
