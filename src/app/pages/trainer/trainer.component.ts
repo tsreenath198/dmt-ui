@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { TraineeModel } from 'app/models/trainee-model';
 import { TrainerModel } from 'app/models/trainer-model';
 import { TrainerService } from 'app/services/trainer/trainer.service';
@@ -12,6 +13,7 @@ import { TrainerService } from 'app/services/trainer/trainer.service';
 export class TrainerComponent implements OnInit {
 
     public trainerDataSource:TrainerModel[];
+    public routeConstants= new RouteConstants();
   
   constructor(private router:Router ,
     private trainerService:TrainerService) { }
@@ -35,9 +37,9 @@ export class TrainerComponent implements OnInit {
     console.log("update")
   }
   navigateToCreateForm(){
-    this.router.navigate(['/trainer/create'])
+    this.router.navigate([this.routeConstants.TRAINER_CREATE])
   }
   navigateToUpdateForm(){
-    this.router.navigate(['/trainer/update',1])
+    this.router.navigate([this.routeConstants.TRAINER_UPDATE,1])
   }
 }

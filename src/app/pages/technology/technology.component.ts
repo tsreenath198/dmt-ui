@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { TechnologyModel } from 'app/models/technology-model';
 import { TechnologyService } from 'app/services/technology/technology.service';
 
@@ -11,6 +12,7 @@ import { TechnologyService } from 'app/services/technology/technology.service';
 export class TechnologyComponent implements OnInit {
 
   public technologyDataSource: TechnologyModel[];
+  public routeConstants= new RouteConstants();
 
   constructor(private router: Router,
     private technologyService: TechnologyService) { }
@@ -35,9 +37,9 @@ export class TechnologyComponent implements OnInit {
     console.log("update")
   }
   navigateToCreateForm() {
-    this.router.navigate(['/dmt/technology/create'])
+    this.router.navigate([this.routeConstants.TECHNOLOGY_CREATE])
   }
   navigateToUpdateForm() {
-    this.router.navigate(['/dmt/technology/update', 1])
+    this.router.navigate([this.routeConstants.TECHNOLOGY_UPDATE, 1])
   }
 }
