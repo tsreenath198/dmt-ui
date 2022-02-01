@@ -9,6 +9,9 @@
         "alternatePhone": "0887676554",
         "skipeId": "kiran098",
         "timeZone": "5:30 SGT",
+        "status" :"status",
+        "paidStatus":" ",
+        "receivedStatus":" ",
         "id": "1",
         "description": "Trainee",
         "activeFlag": "0"
@@ -23,6 +26,9 @@
         "alternatePhone": "0890676554",
         "skipeId": "kin098",
         "timeZone": "5:30 SGT",
+        "status" :"status",
+        "paidStatus":" ",
+        "receivedStatus":" ",
         "id": "2",
         "description": "Trainee",
         "activeFlag": "0"
@@ -37,6 +43,9 @@
         "alternatePhone": "08872346554",
         "skipeId": "ramesh098",
         "timeZone": "5:30 SGT",
+        "status" :"status",
+        "paidStatus":" ", 
+        "receivedStatus":" ",
         "id": "3",
         "description": "Trainee",
         "activeFlag": "0"
@@ -51,6 +60,9 @@
         "alternatePhone": "0887676554",
         "skipeId": "vamshi098",
         "timeZone": "5:30 SGT",
+        "status" :"status",
+        "paidStatus":" ",
+        "receivedStatus":" ",
         "id": "4",
         "description": "Trainee",
         "activeFlag": "0"
@@ -65,6 +77,9 @@
         "alternatePhone": "0834576554",
         "skipeId": "kiran098",
         "timeZone": "5:30 SGT",
+        "status" :"status",
+        "paidStatus":" ",
+        "receivedStatus":" ",
         "id": "5",
         "description": "Trainee",
         "activeFlag": "0"

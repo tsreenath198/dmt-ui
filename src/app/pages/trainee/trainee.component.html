@@ -3,52 +3,30 @@
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
+                <th scope="col">Trainee Id</th>
                 <th scope="col">Trainee Name</th>
-                <th scope="col">Email</th>
                 <th scope="col">Phone</th>
-                <th scope="col">Alternative Phone</th>
-                <th scope="col">Technology Name</th>
-                <th scope="col">Batch Id</th>
-                <th scope="col">Client Name</th>
-                <th scope="col">Skype Id</th>
-                <th scope="col">Time Zone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Technology</th>
+                <th scope="col">Paid Status</th>
+                <th scope="col">Received Status</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let trainee of traineeDataSource">
             <tr>
-                
-                 <td>Mark</td>
-                <td>Otto@gmail.com</td>
-                <td>2346546890</td>
-                <td>8462898989</td>
-                <td>Angular</td>
-                <td>b01</td>
-                <td>Wood</td>
-                <td>2wtr34654ertew</td>
-                <td>sdf</td>
-                
+                <th scope="row">{{trainee.id}}</th>
+                <td>{{trainee.name}}</td>
+                <td>{{trainee.phone}}</td>
+                <td>{{trainee.email}}</td>
+                <td>{{trainee.technologyId}}</td>
+                <td>{{trainee.paidStatus}}</td>
+                <td>{{trainee.receivedStatus}}</td>
                 
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Mark</td>
-                <td>Otto@gmail.com</td>
-                <td>2346546890</td>
-                <td>8462898989</td>
-                <td>Angular</td>
-                <td>b01</td>
-                <td>Wood</td>
-                <td>2wtr34654ertew</td>
-                <td>sdf</td>
-                <td>
-                    <i class="nc-icon nc-simple-add"></i>
-                    <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(trainee.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
             </tr>
         </tbody>

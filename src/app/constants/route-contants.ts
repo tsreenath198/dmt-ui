@@ -4,4 +4,8 @@ export class RouteConstants{
 
     TRAINER_CREATE = "/dmt/trainer/create";
     TRAINER_UPDATE = "/dmt/trainer/update";
+
+    TRAINEE_CREATE =  '/dmt/trainee/create';
+    TRAINEE_UPDATE =  '/dmt/trainee/update';
+
 }

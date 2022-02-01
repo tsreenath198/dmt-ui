@@ -3,6 +3,7 @@
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
+                <th scope="col">Trainer Id</th>
                 <th scope="col">Trainer Name</th>
                 <th scope="col">Technology Name</th>
                 <th scope="col">Trainer Phone</th>
@@ -11,31 +12,19 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor = "let trainer of trainerDataSource">
             <tr>
-                
-                 <td>Mark</td>
-                <td>Angular</td>
-                <td>2346546890</td>
-                <td>Otto@gmail.com</td>
-                <td>yes ok with this</td>
+                <th scope="row">{{trainer.id}}</th>
+                 <td>{{trainer.name}}</td>
+                <td>{{trainer.techonologyId}}</td>
+                <td>{{trainer.phone}}</td>
+                <td>{{trainer.email}}</td>
+                <td>{{trainer.description}}</td>
                 
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Mark</td>
-                <td>Angular</td>
-                <td>2346546890</td>
-                <td>Otto@gmail.com</td>
-                <td>yes ok with this</td>
-                <td>
-                    <i class="nc-icon nc-simple-add"></i>
-                    <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(trainer.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
             </tr>
         </tbody>
