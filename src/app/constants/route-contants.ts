@@ -11,4 +11,7 @@ export class RouteConstants{
     BATCH_CREATE = '/dmt/batch/create';
     BATCH_UPDATE = '/dmt/batch/update';
 
+    CLIENT_CREATE = '/dmt/client/create';
+    CLIENT_UPDATE = '/dmt/client/update';
+
 }

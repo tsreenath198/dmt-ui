@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { ClientModel } from 'app/models/client-model';
 import { ClientService } from 'app/services/client/client.service';
 
@@ -11,6 +12,8 @@ import { ClientService } from 'app/services/client/client.service';
 export class ClientComponent implements OnInit {
 
   public clientDataSource: ClientModel[];
+  public routeConstants = new RouteConstants();
+
   constructor(private router: Router,
     private clientService: ClientService) { }
 
@@ -30,9 +33,9 @@ export class ClientComponent implements OnInit {
     console.log("update")
   }
   navigateToCreateForm() {
-    this.router.navigate(['/client/create'])
+    this.router.navigate([this.routeConstants.CLIENT_CREATE])
   }
   navigateToUpdateForm() {
-    this.router.navigate(['/client/update', 1])
+    this.router.navigate([this.routeConstants.CLIENT_UPDATE, 1])
   }
 }

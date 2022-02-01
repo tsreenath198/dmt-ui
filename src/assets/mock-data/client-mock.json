@@ -2,6 +2,7 @@
     {
         "name": "Mark",
         "address": "address",
+        "contact":"Contact",
         "id": "1",
         "description": "client",
         "activeFlag": "0"
@@ -9,6 +10,7 @@
     {
         "name": "Wood",
         "address": "address",
+        "contact":"Contact",
         "id": "2",
         "description": "client",
         "activeFlag": "0"
@@ -16,6 +18,7 @@
     {
         "name": "Peterson",
         "address": "address",
+        "contact":"Contact",
         "id": "3",
         "description": "client",
         "activeFlag": "0"
@@ -23,6 +26,7 @@
     {
         "name": "Burg",
         "address": "address",
+        "contact":"Contact",
         "id": "4",
         "description": "client",
         "activeFlag": "0"
@@ -30,6 +34,7 @@
     {
         "name": "Lean",
         "address": "address",
+        "contact":"Contact",
         "id": "5",
         "description": "client",
         "activeFlag": "0"
