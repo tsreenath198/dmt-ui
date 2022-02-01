@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { InterviewModel } from 'app/models/interview-model';
 import { InterviewService } from 'app/services/interview/interview.service';
 
@@ -11,6 +12,7 @@ import { InterviewService } from 'app/services/interview/interview.service';
 export class InterviewComponent implements OnInit {
 
   public interviewDataSource:InterviewModel[];
+  public routeConstant= new RouteConstants();
 
   constructor(private router:Router,
     private interviewService:InterviewService) { }
@@ -34,9 +36,9 @@ export class InterviewComponent implements OnInit {
     console.log("update")
   }
   navigateToCreateForm(){
-    this.router.navigate(['/interview/create'])
+    this.router.navigate([this.routeConstant.INTERVIEW_CREATE])
   }
   navigateToUpdateForm(){
-    this.router.navigate(['/interview/update',1])
+    this.router.navigate([this.routeConstant.INTERVIEW_UPDATE,1])
   }
 }

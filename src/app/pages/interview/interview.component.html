@@ -3,30 +3,35 @@
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
-               
+                <th scope="col">Id</th>
                 <th scope="col">Employee Name</th>
                 <th scope="col">Trainee Name</th>
+                <th scope="col">EndClient Name</th>
                 <th scope="col">Client Name</th>
+                <th scope="col">Technology Name</th>
                 <th scope="col">Interview Date</th>
-                <th scope="col">Time</th>
                 <th scope="col">Status</th>
+                <th scope="col">Paid Status</th>
+                <th scope="col">Received Status</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor = "let interview of interviewDataSource">
             <tr>
-                
-                <td>Marj</td>
-                <td>Wood</td>
-                <td>ABC</td>
-                <td>10/3/2023</td>
-                <td>10:00 am</td>
-                <td>Active</td>
-                
+                <th scope="row">{{interview.id}}</th>
+                <td>{{interview.employeeId}}</td>
+                <td>{{interview.traineeId}}</td>
+                <td>{{interview.endClient}}</td>
+                <td>{{interview.clientId}}</td>
+                <td>{{interview.technologyId}}</td>
+                <td>{{interview.interviewDate}}</td>
+                <td>{{interview.status}}</td>
+                <td>{{interview.paidStatus}}</td>
+                <td>{{interview.receivedStatus}}</td>
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(interview.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
             </tr>
             <tr>
