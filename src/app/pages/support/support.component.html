@@ -3,33 +3,34 @@
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
+                <th scope="col">Id</th>
                 <th scope="col">Trainee Name</th>
-                <th scope="col">Technology Name</th>
-                <th scope="col">Employee Name</th>
+                <th scope="col">Trainer Name</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Alloted Time</th>
+                <th scope="col">End Client</th>
+                <th scope="col">Technology Used</th>
+                <th scope="col">Paid By</th>
+                <th scope="col">Paid Status</th>
+                <th scope="col">Received Status</th>
                 <th scope="col">Status</th>
-                <th scope="col">Attachment</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor = "let support of supportDataSource">
             <tr>
-                 <td>Wood</td>
-                 <td>Angular</td>
-                <td>Hello</td>
-                <td>Active</td>
-                <td>File</td>
-                <td>
-                    <i class="nc-icon nc-simple-add"></i>
-                    <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Wood</td>
-                 <td>Angular</td>
-                <td>Hello</td>
-                <td>Active</td>
-                <td>File</td>
+                <th scope="row">{{support.id}}</th>
+                 <td>{{support.trainerId}}</td>
+                 <td>{{support.traineeId}}</td>
+                <td>{{support.startDate}}</td>
+                <td>{{support.endDate}}</td>
+                <td>{{support.endClient}}</td>
+                <td>{{support.technologyUsed}}</td>
+                <td>{{support.paidBy}}</td>
+                <td>{{support.paidStatus}}</td>
+                <td>{{support.receivedStatus}}</td>
+                <td>{{support.status}}</td>
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>

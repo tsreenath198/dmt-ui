@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="employee">Employee</label>
-                    <select class="custom-select" formControlName="employeeId">
+                    <label for="trainerId">Trainer</label>
+                    <select class="custom-select" formControlName="trainerId">
                         <option selected>Open this select menu</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -25,56 +25,6 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="client">Client</label>
-                    <select class="custom-select" formControlName="clientId">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="startdate">Start Date</label>
-                    <input type="text" class="form-control" formControlName="startDate" id="startdate"
-                        aria-describedby="Help" placeholder="Enter start Date ">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="enddate">End Date</label>
-                    <input type="text" class="form-control" formControlName="endDate" id="enddate"
-                        aria-describedby="Help" placeholder="Enter end Date ">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="endclient">End Client</label>
-                    <input type="text" class="form-control" formControlName="endClient" id="endclient"
-                        aria-describedby="Help" placeholder="Enter End client ">
-                </div>
-            </div>  
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="allotedTime">Alloted Time</label>
-                    <input type="text" class="form-control" formControlName="allotedTime" id="allotedTime"
-                        aria-describedby="Help" placeholder="Enter alloted time">
-                </div>
-            </div>  
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="durationField">Duration Field</label>
-                    <input type="text" class="form-control" formControlName="durationField" id="durationField"
-                        aria-describedby="Help" placeholder="Enter Duration time ">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
                     <label for="technologyUsed">Technology Used</label>
                     <input type="text" class="form-control" formControlName="technologyUsed" id="technologyUsed"
                         aria-describedby="Help" placeholder="Enter Used Technology ">
@@ -82,7 +32,84 @@
             </div>
         </div>
         <div class="row">
-            
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="startdate">Start Date</label>
+                    <input type="date" class="form-control" formControlName="startDate" id="startdate"
+                        aria-describedby="Help" placeholder="Enter start Date ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="enddate">End Date</label>
+                    <input type="date" class="form-control" formControlName="endDate" id="enddate"
+                        aria-describedby="Help" placeholder="Enter end Date ">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="endClient">End Client</label>
+                    <input type="text" class="form-control" formControlName="endClient" id="endClient"
+                        aria-describedby="Help" placeholder="Enter End client ">
+                </div>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="batch">Status</label>
+                    <select class="custom-select" formControlName="batchId">
+                        <option selected>Select Status of Support</option>
+                        <option value="1">Not Started</option>
+                        <option value="2">In Progress</option>
+                        <option value="3">Closed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="batch">Paid Status</label>
+                    <select class="custom-select" formControlName="batchId">
+                        <option selected>Select Status of Payment</option>
+                        <option value="1">Not Started</option>
+                        <option value="2">In Progress</option>
+                        <option value="3">Paid in Progress</option>
+                        <option value="2">Payment Pending</option>
+                        <option value="3">Closed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="batch">Received Status</label>
+                    <select class="custom-select" formControlName="batchId">
+                        <option selected>Select Status of Payment</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                        
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="paidBy">Paid By</label>
+                    <select class="custom-select" formControlName="paidBy">
+                        <option selected>Select Paid By </option>
+                        <option value="1">Consultant</option>
+                        <option value="2">Consultency</option>
+                        
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="allotedTime">Alloted Time</label>
+                    <input type="time" class="form-control" formControlName="allotedTime" id="allotedTime"
+                        aria-describedby="Help" placeholder="Enter alloted time">
+                </div>
+            </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="description">Description</label>

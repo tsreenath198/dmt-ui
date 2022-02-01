@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { SupportModel } from 'app/models/support-model';
 import { SupportService } from 'app/services/support/support.service';
 
@@ -11,6 +12,7 @@ import { SupportService } from 'app/services/support/support.service';
 export class SupportComponent implements OnInit {
 
  public supportDataSource: SupportModel[];
+ public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
     private supportService:SupportService) { }
@@ -33,9 +35,9 @@ export class SupportComponent implements OnInit {
     console.log("update")
   }
   navigateToCreateForm(){
-    this.router.navigate(['/support/create'])
+    this.router.navigate([this.routeConstants.SUPPORT_CREATE])
   }
   navigateToUpdateForm(){
-    this.router.navigate(['/support/update',1])
+    this.router.navigate([this.routeConstants.SUPPORT_UPDATE,1])
   }
 }

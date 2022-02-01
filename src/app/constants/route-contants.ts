@@ -15,6 +15,9 @@ export class RouteConstants{
     CLIENT_UPDATE = '/dmt/client/update';
 
     INTERVIEW_CREATE = '/dmt/interview/create';
-    INTERVIEW_UPDATE = '/dmt/interview/update'
+    INTERVIEW_UPDATE = '/dmt/interview/update';
+
+    SUPPORT_CREATE = '/dmt/support/create';
+    SUPPORT_UPDATE = '/dmt/support/update';
 
 }
