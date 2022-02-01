@@ -10,7 +10,7 @@ export interface TraineeModel{
     timeZone:number,
     status:string,
     paidStatus:string,
-    receivedStatus,
+    receivedStatus:string,
     id:number,
     description:string,
     activeFlag:string

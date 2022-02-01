@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { BatchModel } from 'app/models/batch-model';
 import { BatchService } from 'app/services/batch/batch.service';
 
@@ -11,6 +12,7 @@ import { BatchService } from 'app/services/batch/batch.service';
 export class BatchComponent implements OnInit {
   
   public batchDataSource: BatchModel[];
+  public routeConstants = new RouteConstants();
   
 
  constructor(private router:Router,
@@ -35,9 +37,9 @@ export class BatchComponent implements OnInit {
     console.log("update")
   }
   navigateToCreateForm(){
-    this.router.navigate(['/batch/create'])
+    this.router.navigate([this.routeConstants.BATCH_CREATE])
   }
   navigateToUpdateForm(){
-    this.router.navigate(['/batch/update',1])
+    this.router.navigate([this.routeConstants.BATCH_UPDATE,1])
   }
 }

@@ -8,4 +8,7 @@ export class RouteConstants{
     TRAINEE_CREATE =  '/dmt/trainee/create';
     TRAINEE_UPDATE =  '/dmt/trainee/update';
 
+    BATCH_CREATE = '/dmt/batch/create';
+    BATCH_UPDATE = '/dmt/batch/update';
+
 }

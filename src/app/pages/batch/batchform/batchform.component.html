@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="trainee">Trainee</label>
+                    <label for="trainee">Trainer</label>
                     <select class="custom-select" formControlName="traineeId">
                         <option selected>Open this select menu</option>
                         <option value="1">One</option>
@@ -35,14 +35,14 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="startdate">Start Date</label>
-                    <input type="text" class="form-control" formControlName="startdate" id="startdate"
+                    <input type="date" class="form-control" formControlName="startdate" id="startdate"
                         aria-describedby="Help" placeholder="Enter Start Date ">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="enddate">End Date</label>
-                    <input type="text" class="form-control" formControlName="enddate" id="enddate"
+                    <input type="date" class="form-control" formControlName="enddate" id="enddate"
                         aria-describedby="Help" placeholder="Enter End Date ">
                 </div>
             </div>
@@ -53,6 +53,43 @@
                         aria-describedby="phoneHelp" placeholder="Enter duration time">
                 </div>
             </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="batch">Status</label>
+                    <select class="custom-select" formControlName="batchId">
+                        <option selected>Select Status of Batch</option>
+                        <option value="1">Not Started</option>
+                        <option value="2">In Progress</option>
+                        <option value="3">Closed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="batch">Paid Status</label>
+                    <select class="custom-select" formControlName="batchId">
+                        <option selected>Select Status of Payment</option>
+                        <option value="1">Not Started</option>
+                        <option value="2">In Progress</option>
+                        <option value="3">Paid in Progress</option>
+                        <option value="2">Payment Pending</option>
+                        <option value="3">Closed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="batch">Received Status</label>
+                    <select class="custom-select" formControlName="batchId">
+                        <option selected>Select Status of Payment</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                        
+                    </select>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4">
