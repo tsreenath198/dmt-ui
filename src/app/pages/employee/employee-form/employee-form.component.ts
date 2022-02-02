@@ -17,13 +17,17 @@ export class EmployeeFormComponent implements OnInit {
 
   buildForm() {
     this.employeeForm = this.fb.group({
-      fname: ['', Validators.required],
-      lname: ['', Validators.required],
+      name: ['', Validators.required],
+      invoiceNo: [''],
+      traineeId: [''],
+      actualAmount: [''],
+      receivedAmount: [''],
+      receivedDate: [''],
+      supportStartDate: [''],
+      supportEndDate: [''],
       phone: [''],
       email: [''],
-      role: [''],
-      salary: [''],
-      address: [''],
+      id:[''],
       description: [''],
     });
   }
