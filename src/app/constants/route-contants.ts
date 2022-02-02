@@ -23,4 +23,7 @@ export class RouteConstants{
     EMPLOYEE_CREATE = '/dmt/employee/create';
     EMPLOYEE_UPDATE = '/dmt/employee/update';
 
+    SALARY_CREATE = '/dmt/salary/create';
+    SALARY_UPDATE = '/dmt/salary/update';
+
 }

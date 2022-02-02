@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { SalaryModel } from 'app/models/salary-model';
 import { SalaryService } from 'app/services/salary/salary.service';
 
@@ -11,6 +12,7 @@ import { SalaryService } from 'app/services/salary/salary.service';
 export class SalaryComponent implements OnInit {
 
 public salaryDataSource:SalaryModel[];
+public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
     private salaryService:SalaryService) { }
@@ -33,10 +35,10 @@ public salaryDataSource:SalaryModel[];
     console.log("update")
   }
   navigateToCreateForm(){
-    this.router.navigate(['/salary/create'])
+    this.router.navigate([this.routeConstants.SALARY_CREATE])
   }
   navigateToUpdateForm(){
-    this.router.navigate(['/salary/update',1])
+    this.router.navigate([this.routeConstants.SALARY_UPDATE,1])
   }
 }
 
