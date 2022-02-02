@@ -20,6 +20,10 @@ export class ClientFormComponent implements OnInit {
       name: ['', Validators.required],
       address: [''],
       description: [''],
+      contact: [''],
+      email: [''],
+      designation: [''],
+      phone: [''],
     });
   }
 

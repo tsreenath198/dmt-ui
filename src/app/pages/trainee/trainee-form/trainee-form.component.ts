@@ -22,9 +22,13 @@ export class TraineeFormComponent implements OnInit {
       alternativePhone: [''],
       email: [''],
       technologyId: [''],
-      timezone  : [''],
+      timeZone  : [''],
       phone: [''],
       batchId: [''],
+      status: [''],
+      paidStatus: [''],
+      receivedStatus: [''],
+      id: [''],
       description: [''],
     });
   }

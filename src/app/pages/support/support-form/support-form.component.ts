@@ -17,15 +17,18 @@ export class SupportFormComponent implements OnInit {
   buildForm() {
     this.supportForm = this.fb.group({
 
-      employeeId: [''],
+      trainerId: [''],
       traineeId: [''],
-      clientId: [''],
+      paidBy: [''],
       startDate: [''],
-      durationField: [''],
       endDate: [''],
       endClient: [''],
       allotedTime: [''],
+      paidStatus: [''],
+      receivedStatus: [''],
+      status: [''],
       technologyUsed: [''],
+      id: [''],
       description: [''],
     });
   }

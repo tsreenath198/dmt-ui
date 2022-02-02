@@ -16,7 +16,8 @@ export class TechnologyFormComponent implements OnInit {
   buildForm() {
     this.technologyForm = this.fb.group({
       name: ['', Validators.required],
-      description: ['']
+      description: [''],
+      id:[''],
     });
   }
 createForm(){

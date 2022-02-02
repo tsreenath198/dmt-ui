@@ -23,6 +23,7 @@ export class TrainerFormComponent implements OnInit {
       phone: [''],
       email: [''],
       description: [''],
+      id :[''],
     });
   }
 

@@ -19,12 +19,17 @@ export class InterviewFormComponent implements OnInit {
       
       employeeId: [''],
       traineeId: [''],
+      technologyId:[''],
       clientId: [''],
       interviewDate: [''],
       endClient: [''],
       allotedTime  : [''],
       status: [''],
+      paidStatus: [''],
+      receivedStatus: [''],
+      id: [''],
       description: [''],
+
     });
   }
 createForm(){

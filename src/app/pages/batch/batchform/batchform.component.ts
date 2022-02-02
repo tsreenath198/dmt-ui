@@ -17,13 +17,17 @@ export class BatchformComponent implements OnInit {
   buildForm() {
     this.batchForm = this.fb.group({
       
-      Batch: [''],
-      TechnologyId: [''],
+      batch: [''],
+      technologyId: [''],
       traineeId: [''],
-      startdate: [''],
-      enddate: [''],
-      durationfield  : [''],
-      allotedtime: [''],
+      startDate: [''],
+      endDate: [''],
+      durationField  : [''],
+      allottedTime: [''],
+      status: [''],
+      paidStatus: [''],
+      receivedStatus: [''],
+      id:[''],
       description: [''],
     });
   }
