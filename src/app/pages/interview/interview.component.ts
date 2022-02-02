@@ -12,7 +12,7 @@ import { InterviewService } from 'app/services/interview/interview.service';
 export class InterviewComponent implements OnInit {
 
   public interviewDataSource:InterviewModel[];
-  public routeConstant= new RouteConstants();
+  public routeConstants= new RouteConstants();
 
   constructor(private router:Router,
     private interviewService:InterviewService) { }
@@ -36,9 +36,9 @@ export class InterviewComponent implements OnInit {
     console.log("update")
   }
   navigateToCreateForm(){
-    this.router.navigate([this.routeConstant.INTERVIEW_CREATE])
+    this.router.navigate([this.routeConstants.INTERVIEW_CREATE])
   }
   navigateToUpdateForm(){
-    this.router.navigate([this.routeConstant.INTERVIEW_UPDATE,1])
+    this.router.navigate([this.routeConstants.INTERVIEW_UPDATE,1])
   }
 }

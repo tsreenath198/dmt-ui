@@ -20,4 +20,7 @@ export class RouteConstants{
     SUPPORT_CREATE = '/dmt/support/create';
     SUPPORT_UPDATE = '/dmt/support/update';
 
+    EMPLOYEE_CREATE = '/dmt/employee/create';
+    EMPLOYEE_UPDATE = '/dmt/employee/update';
+
 }
