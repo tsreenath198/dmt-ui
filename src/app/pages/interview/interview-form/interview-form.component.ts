@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-interview-form',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class InterviewFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,
+    private router:Router) { }
   public interviewForm:FormGroup;
 
   ngOnInit(): void {
@@ -34,5 +36,8 @@ export class InterviewFormComponent implements OnInit {
   }
 createForm(){
   console.log(this.interviewForm.value)
+}
+navigateToParent() {
+  this.router.navigate(['/dmt/interview']);
 }
 }

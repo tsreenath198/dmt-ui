@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trainee-form',
@@ -7,8 +8,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./trainee-form.component.css']
 })
 export class TraineeFormComponent implements OnInit {
+ 
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,
+    private router:Router) { }
   public traineeForm: FormGroup;
 
   ngOnInit(): void {
@@ -35,4 +38,7 @@ export class TraineeFormComponent implements OnInit {
 createForm(){
   console.log(this.traineeForm.value)
 }
+  navigateToParent(){
+    this.router.navigate(['/dmt/trainee'])
+  }
 }

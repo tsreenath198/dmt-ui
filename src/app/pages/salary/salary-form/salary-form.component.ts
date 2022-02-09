@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-salary-form',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SalaryFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,
+    private router:Router) { }
   public salaryForm:FormGroup;
 
   ngOnInit(): void {
@@ -26,5 +28,8 @@ export class SalaryFormComponent implements OnInit {
   }
 createForm(){
   console.log(this.salaryForm.value)
+}
+navigateToParent() {
+  this.router.navigate(['/dmt/salary']);
 }
 }

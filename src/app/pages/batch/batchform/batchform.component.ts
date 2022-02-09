@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-batchform',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class BatchformComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,
+    private router:Router) { }
   public batchForm:FormGroup;
 
   ngOnInit(): void {
@@ -33,5 +35,8 @@ export class BatchformComponent implements OnInit {
   }
 createForm(){
   console.log(this.batchForm.value)
+}
+navigateToParent() {
+  this.router.navigate(['/dmt/batch']);
 }
 }

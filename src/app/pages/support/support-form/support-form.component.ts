@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-support-form',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SupportFormComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private router:Router) { }
   public supportForm: FormGroup;
 
   ngOnInit(): void {
@@ -34,6 +36,9 @@ export class SupportFormComponent implements OnInit {
   }
   createForm() {
     console.log(this.supportForm.value)
+  }
+  navigateToParent() {
+    this.router.navigate(['/dmt/support']);
   }
 }
 
