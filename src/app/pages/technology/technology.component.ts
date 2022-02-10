@@ -17,6 +17,9 @@ export class TechnologyComponent implements OnInit {
   constructor(private router: Router,
     private technologyService: TechnologyService) { }
 
+    serachString:string =" ";
+    _technologyDataSource:TechnologyModel;
+
   ngOnInit(): void {
     this.getTechnologyData();
   }

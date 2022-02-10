@@ -16,11 +16,13 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { ReactiveFormsModule } from "@angular/forms";
 import { SigninComponent } from "./pages/signin/signin.component";
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    SigninComponent
+    SigninComponent,
+    
   ],
   imports: [
     BrowserAnimationsModule,
