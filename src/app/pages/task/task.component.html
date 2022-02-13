@@ -3,32 +3,30 @@
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
+                <th scope="col">Id</th>
                 <th scope="col">Category</th>
                 <th scope="col">Status</th>
-                <th scope="col">Employee Name</th>
+                <th scope="col">Employee</th>
                 <th scope="col">Estimated Time</th>
                 <th scope="col"> Date</th>
                 <th scope="col">Description</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let task of taskDataSource">
             <tr>
-                <td>technology</td>
-                <td>active</td>
-                <td>mike</td>
-                <td>1 month</td>
-                <td>10/05/2021</td>
+                <td>{{task.id}}</td>
+                <td>{{task.category}}</td>
+                <td>{{task.status}}</td>
+                <td>{{task.employeeId}}</td>
+                <td>{{task.estimatedTime}}</td>
+                <td>{{task.date}}</td>
                 <td>Active</td>
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(task.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
-            </tr>
-            <tr>
-                
-               
             </tr>
         </tbody>
     </table>

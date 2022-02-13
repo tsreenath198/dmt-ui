@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { TaskModel } from 'app/models/task-model';
 import { TaskService } from 'app/services/task/task.service';
 
@@ -11,6 +12,7 @@ import { TaskService } from 'app/services/task/task.service';
 export class TaskComponent implements OnInit {
 
   public taskDataSource:TaskModel[];
+  public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
     private taskService:TaskService) { }
@@ -30,10 +32,10 @@ export class TaskComponent implements OnInit {
     console.log("update")
   }
   navigateToCreateForm(){
-    this.router.navigate(['/task/create'])
+    this.router.navigate([this.routeConstants.TASK_CREATE])
   }
   navigateToUpdateForm(){
-    this.router.navigate(['/task/update',1])
+    this.router.navigate([this.routeConstants.TASK_UPDATE,1])
   }
 }
 
