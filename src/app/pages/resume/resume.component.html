@@ -3,50 +3,27 @@
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">Trainee Name</th>
-                <th scope="col">Employee Name</th>
-                <th scope="col">Start Date</th>
-                <th scope="col">End Date</th>
-                <th scope="col">Allotted Time</th>
-                <th scope="col">End Client</th>
-                <th scope="col">Technology Used</th>
-                <th scope="col">Status</th>
-                <th scope="col">Discription</th>
+                <th scope="col">id</th>
+                <th scope="col">Trainee </th>
+                <th scope="col">Employee </th>
+                <th scope="col"> Date</th>
+                <th scope="col">Paid Status</th>
+                <th scope="col">Received Status</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let resume of resumeDataSource">
             <tr>
-                
-                 <td>Mark</td>
-                <td>Wood</td>
-                <td>10/2/2000</td>
-                <td>10/2/2000</td>
-                <td>11/3/2099</td>
-                <td>Markwood</td>
-                <td>Angular</td>
-                <td>Active</td>
-                <td>2wtr34654ertew</td>
+                <th scope="row">{{resume.id}}</th>
+                <td>{{resume.traineeId}}</td>
+                <td>{{ resume.employeeId}}</td>
+                <td>{{ resume.date}}</td>
+                <td>{{resume.paidStatus}}</td>
+                <td>{{resume.receivedStatus}}</td>
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>Mark</td>
-                <td>Wood</td>
-                <td>10/2/2000</td>
-                <td>10/2/2000</td>
-                <td>11/3/2099</td>
-                <td>Markwood</td>
-                <td>Angular</td>
-                <td>Active</td>
-                <td>2wtr34654ertew</td>
-                <td>
-                    <i class="nc-icon nc-simple-add"></i>
-                    <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(resume.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
             </tr>
         </tbody>

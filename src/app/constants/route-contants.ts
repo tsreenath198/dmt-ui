@@ -26,4 +26,28 @@ export class RouteConstants{
     SALARY_CREATE = '/dmt/salary/create';
     SALARY_UPDATE = '/dmt/salary/update';
 
+    RESUME_CREATE = '/dmt/resume/create';
+    RESUME_UPDATE = '/dmt/resume/update';
+    
+    TASK_CREATE = '/dmt/task/create';
+    TASK_UPDATE = '/dmt/task/update';
+
+    QUETION_CREATE = '/dmt/quetion/create';
+    QUETION_UPDATE = '/dmt/quetion/update';
+
+    COURSE_CREATE = '/dmt/course/create';
+    COURSE_UPDATE = '/dmt/course/update';
+
+    PIPELINE_CREATE = '/dmt/pipeline/create';
+    PIPELINE_UPDATE = '/dmt/pipeline/update';
+
+    SUPPORTINTERACTION_CREATE = '/dmt/supportinteraction/create';
+    SUPPORTINTERACTION_UPDATE = '/dmt/supportinteraction/update';
+
+    EMPLOYEEPAYMENT_CREATE = '/dmt/employeepayment/create';
+    EMPLOYEEPAYMENT_UPDATE = '/dmt/employeepayment/update';
+
+    INVOICE_CREATE = '/dmt/invoice/create';
+    INVOICE_UPDATE = '/dmt/invoice/update';
+
 }

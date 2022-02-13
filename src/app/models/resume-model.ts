@@ -1,8 +1,9 @@
 export interface ResumeModel{
-    technologyId:number,
     traineeId:number,
-    employeeId:number,
-    attachments:string,
+    employeeId:string,
+    date:string,
+    paidStatus:number,
+    receivedStatus:string,
     id:number,
     description:string,
     activeFlag:string

@@ -1,5 +1,15 @@
 <div class="container">
     <button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
+    <div class="col">
+        <form>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="searchString" placeholder="Type to search..."
+                        [(ngModel)]="searchString" />
+                </div>
+            </div>
+        </form>
+    </div>
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
@@ -13,7 +23,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor="let trainee of traineeDataSource">
+        <tbody *ngFor="let trainee of traineeDataSource  |  filter:'name': searchString ; ">
             <tr>
                 <th scope="row">{{trainee.id}}</th>
                 <td>{{trainee.name}}</td>

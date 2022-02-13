@@ -1,5 +1,5 @@
 export interface QuetionModel{
-    clientId:number,
+    EndClient:string,
     quetion:string,
     answers:string,
     id:number,

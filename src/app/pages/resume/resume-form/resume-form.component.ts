@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resume-form',
@@ -7,8 +8,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./resume-form.component.css']
 })
 export class ResumeFormComponent implements OnInit {
+  ;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private router:Router) { }
   public resumeForm: FormGroup;
 
   ngOnInit(): void {
@@ -17,16 +20,20 @@ export class ResumeFormComponent implements OnInit {
 
   buildForm() {
     this.resumeForm = this.fb.group({
-      technologyId: [''],
       employeeId: [''],
       traineeId: [''],
-      attachment: [''],
+      date: [''],
+      paidStatus: [''],
+      receivedStatus: [''],
       description: [''],
+      id: [''],
     });
   }
 
   createForm() {
     console.log(this.resumeForm.value);
   }
-
+  navigateToParent() {
+    this.router.navigate(['/dmt/resume']);
+  }
 }

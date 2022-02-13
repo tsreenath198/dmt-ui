@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { ResumeModel } from 'app/models/resume-model';
 import { ResumeService } from 'app/services/resume/resume.service';
 
@@ -11,6 +12,7 @@ import { ResumeService } from 'app/services/resume/resume.service';
 export class ResumeComponent implements OnInit {
 
   public resumeDataSource:ResumeModel[];
+  public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
     private resumeService:ResumeService) { }
@@ -33,9 +35,9 @@ export class ResumeComponent implements OnInit {
     console.log("update")
   }
   navigateToCreateForm(){
-    this.router.navigate(['/resume/create'])
+    this.router.navigate([this.routeConstants.RESUME_CREATE])
   }
-  navigateToUpdateForm(){
-    this.router.navigate(['/resume/update',1])
+  navigateToUpdateForm(id:number){
+    this.router.navigate([this.routeConstants.RESUME_UPDATE,id])
   }
 }
