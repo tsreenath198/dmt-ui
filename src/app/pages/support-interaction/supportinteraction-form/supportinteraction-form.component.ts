@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-supportinteraction-form',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SupportinteractionFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,
+    private router:Router) { }
   public supportinteractionForm:FormGroup;
 
   ngOnInit(): void {
@@ -27,5 +29,8 @@ export class SupportinteractionFormComponent implements OnInit {
   }
 createForm(){
   console.log(this.supportinteractionForm.value)
+}
+navigateToParent(){
+  this.router.navigate(['/dmt/supportinteraction'])
 }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { supportInteractionModel } from 'app/models/supportInteraction-model';
 import { SupportinteractionService } from 'app/services/supportinteraction/supportinteraction.service';
 
@@ -11,6 +12,7 @@ import { SupportinteractionService } from 'app/services/supportinteraction/suppo
 export class SupportInteractionComponent implements OnInit {
 
   public supportinteractionDataSource: supportInteractionModel[];
+  public routeConstants = new RouteConstants();
 
   constructor(private router: Router,
     private supportinteractionService: SupportinteractionService) { }
@@ -33,9 +35,9 @@ export class SupportInteractionComponent implements OnInit {
     console.log("update")
   }
   navigateToCreateForm() {
-    this.router.navigate(['/supportinteraction/create'])
+    this.router.navigate([this.routeConstants.SUPPORTINTERACTION_CREATE])
   }
   navigateToUpdateForm() {
-    this.router.navigate(['/supportinteraction/update', 1])
+    this.router.navigate([this.routeConstants.SUPPORTINTERACTION_UPDATE, 1])
   }
 }

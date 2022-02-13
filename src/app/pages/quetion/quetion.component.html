@@ -3,35 +3,24 @@
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
-                
+                <th scope="col">Id</th>
                 <th scope="col">End Client</th>
                 <th scope="col">Quetion</th>
                 <th scope="col">Answers</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor = "let quetion of quetionDataSource">
             <tr>
-                
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>Yes</td>
+                <th scope="row">{{quetion.id}}</th>
+                <td>{{quetion.endClient}}</td>
+                <td>{{quetion.quetion}}</td>
+                <td>{{quetion.answers}}</td>
                 
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
-                </td>
-            </tr>
-            <tr>
-                
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>Yes</td>
-                <td>
-                    <i class="nc-icon nc-simple-add"></i>
-                    <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(quetion.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
             </tr>
         </tbody>

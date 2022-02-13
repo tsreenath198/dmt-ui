@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { PipelineModel } from 'app/models/pipeline-model';
 import { PipelineService } from 'app/services/pipeline/pipeline.service';
 
@@ -11,6 +12,7 @@ import { PipelineService } from 'app/services/pipeline/pipeline.service';
 export class PipelineComponent implements OnInit {
 
 public pipelineDataSource:PipelineModel[];
+public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
     private pipelineService:PipelineService) { }
@@ -30,9 +32,9 @@ public pipelineDataSource:PipelineModel[];
     console.log("update")
   }
   navigateToCreateForm(){
-    this.router.navigate(['/pipeline/create'])
+    this.router.navigate([this.routeConstants.PIPELINE_CREATE])
   }
   navigateToUpdateForm(){
-    this.router.navigate(['/pipeline/update',1])
+    this.router.navigate([this.routeConstants.PIPELINE_UPDATE,1])
   }
 }

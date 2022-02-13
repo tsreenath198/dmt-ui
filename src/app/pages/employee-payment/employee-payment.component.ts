@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { EmployeePaymentModel } from 'app/models/employeePayment-model';
 import { EmployeepaymentService } from 'app/services/employeepayment/employeepayment.service';
 
@@ -11,6 +12,7 @@ import { EmployeepaymentService } from 'app/services/employeepayment/employeepay
 export class EmployeePaymentComponent implements OnInit {
 
 public employeepaymentDataSource:EmployeePaymentModel[];
+public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
     private employeepaymentService:EmployeepaymentService) { }
@@ -33,9 +35,9 @@ public employeepaymentDataSource:EmployeePaymentModel[];
     console.log("update")
   }
   navigateToCreateForm(){
-    this.router.navigate(['/employeepayment/create'])
+    this.router.navigate([this.routeConstants.EMPLOYEEPAYMENT_CREATE])
   }
   navigateToUpdateForm(){
-    this.router.navigate(['/employeepayment/update',1])
+    this.router.navigate([this.routeConstants.EMPLOYEEPAYMENT_UPDATE,1])
   }
 }

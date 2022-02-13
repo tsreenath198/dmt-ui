@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'app/constants/route-contants';
 import { QuetionModel } from 'app/models/quetion-model';
 import { QuetionService } from 'app/services/quetion/quetion.service';
 
@@ -11,6 +12,7 @@ import { QuetionService } from 'app/services/quetion/quetion.service';
 export class QuetionComponent implements OnInit {
 
 public quetionDataSource:QuetionModel[];
+public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
     private quetionService:QuetionService) { }
@@ -34,9 +36,9 @@ public quetionDataSource:QuetionModel[];
     console.log("update")
   }
   navigateToCreateForm(){
-    this.router.navigate(['/quetion/create'])
+    this.router.navigate([this.routeConstants.QUETION_CREATE])
   }
   navigateToUpdateForm(){
-    this.router.navigate(['/quetion/update',1])
+    this.router.navigate([this.routeConstants.QUETION_UPDATE,1])
   }
 }

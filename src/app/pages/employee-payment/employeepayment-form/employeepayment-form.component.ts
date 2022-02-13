@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employeepayment-form',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class EmployeepaymentFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,
+    private router:Router) { }
   public employeePaymentForm:FormGroup;
 
   ngOnInit(): void {
@@ -29,5 +31,8 @@ export class EmployeepaymentFormComponent implements OnInit {
 createForm(){
   console.log(this.employeePaymentForm.value)
 }
+  navigateToParent(){
+    this.router.navigate(['/dmt/employeepayment'])
+  }
 }
 

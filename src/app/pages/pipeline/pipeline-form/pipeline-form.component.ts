@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pipeline-form',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PipelineFormComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private router:Router) { }
   public pipelineForm: FormGroup;
 
   ngOnInit(): void {
@@ -28,6 +30,8 @@ export class PipelineFormComponent implements OnInit {
   createForm() {
     console.log(this.pipelineForm.value);
   }
-
+  navigateToParent(){
+    this.router.navigate(['/dmt/pipeline'])
+  }
 }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,  } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quetion-form',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup,  } from '@angular/forms';
 })
 export class QuetionFormComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private router:Router) { }
   public quetionForm: FormGroup;
 
   ngOnInit(): void {
@@ -27,5 +29,7 @@ export class QuetionFormComponent implements OnInit {
   createForm(){
     console.log(this.quetionForm.value);
   }
-
+  navigateToParent(){
+    this.router.navigate(['/dmt/quetion'])
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-invoice-form',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class InvoiceFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,
+    private router:Router) { }
   public invoiceForm:FormGroup;
 
   ngOnInit(): void {
@@ -30,5 +32,8 @@ export class InvoiceFormComponent implements OnInit {
 createForm(){
   console.log(this.invoiceForm.value)
 }
+  navigateToParent(){
+    this.router.navigate(['/dmt/invoice'])
+  }
 }
 

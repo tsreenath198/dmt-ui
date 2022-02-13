@@ -3,7 +3,7 @@
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
-               
+                <th scope="col"> Id</th>
                 <th scope="col">Name </th>
                 <th scope="col">Phone</th>
                 <th scope="col">Email</th>
@@ -11,22 +11,18 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor=" let pipeline of pipelineDataSource">
             <tr>
-                
-                <td>Marj</td>
-                <td>99520114633</td>
-                <td>Mari456@gmail.com</td>
-                <td>Java </td>
+                <th scope="row">{{pipeline.id}}</th>
+                <td>{{pipeline.name}}</td>
+                <td>{{pipeline.phone}}</td>
+                <td>{{pipeline.email}}</td>
+                <td>{{pipeline.requirements}}</td>
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(pipeline.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
-            </tr>
-            <tr>
-                
-               
             </tr>
         </tbody>
     </table>

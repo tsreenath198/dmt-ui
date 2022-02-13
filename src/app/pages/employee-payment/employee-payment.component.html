@@ -13,24 +13,20 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let employeePayment of employeepaymentDataSource">
             <tr>
-                <td>001</td>
-                <td>Mike</td>
-                <td>12/2020</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
+                <th scope="row">{{employeePayment.id}}</th>
+                <td>{{employeePayment.employeeId}}</td>
+                <td>{{employeePayment.monthYear}}</td>
+                <td>{{employeePayment.trainingPeriod}}</td>
+                <td>{{employeePayment.supportPeriod}}</td>
+                <td>{{employeePayment.preparation}}</td>
+                <td>{{employeePayment.misc}}</td>
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(employeepayment.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
-            </tr>
-            <tr>
-                
-               
             </tr>
         </tbody>
     </table>
