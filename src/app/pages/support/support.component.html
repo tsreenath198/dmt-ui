@@ -1,5 +1,22 @@
 <div class="container">
-    <button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
+        </div>
+        <div class="col">
+            <form>
+                <div class="form-group">
+                    <div class="input-group no-border">
+                        <input type="text" class="form-control" name="searchString" placeholder="Type to search..."
+                            [(ngModel)]="searchString" />
+                        <div class="input-group-append">
+                            <div class="input-group-text"><i class="nc-icon nc-zoom-split"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
@@ -18,11 +35,11 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor = "let support of supportDataSource">
+        <tbody *ngFor="let support of supportDataSource | filter : 'id': searchString">
             <tr>
                 <th scope="row">{{support.id}}</th>
-                 <td>{{support.trainerId}}</td>
-                 <td>{{support.traineeId}}</td>
+                <td>{{support.trainerId}}</td>
+                <td>{{support.traineeId}}</td>
                 <td>{{support.startDate}}</td>
                 <td>{{support.endDate}}</td>
                 <td>{{support.allottedTime}}</td>

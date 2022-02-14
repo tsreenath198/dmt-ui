@@ -1,14 +1,21 @@
 <div class="container">
-    <button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
-    <div class="col">
-        <form>
-            <div class="form-group">
-                <div class="input-group">
-                    <input type="text" class="form-control" name="searchString" placeholder="Type to search..."
-                        [(ngModel)]="searchString" />
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
+        </div>
+        <div class="col">
+            <form>
+                <div class="form-group">
+                    <div class="input-group no-border">
+                        <input type="text" class="form-control" name="searchString" placeholder="Type to search..."
+                            [(ngModel)]="searchString" />
+                        <div class="input-group-append">
+                            <div class="input-group-text"><i class="nc-icon nc-zoom-split"></i></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
@@ -32,7 +39,7 @@
                 <td>{{trainee.technologyId}}</td>
                 <td>{{trainee.paidStatus}}</td>
                 <td>{{trainee.receivedStatus}}</td>
-                
+
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>

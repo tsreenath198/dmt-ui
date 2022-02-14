@@ -1,5 +1,22 @@
 <div class="container">
-    <button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-secondary" (click)="navigateToCreateForm()">Add</button>
+        </div>
+        <div class="col">
+            <form>
+                <div class="form-group">
+                    <div class="input-group no-border">
+                        <input type="text" class="form-control" name="searchString" placeholder="Type to search..."
+                            [(ngModel)]="searchString" />
+                        <div class="input-group-append">
+                            <div class="input-group-text"><i class="nc-icon nc-zoom-split"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
@@ -12,15 +29,15 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor = "let trainer of trainerDataSource">
+        <tbody *ngFor="let trainer of trainerDataSource | filter : 'name':searchString">
             <tr>
                 <th scope="row">{{trainer.id}}</th>
-                 <td>{{trainer.name}}</td>
+                <td>{{trainer.name}}</td>
                 <td>{{trainer.technologyId}}</td>
                 <td>{{trainer.phone}}</td>
                 <td>{{trainer.email}}</td>
                 <td>{{trainer.description}}</td>
-                
+
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>
