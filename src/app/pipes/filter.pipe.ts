@@ -6,15 +6,15 @@ import { TechnologyModel } from 'app/models/technology-model';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(technologyDataSources: any[], searchString: string): any[] {
+  transform(dataSources: any[], searchString: string): any[] {
 
-    if (!technologyDataSources) {
+    if (!dataSources) {
       return [];
     }
-    if (!searchString || !technologyDataSources) {
-      return technologyDataSources;
+    if (!searchString || !dataSources) {
+      return dataSources;
     }
-    return technologyDataSources.filter((singletechnologyDataSource) =>
+    return dataSources.filter((singletechnologyDataSource) =>
       singletechnologyDataSource.name?.toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
       singletechnologyDataSource.id?.toString().toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
       singletechnologyDataSource.phone?.toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
