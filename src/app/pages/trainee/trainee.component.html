@@ -30,7 +30,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor="let trainee of traineeDataSource  |  filter:'name': searchString ; ">
+        <tbody *ngFor="let trainee of traineeDataSource  |  filter : searchString ; ">
             <tr>
                 <th scope="row">{{trainee.id}}</th>
                 <td>{{trainee.name}}</td>

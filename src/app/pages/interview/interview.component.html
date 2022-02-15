@@ -33,7 +33,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor="let interview of interviewDataSource | filter : 'id' : searchString">
+        <tbody *ngFor="let interview of interviewDataSource | filter : searchString">
             <tr>
                 <th scope="row">{{interview.id}}</th>
                 <td>{{interview.employeeId}}</td>

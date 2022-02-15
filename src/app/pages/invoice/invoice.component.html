@@ -32,7 +32,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor = " let invoice of invoiceDataSource">
+        <tbody *ngFor = " let invoice of invoiceDataSource  | filter : searchString">
             <tr>
                 <th scope="row">{{invoice.id}}</th>
                 <td>{{invoice.no}}</td>

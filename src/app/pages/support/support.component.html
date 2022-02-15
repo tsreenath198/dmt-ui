@@ -35,7 +35,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor="let support of supportDataSource | filter : 'id': searchString">
+        <tbody *ngFor="let support of supportDataSource | filter : searchString">
             <tr>
                 <th scope="row">{{support.id}}</th>
                 <td>{{support.trainerId}}</td>
@@ -52,7 +52,7 @@
                 <td>
                     <i class="nc-icon nc-simple-add"></i>
                     <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm()"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(support.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
             </tr>
         </tbody>

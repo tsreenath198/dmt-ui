@@ -32,7 +32,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor="let batch of batchDataSource | filter : 'name' : searchString">
+        <tbody *ngFor="let batch of batchDataSource  |  filter : searchString ;">
             <tr>
                 <th scope="row">{{batch.id}}</th>
                 <td>{{batch.batch}}</td>

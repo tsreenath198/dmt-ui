@@ -30,7 +30,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor="let employeePayment of employeepaymentDataSource">
+        <tbody *ngFor="let employeePayment of employeepaymentDataSource  | filter : searchString">
             <tr>
                 <th scope="row">{{employeePayment.id}}</th>
                 <td>{{employeePayment.employeeId}}</td>
@@ -47,4 +47,4 @@
             </tr>
         </tbody>
     </table>
-</div>z
+</div>

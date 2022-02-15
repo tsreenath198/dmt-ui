@@ -30,7 +30,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor="let task of taskDataSource">
+        <tbody *ngFor="let task of taskDataSource | filter : searchString" >
             <tr>
                 <th scope="row">{{task.id}}</th>
                 <td>{{task.category}}</td>

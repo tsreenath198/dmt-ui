@@ -29,7 +29,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor = "let supportInteraction of supportinteractionDataSource">
+        <tbody *ngFor = "let supportInteraction of supportinteractionDataSource  | filter : searchString">
             <tr>
                 <th scope="row">{{supportInteraction.id}}</th>
                 <td>{{supportInteraction.trainerId}}</td>

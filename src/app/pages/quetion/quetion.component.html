@@ -27,7 +27,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor = "let quetion of quetionDataSource">
+        <tbody *ngFor = "let quetion of quetionDataSource  | filter : searchString">
             <tr>
                 <th scope="row">{{quetion.id}}</th>
                 <td>{{quetion.endClient}}</td>

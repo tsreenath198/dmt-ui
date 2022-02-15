@@ -26,7 +26,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor = "let course of courseDataSourse">
+        <tbody *ngFor = "let course of courseDataSourse  | filter : searchString">
             <tr>
                 <th scope="row">{{course.id}}</th>
                 <td>{{course.technologyId}}</td>

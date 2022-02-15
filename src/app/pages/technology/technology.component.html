@@ -26,7 +26,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor="let technology of technologyDataSource | filter : 'name' : searchString ; let i = id">
+        <tbody *ngFor="let technology of technologyDataSource | filter : searchString ; let i = id">
             <tr>
                 <th scope="row">{{technology.id}}</th>
                 <td>{{technology.name}}</td>

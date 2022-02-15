@@ -27,7 +27,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor="let client of clientDataSource | filter : 'id' : searchString">
+        <tbody *ngFor="let client of clientDataSource | filter : searchString ;">
             <tr>
 
                 <th scope="row">{{client.id}} </th>
@@ -39,8 +39,6 @@
                     <i class="nc-icon nc-share-66"></i>
                     <a (click)="navigateToUpdateForm(client.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
-            </tr>
-            <tr>
             </tr>
         </tbody>
     </table>

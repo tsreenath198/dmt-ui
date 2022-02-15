@@ -28,7 +28,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor=" let pipeline of pipelineDataSource">
+        <tbody *ngFor=" let pipeline of pipelineDataSource  | filter : searchString">
             <tr>
                 <th scope="row">{{pipeline.id}}</th>
                 <td>{{pipeline.name}}</td>

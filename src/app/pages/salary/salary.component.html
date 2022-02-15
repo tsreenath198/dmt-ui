@@ -28,7 +28,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor = "let salary of salaryDataSource">
+        <tbody *ngFor = "let salary of salaryDataSource  | filter : searchString">
             <tr>
                 <th scope="row">{{salary.id}}</th>
                 <td>{{salary.employeeId}}</td>
