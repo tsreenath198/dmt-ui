@@ -6,22 +6,22 @@ import { TechnologyModel } from 'app/models/technology-model';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(technologyDataSources: any[], searchString: string): any[] {
+  transform(dataSources: any[], searchString: string): any[] {
 
-    if (!technologyDataSources) {
+    if (!dataSources) {
       return [];
     }
-    if (!searchString || !technologyDataSources) {
-      return technologyDataSources;
+    if (!searchString || !dataSources) {
+      return dataSources;
     }
-    return technologyDataSources.filter((singletechnologyDataSource) =>
-      singletechnologyDataSource.name?.toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
-      singletechnologyDataSource.id?.toString().toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
-      singletechnologyDataSource.phone?.toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
-      singletechnologyDataSource.email?.toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
-      singletechnologyDataSource.endClient?.toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
-      singletechnologyDataSource.invoiceNo?.toString().toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
-      singletechnologyDataSource.no?.toString().toLocaleLowerCase().match(searchString.toLocaleLowerCase())
+    return dataSources.filter((dataSource) =>
+      dataSource.name?.toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
+      dataSource.id?.toString().toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
+      dataSource.phone?.toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
+      dataSource.email?.toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
+      dataSource.endClient?.toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
+      dataSource.invoiceNo?.toString().toLocaleLowerCase().match(searchString.toLocaleLowerCase()) ||
+      dataSource.no?.toString().toLocaleLowerCase().match(searchString.toLocaleLowerCase())
 
 
     );  
