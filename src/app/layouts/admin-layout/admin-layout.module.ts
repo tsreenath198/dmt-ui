@@ -50,6 +50,7 @@ import { EmployeepaymentFormComponent } from 'app/pages/employee-payment/employe
 import { InvoiceFormComponent } from 'app/pages/invoice/invoice-form/invoice-form.component';
 import { TechnologyComponent } from 'app/pages/technology/technology.component';
 import { FilterPipe } from 'app/pipes/filter.pipe';
+import { ConfirmationDialogComponent } from 'app/shared/confirmation-dialog/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   imports: [
@@ -104,6 +105,7 @@ import { FilterPipe } from 'app/pipes/filter.pipe';
     SupportinteractionFormComponent,
     EmployeepaymentFormComponent,
     InvoiceFormComponent,
+    ConfirmationDialogComponent,
 
     FilterPipe
   ]

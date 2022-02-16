@@ -26,15 +26,17 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody *ngFor="let technology of technologyDataSource | filter : searchString ; let i = id">
+        <tbody *ngFor="let technology of technologyDataSource | filter : searchString ; let i = index">
             <tr>
                 <th scope="row">{{technology.id}}</th>
                 <td>{{technology.name}}</td>
                 <td>{{technology.description}}</td>
                 <td>
-                    <i class="nc-icon nc-simple-add"></i>
-                    <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm(technology.id)"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(technology.id)"><i class="nc-icon nc-share-66"></i></a>&nbsp;&nbsp;
+                    <i class="nc-icon nc-simple-add"></i>&nbsp;&nbsp;   
+                    <a (click)="OnDeleteClick(technology.id)"><i class="nc-icon nc-box"
+                        ></i></a>
+
                 </td>
             </tr>
         </tbody>
