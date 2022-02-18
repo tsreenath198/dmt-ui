@@ -40,8 +40,8 @@
                 <td>{{task.date}}</td>
                 <td>Active</td>
                 <td>
-                    <a (click)="navigateToUpdateForm(task.id)"><i class="nc-icon nc-share-66"></i></a>
-                    <a (click)="onDeleteClick(task.id)"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(task.id)"><i class="nc-icon nc-share-66" data-toggle="tooltip" data-placement="left" title="Update"></i></a>
+                    <a (click)="onDeleteClick(task.id)"><i class="nc-icon nc-box" data-toggle="tooltip" data-placement="left" title="Delete"></i></a>
                 </td>
             </tr>
         </tbody>

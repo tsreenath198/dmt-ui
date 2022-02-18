@@ -36,8 +36,8 @@
                 <td>{{pipeline.email}}</td>
                 <td>{{pipeline.requirements}}</td>
                 <td>
-                    <a (click)="navigateToUpdateForm(pipeline.id)"><i class="nc-icon nc-share-66"></i></a>
-                    <a (click)="onDeleteClick(pipeline.id)"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(pipeline.id)"><i class="nc-icon nc-share-66" data-toggle="tooltip" data-placement="left" title="Update"></i></a>
+                    <a (click)="onDeleteClick(pipeline.id)"><i class="nc-icon nc-box" data-toggle="tooltip" data-placement="left" title="Delete"></i></a>
                 </td>
             </tr>
         </tbody>

@@ -33,8 +33,8 @@
                 <td>{{course.name}}</td>
                 <td>{{course.estimatedHours}}</td>
                 <td>
-                    <a (click)="navigateToUpdateForm(course.id)"><i class="nc-icon nc-share-66"></i></a>
-                    <a (click)="onDeleteClick(course.id)"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(course.id)"><i class="nc-icon nc-share-66" data-toggle="tooltip" data-placement="left" title="Update"></i></a>
+                    <a (click)="onDeleteClick(course.id)"><i class="nc-icon nc-box" data-toggle="tooltip" data-placement="left" title="Delete"></i></a>
                 </td>
             </tr>
         </tbody>
