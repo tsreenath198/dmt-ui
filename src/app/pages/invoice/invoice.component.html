@@ -44,14 +44,9 @@
                 <td>{{invoice.supportEndDate}}</td>
                 <td>{{invoice.description}}</td>
                 <td>
-                    <i class="nc-icon nc-simple-add"></i>
-                    <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm(invoice.id)"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(invoice.id)"><i class="nc-icon nc-share-66"></i></a>
+                    <a (click)="onDeleteClick(invoice.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
-            </tr>
-            <tr>
-                
-               
             </tr>
         </tbody>
     </table>

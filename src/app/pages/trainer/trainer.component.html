@@ -39,9 +39,8 @@
                 <td>{{trainer.description}}</td>
 
                 <td>
-                    <i class="nc-icon nc-simple-add"></i>
-                    <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm(trainer.id)"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(trainer.id)"><i class="nc-icon nc-share-66"></i></a>
+                    <a (click)="onDeleteClick(trainer.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
             </tr>
         </tbody>

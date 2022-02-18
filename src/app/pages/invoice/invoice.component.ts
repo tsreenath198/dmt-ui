@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouteConstants } from 'app/constants/route-contants';
 import { InvoiceModel } from 'app/models/invoice-model';
+import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
 import { InvoiceService } from 'app/services/invoice/invoice.service';
 
 @Component({
@@ -15,7 +16,7 @@ public invoiceDataSource:InvoiceModel[];
 public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
-    private invoiceService:InvoiceService) { }
+    private invoiceService:InvoiceService, private confirmationDialogService:ConfirmationDialogService) { }
 
   ngOnInit(): void {
     this.getInvoiceData();
@@ -25,12 +26,6 @@ public routeConstants = new RouteConstants();
       this.invoiceDataSource = result;
     })
   }
-  onAddClick() {
-    console.log("Add")
-  }
-  onDeleteClick() {
-    console.log("delete")
-  }
   onUpdateClick() {
     console.log("update")
   }
@@ -39,5 +34,14 @@ public routeConstants = new RouteConstants();
   }
   navigateToUpdateForm(){
     this.router.navigate([this.routeConstants.INVOICE_UPDATE,1])
+  }
+  public onDeleteClick(id: number): void {
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+      .then((confirmed) => {
+        if (confirmed) {
+          this.invoiceDataSource = this.invoiceDataSource.filter(technology => technology.id !== id);;
+        }
+      }
+      ).catch(() => console.log('User dismissed the dialog '))
   }
 }

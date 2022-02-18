@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouteConstants } from 'app/constants/route-contants';
 import { QuetionModel } from 'app/models/quetion-model';
+import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
 import { QuetionService } from 'app/services/quetion/quetion.service';
 
 @Component({
@@ -15,7 +16,7 @@ public quetionDataSource:QuetionModel[];
 public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
-    private quetionService:QuetionService) { }
+    private quetionService:QuetionService, private confirmationDialogService:ConfirmationDialogService) { }
 
   ngOnInit(): void {
     this.getQuetionData();
@@ -26,12 +27,6 @@ public routeConstants = new RouteConstants();
     })
   }
 
-  onAddClick() {
-    console.log("Add")
-  }
-  onDeleteClick() {
-    console.log("delete")
-  }
   onUpdateClick() {
     console.log("update")
   }
@@ -40,5 +35,14 @@ public routeConstants = new RouteConstants();
   }
   navigateToUpdateForm(){
     this.router.navigate([this.routeConstants.QUETION_UPDATE,1])
+  }
+  public onDeleteClick(id: number): void {
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+      .then((confirmed) => {
+        if (confirmed) {
+          this.quetionDataSource = this.quetionDataSource.filter(technology => technology.id !== id);;
+        }
+      }
+      ).catch(() => console.log('User dismissed the dialog '))
   }
 }

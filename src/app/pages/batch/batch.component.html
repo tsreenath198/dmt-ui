@@ -44,9 +44,8 @@
                 <td>{{batch.paidStatus}}</td>
                 <td>{{batch.receivedStatus}}</td>
                 <td>
-                    <i class="nc-icon nc-simple-add"></i>
-                    <i class="nc-icon nc-share-66"></i>
-                    <a (click)="navigateToUpdateForm(batch.id)"><i class="nc-icon nc-box"></i></a>
+                    <a (click)="navigateToUpdateForm(batch.id)"><i class="nc-icon nc-share-66"></i></a>
+                    <a (click)="onDeleteClick(batch.id)"><i class="nc-icon nc-box"></i></a>
                 </td>
             </tr>
         </tbody>

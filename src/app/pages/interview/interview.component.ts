@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouteConstants } from 'app/constants/route-contants';
 import { InterviewModel } from 'app/models/interview-model';
+import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
 import { InterviewService } from 'app/services/interview/interview.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class InterviewComponent implements OnInit {
   public routeConstants= new RouteConstants();
 
   constructor(private router:Router,
-    private interviewService:InterviewService) { }
+    private interviewService:InterviewService , private confirmationDialogService:ConfirmationDialogService) { }
 
   ngOnInit(): void {
     this.getInterviewData();
@@ -26,12 +27,7 @@ export class InterviewComponent implements OnInit {
     })
   }
 
-  onAddClick() {
-    console.log("Add")
-  }
-  onDeleteClick() {
-    console.log("delete")
-  }
+  
   onUpdateClick() {
     console.log("update")
   }
@@ -41,4 +37,14 @@ export class InterviewComponent implements OnInit {
   navigateToUpdateForm(){
     this.router.navigate([this.routeConstants.INTERVIEW_UPDATE,1])
   }
+  public onDeleteClick(id: number): void {
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+      .then((confirmed) => {
+        if (confirmed) {
+          this.interviewDataSource = this.interviewDataSource.filter(technology => technology.id !== id);;
+        }
+      }
+      ).catch(() => console.log('User dismissed the dialog '))
+  }
+
 }

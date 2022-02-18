@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouteConstants } from 'app/constants/route-contants';
 import { ResumeModel } from 'app/models/resume-model';
+import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
 import { ResumeService } from 'app/services/resume/resume.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class ResumeComponent implements OnInit {
   public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
-    private resumeService:ResumeService) { }
+    private resumeService:ResumeService , private confirmationDialogService:ConfirmationDialogService) { }
 
   ngOnInit(): void {
     this.getResumeData();
@@ -25,12 +26,7 @@ export class ResumeComponent implements OnInit {
       this.resumeDataSource = result;
     })
   }
-  onAddClick() {
-    console.log("Add")
-  }
-  onDeleteClick() {
-    console.log("delete")
-  }
+  
   onUpdateClick() {
     console.log("update")
   }
@@ -39,5 +35,14 @@ export class ResumeComponent implements OnInit {
   }
   navigateToUpdateForm(id:number){
     this.router.navigate([this.routeConstants.RESUME_UPDATE,id])
+  }
+  public onDeleteClick(id: number): void {
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+      .then((confirmed) => {
+        if (confirmed) {
+          this.resumeDataSource = this.resumeDataSource.filter(technology => technology.id !== id);;
+        }
+      }
+      ).catch(() => console.log('User dismissed the dialog '))
   }
 }

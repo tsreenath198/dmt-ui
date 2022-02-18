@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RouteConstants } from 'app/constants/route-contants';
 import { TraineeModel } from 'app/models/trainee-model';
 import { TrainerModel } from 'app/models/trainer-model';
+import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
 import { TrainerService } from 'app/services/trainer/trainer.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class TrainerComponent implements OnInit {
     public routeConstants= new RouteConstants();
   
   constructor(private router:Router ,
-    private trainerService:TrainerService) { }
+    private trainerService:TrainerService, private confirmationDialogService:ConfirmationDialogService) { }
   ngOnInit(): void {
     this.getTrainerData()
   }
@@ -30,9 +31,6 @@ export class TrainerComponent implements OnInit {
   onAddClick() {
     console.log("Add")
   }
-  onDeleteClick() {
-    console.log("delete")
-  }
   onUpdateClick() {
     console.log("update")
   }
@@ -41,5 +39,14 @@ export class TrainerComponent implements OnInit {
   }
   navigateToUpdateForm(){
     this.router.navigate([this.routeConstants.TRAINER_UPDATE,1])
+  }
+  public onDeleteClick(id: number): void {
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+      .then((confirmed) => {
+        if (confirmed) {
+          this.trainerDataSource = this.trainerDataSource.filter(technology => technology.id !== id);;
+        }
+      }
+      ).catch(() => console.log('User dismissed the dialog '))
   }
 }

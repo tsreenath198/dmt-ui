@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouteConstants } from 'app/constants/route-contants';
 import { supportInteractionModel } from 'app/models/supportInteraction-model';
+import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
 import { SupportinteractionService } from 'app/services/supportinteraction/supportinteraction.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class SupportInteractionComponent implements OnInit {
   public routeConstants = new RouteConstants();
 
   constructor(private router: Router,
-    private supportinteractionService: SupportinteractionService) { }
+    private supportinteractionService: SupportinteractionService, private confirmationDialogService:ConfirmationDialogService) { }
   ngOnInit(): void {
     this.getSupportinteractionData();
   }
@@ -25,12 +26,6 @@ export class SupportInteractionComponent implements OnInit {
     })
   }
 
-  onAddClick() {
-    console.log("Add")
-  }
-  onDeleteClick() {
-    console.log("delete")
-  }
   onUpdateClick() {
     console.log("update")
   }
@@ -39,5 +34,14 @@ export class SupportInteractionComponent implements OnInit {
   }
   navigateToUpdateForm() {
     this.router.navigate([this.routeConstants.SUPPORTINTERACTION_UPDATE, 1])
+  }
+  public onDeleteClick(id: number): void {
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+      .then((confirmed) => {
+        if (confirmed) {
+          this.supportinteractionDataSource = this.supportinteractionDataSource.filter(technology => technology.id !== id);;
+        }
+      }
+      ).catch(() => console.log('User dismissed the dialog '))
   }
 }

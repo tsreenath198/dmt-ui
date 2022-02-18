@@ -47,7 +47,7 @@ export class TechnologyComponent implements OnInit {
 
 
 
-  public OnDeleteClick(id: number): void {
+  public onDeleteClick(id: number): void {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
       .then((confirmed) => {
         if (confirmed) {

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RouteConstants } from 'app/constants/route-contants';
 import { ClientModel } from 'app/models/client-model';
 import { ClientService } from 'app/services/client/client.service';
+import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
 
 @Component({
   selector: 'app-client',
@@ -15,7 +16,7 @@ export class ClientComponent implements OnInit {
   public routeConstants = new RouteConstants();
 
   constructor(private router: Router,
-    private clientService: ClientService) { }
+    private clientService: ClientService, private confirmationDialogService:ConfirmationDialogService) { }
 
   ngOnInit(): void {
     this.getClientData()
@@ -26,9 +27,6 @@ export class ClientComponent implements OnInit {
     })
   }
 
-  onDeleteClick() {
-    console.log("delete")
-  }
   onUpdateClick() {
     console.log("update")
   }
@@ -38,4 +36,14 @@ export class ClientComponent implements OnInit {
   navigateToUpdateForm() {
     this.router.navigate([this.routeConstants.CLIENT_UPDATE, 1])
   }
+  public onDeleteClick(id: number): void {
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+      .then((confirmed) => {
+        if (confirmed) {
+          this.clientDataSource = this.clientDataSource.filter(technology => technology.id !== id);;
+        }
+      }
+      ).catch(() => console.log('User dismissed the dialog '))
+  }
+
 }
