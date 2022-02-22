@@ -38,7 +38,7 @@ export class InterviewComponent implements OnInit {
     this.router.navigate([this.routeConstants.INTERVIEW_UPDATE,1])
   }
   public onDeleteClick(id: number): void {
-    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : '+ id)
       .then((confirmed) => {
         if (confirmed) {
           this.interviewDataSource = this.interviewDataSource.filter(technology => technology.id !== id);;

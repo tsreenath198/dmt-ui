@@ -9,6 +9,6 @@ export class TechnologyService {
   constructor(private httpClient: HttpClient) { }
 
   getMockData() {
-    return this.httpClient.get('assets/mock-data/technology-mock.json');
+    return this.httpClient.get("http://210.16.76.202:8086/technology");
   }
 }

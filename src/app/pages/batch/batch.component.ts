@@ -39,7 +39,7 @@ export class BatchComponent implements OnInit {
     this.router.navigate([this.routeConstants.BATCH_UPDATE,1])
   }
   public onDeleteClick(id: number): void {
-    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : '+ id)
       .then((confirmed) => {
         if (confirmed) {
           this.batchDataSource = this.batchDataSource.filter(technology => technology.id !== id);;

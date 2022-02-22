@@ -37,7 +37,7 @@ public routeConstants = new RouteConstants();
     this.router.navigate([this.routeConstants.COURSE_UPDATE,1])
   }
   public onDeleteClick(id: number): void {
-    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
           this.courseDataSourse = this.courseDataSourse.filter(technology => technology.id !== id);;

@@ -34,7 +34,7 @@ export class TaskComponent implements OnInit {
     this.router.navigate([this.routeConstants.TASK_UPDATE,1])
   }
   public onDeleteClick(id: number): void {
-    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
           this.taskDataSource = this.taskDataSource.filter(technology => technology.id !== id);;

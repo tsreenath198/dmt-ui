@@ -37,7 +37,7 @@ export class ClientComponent implements OnInit {
     this.router.navigate([this.routeConstants.CLIENT_UPDATE, 1])
   }
   public onDeleteClick(id: number): void {
-    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : '+ id)
       .then((confirmed) => {
         if (confirmed) {
           this.clientDataSource = this.clientDataSource.filter(technology => technology.id !== id);;

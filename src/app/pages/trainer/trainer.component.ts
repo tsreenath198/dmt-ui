@@ -41,7 +41,7 @@ export class TrainerComponent implements OnInit {
     this.router.navigate([this.routeConstants.TRAINER_UPDATE,1])
   }
   public onDeleteClick(id: number): void {
-    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : '+ id)
       .then((confirmed) => {
         if (confirmed) {
           this.trainerDataSource = this.trainerDataSource.filter(technology => technology.id !== id);;

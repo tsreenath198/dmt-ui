@@ -48,10 +48,11 @@ export class TechnologyComponent implements OnInit {
 
 
   public onDeleteClick(id: number): void {
-    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to delete Id : '+ id )
       .then((confirmed) => {
         if (confirmed) {
-          this.technologyDataSource = this.technologyDataSource.filter(technology => technology.id !== id);;
+          this.technologyDataSource = this.technologyDataSource.filter(technology => technology.id !== id);
+          console.log("deleted Succesfully")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))
