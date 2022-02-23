@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-trainee-form',
@@ -11,7 +12,8 @@ export class TraineeFormComponent implements OnInit {
  
 
   constructor(private fb:FormBuilder,
-    private router:Router) { }
+    private router:Router,
+    private toastr:NotificationService) { }
   public traineeForm: FormGroup;
 
   ngOnInit(): void {
@@ -37,6 +39,7 @@ export class TraineeFormComponent implements OnInit {
   }
 createForm(){
   console.log(this.traineeForm.value)
+  this.toastr.showSuccess("Submitted Successfully !!", "Trainee table")
 }
   navigateToParent(){
     this.router.navigate(['/dmt/trainee'])

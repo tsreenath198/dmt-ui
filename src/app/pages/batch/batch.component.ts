@@ -4,6 +4,7 @@ import { RouteConstants } from 'app/constants/route-contants';
 import { BatchModel } from 'app/models/batch-model';
 import { BatchService } from 'app/services/batch/batch.service';
 import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-batch',
@@ -17,7 +18,7 @@ export class BatchComponent implements OnInit {
   
 
  constructor(private router:Router,
-  private batchService:BatchService , private confirmationDialogService:ConfirmationDialogService) { }
+  private batchService:BatchService , private confirmationDialogService:ConfirmationDialogService ,private toastr:NotificationService) { }
 
   ngOnInit(): void {
     this.getBatchData();
@@ -42,7 +43,8 @@ export class BatchComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : '+ id)
       .then((confirmed) => {
         if (confirmed) {
-          this.batchDataSource = this.batchDataSource.filter(technology => technology.id !== id);;
+          this.batchDataSource = this.batchDataSource.filter(technology => technology.id !== id);
+          this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

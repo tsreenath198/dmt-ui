@@ -4,6 +4,7 @@ import { RouteConstants } from 'app/constants/route-contants';
 import { EmployeeModel } from 'app/models/employee-model';
 import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
 import { EmployeeService } from 'app/services/employee/employee.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-employee',
@@ -16,7 +17,7 @@ export class EmployeeComponent implements OnInit {
   public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
-    private employeeService:EmployeeService ,private  confirmationDialogService:ConfirmationDialogService) { }
+    private employeeService:EmployeeService ,private  confirmationDialogService:ConfirmationDialogService, private toastr:NotificationService) { }
 
   ngOnInit(): void {
     this.getEmployeeData();
@@ -40,7 +41,8 @@ export class EmployeeComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.employeeDataSource = this.employeeDataSource.filter(technology => technology.id !== id);;
+          this.employeeDataSource = this.employeeDataSource.filter(technology => technology.id !== id);
+          this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

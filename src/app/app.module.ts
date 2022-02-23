@@ -22,10 +22,14 @@ import { SigninComponent } from "./pages/signin/signin.component";
     AppComponent,
     AdminLayoutComponent,
     SigninComponent,
-    
   ],
   imports: [
     BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      toastClass: 'toast-top-left',
+      preventDuplicates: true,
+    }),
     RouterModule.forRoot(AppRoutes, {
       useHash: true
     }),

@@ -4,6 +4,7 @@ import { RouteConstants } from 'app/constants/route-contants';
 import { ClientModel } from 'app/models/client-model';
 import { ClientService } from 'app/services/client/client.service';
 import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-client',
@@ -16,7 +17,7 @@ export class ClientComponent implements OnInit {
   public routeConstants = new RouteConstants();
 
   constructor(private router: Router,
-    private clientService: ClientService, private confirmationDialogService:ConfirmationDialogService) { }
+    private clientService: ClientService, private confirmationDialogService:ConfirmationDialogService, private toastr:NotificationService) { }
 
   ngOnInit(): void {
     this.getClientData()
@@ -40,7 +41,8 @@ export class ClientComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : '+ id)
       .then((confirmed) => {
         if (confirmed) {
-          this.clientDataSource = this.clientDataSource.filter(technology => technology.id !== id);;
+          this.clientDataSource = this.clientDataSource.filter(technology => technology.id !== id);
+          this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

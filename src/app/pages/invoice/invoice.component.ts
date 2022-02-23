@@ -4,6 +4,7 @@ import { RouteConstants } from 'app/constants/route-contants';
 import { InvoiceModel } from 'app/models/invoice-model';
 import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
 import { InvoiceService } from 'app/services/invoice/invoice.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-invoice',
@@ -16,7 +17,7 @@ public invoiceDataSource:InvoiceModel[];
 public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
-    private invoiceService:InvoiceService, private confirmationDialogService:ConfirmationDialogService) { }
+    private invoiceService:InvoiceService, private confirmationDialogService:ConfirmationDialogService, private toastr:NotificationService) { }
 
   ngOnInit(): void {
     this.getInvoiceData();
@@ -39,7 +40,8 @@ public routeConstants = new RouteConstants();
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.invoiceDataSource = this.invoiceDataSource.filter(technology => technology.id !== id);;
+          this.invoiceDataSource = this.invoiceDataSource.filter(technology => technology.id !== id);
+          this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

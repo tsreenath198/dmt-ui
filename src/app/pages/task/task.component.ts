@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RouteConstants } from 'app/constants/route-contants';
 import { TaskModel } from 'app/models/task-model';
 import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 import { TaskService } from 'app/services/task/task.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class TaskComponent implements OnInit {
   public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
-    private taskService:TaskService, private confirmationDialogService:ConfirmationDialogService) { }
+    private taskService:TaskService, private confirmationDialogService:ConfirmationDialogService, private toastr:NotificationService) { }
 
   ngOnInit(): void {
     this.getTaskData();
@@ -37,7 +38,8 @@ export class TaskComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.taskDataSource = this.taskDataSource.filter(technology => technology.id !== id);;
+          this.taskDataSource = this.taskDataSource.filter(technology => technology.id !== id);
+          this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

@@ -4,7 +4,9 @@ import { RouteConstants } from 'app/constants/route-contants';
 import { TraineeModel } from 'app/models/trainee-model';
 import { TrainerModel } from 'app/models/trainer-model';
 import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 import { TraineeService } from 'app/services/trainee/trainee.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -18,7 +20,7 @@ public traineeDataSource: TraineeModel[];
 public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
-    private traineeService:TraineeService, private confirmationDialogService:ConfirmationDialogService) { }
+    private traineeService:TraineeService, private confirmationDialogService:ConfirmationDialogService, private toastr:NotificationService) { }
 
   ngOnInit(): void {
     this.getTraineeData()
@@ -31,7 +33,9 @@ public routeConstants = new RouteConstants();
     })
   }
 
-  
+//   showToasterSuccess(){
+//     this.toastr.showSuccess("Data shown successfully !!", "tutsmake.com")
+// }
   onAddClick() {
     console.log("Add")
   }
@@ -48,11 +52,13 @@ public routeConstants = new RouteConstants();
   public onDeleteClick(id: number): void {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : '+ id)
       .then((confirmed) => {
+        
         if (confirmed) {
           this.traineeDataSource = this.traineeDataSource.filter(technology => technology.id !== id);;
+          this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))
   }
-
+ 
 }

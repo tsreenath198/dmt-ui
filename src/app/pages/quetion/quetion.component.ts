@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RouteConstants } from 'app/constants/route-contants';
 import { QuetionModel } from 'app/models/quetion-model';
 import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 import { QuetionService } from 'app/services/quetion/quetion.service';
 
 @Component({
@@ -16,7 +17,7 @@ public quetionDataSource:QuetionModel[];
 public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
-    private quetionService:QuetionService, private confirmationDialogService:ConfirmationDialogService) { }
+    private quetionService:QuetionService, private confirmationDialogService:ConfirmationDialogService, private toastr:NotificationService) { }
 
   ngOnInit(): void {
     this.getQuetionData();
@@ -40,7 +41,8 @@ public routeConstants = new RouteConstants();
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.quetionDataSource = this.quetionDataSource.filter(technology => technology.id !== id);;
+          this.quetionDataSource = this.quetionDataSource.filter(technology => technology.id !== id);
+          this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

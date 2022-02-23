@@ -4,6 +4,7 @@ import { RouteConstants } from 'app/constants/route-contants';
 import { EmployeePaymentModel } from 'app/models/employeePayment-model';
 import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
 import { EmployeepaymentService } from 'app/services/employeepayment/employeepayment.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-employee-payment',
@@ -16,7 +17,7 @@ public employeepaymentDataSource:EmployeePaymentModel[];
 public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
-    private employeepaymentService:EmployeepaymentService, private confirmationDialogService:ConfirmationDialogService) { }
+    private employeepaymentService:EmployeepaymentService, private confirmationDialogService:ConfirmationDialogService, private toastr:NotificationService) { }
 
   ngOnInit(): void {
     this.getEmployeepaymentData();
@@ -39,7 +40,8 @@ public routeConstants = new RouteConstants();
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.employeepaymentDataSource = this.employeepaymentDataSource.filter(technology => technology.id !== id);;
+          this.employeepaymentDataSource = this.employeepaymentDataSource.filter(technology => technology.id !== id);
+          this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

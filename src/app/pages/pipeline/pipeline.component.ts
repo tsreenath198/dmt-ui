@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RouteConstants } from 'app/constants/route-contants';
 import { PipelineModel } from 'app/models/pipeline-model';
 import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 import { PipelineService } from 'app/services/pipeline/pipeline.service';
 
 @Component({
@@ -16,7 +17,7 @@ public pipelineDataSource:PipelineModel[];
 public routeConstants = new RouteConstants();
 
   constructor(private router:Router,
-    private pipelineService:PipelineService, private confirmationDialogService:ConfirmationDialogService) { }
+    private pipelineService:PipelineService, private confirmationDialogService:ConfirmationDialogService , private toastr:NotificationService) { }
 
   ngOnInit(): void {
     this.getPipelineData();
@@ -36,7 +37,8 @@ public routeConstants = new RouteConstants();
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.pipelineDataSource = this.pipelineDataSource.filter(technology => technology.id !== id);;
+          this.pipelineDataSource = this.pipelineDataSource.filter(technology => technology.id !== id);
+          this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

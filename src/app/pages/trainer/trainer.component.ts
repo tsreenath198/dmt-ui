@@ -4,6 +4,7 @@ import { RouteConstants } from 'app/constants/route-contants';
 import { TraineeModel } from 'app/models/trainee-model';
 import { TrainerModel } from 'app/models/trainer-model';
 import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 import { TrainerService } from 'app/services/trainer/trainer.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class TrainerComponent implements OnInit {
     public routeConstants= new RouteConstants();
   
   constructor(private router:Router ,
-    private trainerService:TrainerService, private confirmationDialogService:ConfirmationDialogService) { }
+    private trainerService:TrainerService, private confirmationDialogService:ConfirmationDialogService, private toastr:NotificationService) { }
   ngOnInit(): void {
     this.getTrainerData()
   }
@@ -45,6 +46,7 @@ export class TrainerComponent implements OnInit {
       .then((confirmed) => {
         if (confirmed) {
           this.trainerDataSource = this.trainerDataSource.filter(technology => technology.id !== id);;
+          this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))
