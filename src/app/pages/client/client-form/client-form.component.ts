@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-client-form',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class ClientFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
-    private router:Router ) { }
+    private router:Router , private toastr:NotificationService) { }
   public clientForm: FormGroup;
 
   ngOnInit(): void {
@@ -31,6 +32,7 @@ export class ClientFormComponent implements OnInit {
 
   createForm() {
     console.log(this.clientForm.value);
+    this.toastr.showSuccess("Submitted Successfully !!", "")
   }
   navigateToParent() {
     this.router.navigate(['/dmt/client']);

@@ -205,3 +205,4 @@
   display: none;
 }
 i{padding: 5px;}
+@import '~ngx-toastr/toastr.css';

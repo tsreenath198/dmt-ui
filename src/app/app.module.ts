@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SigninComponent } from "./pages/signin/signin.component";
 
 
@@ -27,7 +27,7 @@ import { SigninComponent } from "./pages/signin/signin.component";
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 10000,
-      toastClass: 'toast-top-left',
+      positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
     RouterModule.forRoot(AppRoutes, {
@@ -35,11 +35,11 @@ import { SigninComponent } from "./pages/signin/signin.component";
     }),
     SidebarModule,
     NavbarModule,
-    ToastrModule.forRoot(),
     FooterModule,
     HttpClientModule,
     FixedPluginModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

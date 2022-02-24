@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-support-form',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class SupportFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
-    private router:Router) { }
+    private router:Router ,private toastr:NotificationService) { }
   public supportForm: FormGroup;
 
   ngOnInit(): void {
@@ -35,7 +36,8 @@ export class SupportFormComponent implements OnInit {
     });
   }
   createForm() {
-    console.log(this.supportForm.value)
+    console.log(this.supportForm.value);
+    this.toastr.showSuccess("Submitted Successfully !!", "")
   }
   navigateToParent() {
     this.router.navigate(['/dmt/support']);

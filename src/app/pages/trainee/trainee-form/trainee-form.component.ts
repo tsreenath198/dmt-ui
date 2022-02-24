@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NotificationService } from 'app/services/notification/notification.service';
 
@@ -21,7 +21,7 @@ export class TraineeFormComponent implements OnInit {
   }
   buildForm() {
     this.traineeForm = this.fb.group({
-      name: ['', Validators.required],
+      name: new FormControl('', [Validators.required ,Validators.minLength(3)]),
       clientId: [''],
       skypeId: [''],
       alternativePhone: [''],
@@ -38,10 +38,18 @@ export class TraineeFormComponent implements OnInit {
     });
   }
 createForm(){
-  console.log(this.traineeForm.value)
-  this.toastr.showSuccess("Submitted Successfully !!", "Trainee table")
+  //console.log(this.traineeForm.value)
+  if(this.traineeForm == null){
+      this.toastr.showError(" Error !!", "")
+  }
+ else{
+  this.toastr.showSuccess("Submitted Successfully !!", "")
+ }
 }
   navigateToParent(){
     this.router.navigate(['/dmt/trainee'])
+  }
+  get f(){
+    return this.traineeForm.controls;
   }
 }
