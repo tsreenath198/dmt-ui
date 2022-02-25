@@ -9,6 +9,7 @@ import { NotificationService } from 'app/services/notification/notification.serv
   styleUrls: ['./trainer-form.component.css']
 })
 export class TrainerFormComponent implements OnInit {
+submitted= false;
 
   constructor(private fb: FormBuilder,
     private router: Router, private toastr:NotificationService) { }
@@ -23,18 +24,27 @@ export class TrainerFormComponent implements OnInit {
       name: ['', Validators.required],
       technologyId: [''],
       employeeId: [''],
-      phone: [''],
-      email: [''],
+      phone: ['', Validators.required],
+      email: ['', Validators.required],
       description: [''],
       id :[''],
     });
   }
 
   createForm() {
-    console.log(this.trainerForm.value);
-    this.toastr.showSuccess("Submitted Successfully !!", "")
+    this.submitted = true;
+    if (this.trainerForm.valid) {
+      this.toastr.showSuccess("Submitted Successfully !!", "")
+      console.table(this.trainerForm.value)
+    }
+    else{
+      this.toastr.showError("Please Enter the details !!", "")
+    }
   }
  navigateToParent(){
    this.router.navigate(['/dmt/trainer'])
+ }
+ get trainerFormControl(){
+   return this.trainerForm.controls
  }
 }

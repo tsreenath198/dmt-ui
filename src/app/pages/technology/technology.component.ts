@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RouteConstants } from 'app/constants/route-contants';
 import { TechnologyModel } from 'app/models/technology-model';
 import { ConfirmationDialogService } from 'app/services/confirmation-dialog/confirmation-dialog.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 import { TechnologyService } from 'app/services/technology/technology.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class TechnologyComponent implements OnInit {
   public routeConstants = new RouteConstants();
 
   constructor(private router: Router,
-    private technologyService: TechnologyService, private confirmationDialogService: ConfirmationDialogService) { }
+    private technologyService: TechnologyService, private confirmationDialogService: ConfirmationDialogService, private toastr:NotificationService) { }
 
   serachString: string = " ";
   _technologyDataSource: TechnologyModel;
@@ -52,7 +53,7 @@ export class TechnologyComponent implements OnInit {
       .then((confirmed) => {
         if (confirmed) {
           this.technologyDataSource = this.technologyDataSource.filter(technology => technology.id !== id);
-          console.log("deleted Succesfully")
+          this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

@@ -6,10 +6,10 @@
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
                         placeholder="Enter name" formControlName="name">
-                    <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
-                        <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
-                        <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
-                    </div>
+                    <span class="text-danger"
+                        *ngIf="(traineeFormControl.name?.touched || submitted) && traineeFormControl.name.errors?.required">
+                        Name is required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -17,6 +17,10 @@
                     <label for="email">Email</label>
                     <input type="email" class="form-control" formControlName="email" id="email"
                         aria-describedby="emailHelp" placeholder="Enter email">
+                    <span class="text-danger"
+                        *ngIf="(traineeFormControl.email.touched || submitted) && traineeFormControl.email.errors?.required">
+                        Email is required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">

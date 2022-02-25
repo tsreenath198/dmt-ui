@@ -9,7 +9,7 @@ import { NotificationService } from 'app/services/notification/notification.serv
   styleUrls: ['./trainee-form.component.css']
 })
 export class TraineeFormComponent implements OnInit {
- 
+  submitted = false;
 
   constructor(private fb:FormBuilder,
     private router:Router,
@@ -25,7 +25,7 @@ export class TraineeFormComponent implements OnInit {
       clientId: [''],
       skypeId: [''],
       alternativePhone: [''],
-      email: [''],
+      email: ['', Validators.required],
       technologyId: [''],
       timeZone  : [''],
       phone: [''],
@@ -38,18 +38,19 @@ export class TraineeFormComponent implements OnInit {
     });
   }
 createForm(){
-  //console.log(this.traineeForm.value)
-  if(this.traineeForm == null){
-      this.toastr.showError(" Error !!", "")
-  }
- else{
-  this.toastr.showSuccess("Submitted Successfully !!", "")
- }
+  this.submitted = true;
+    if (this.traineeForm.valid) {
+      this.toastr.showSuccess("Submitted Successfully !!", "")
+      console.table(this.traineeForm.value)
+    }
+    else{
+      this.toastr.showError("Please Enter the details !!", "")
+    }
 }
   navigateToParent(){
     this.router.navigate(['/dmt/trainee'])
   }
-  get f(){
+  get traineeFormControl(){
     return this.traineeForm.controls;
   }
 }

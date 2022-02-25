@@ -13,6 +13,7 @@ export class TechnologyFormComponent implements OnInit {
     private router: Router, private toastr:NotificationService) {
   }
   public technologyForm: FormGroup
+  submitted = false;
   ngOnInit(): void {
     this.buildForm();
   }
@@ -24,10 +25,19 @@ export class TechnologyFormComponent implements OnInit {
     });
   }
   createForm() {
-    console.log(this.technologyForm.value);
-    this.toastr.showSuccess("Submitted Successfully !!", "")
+    this.submitted = true;
+    if (this.technologyForm.valid) {
+      this.toastr.showSuccess("Submitted Successfully !!", "")
+      console.table(this.technologyForm.value)
+    }
+    else{
+      this.toastr.showError("Please Enter the details !!", "")
+    }
   }
   navigateToParent() {
     this.router.navigate(['/dmt/technology']);
+  }
+  get technologyFormControl(){
+    return this.technologyForm.controls;
   }
 }

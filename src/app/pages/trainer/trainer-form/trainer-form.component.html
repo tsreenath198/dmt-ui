@@ -6,6 +6,10 @@
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
                         placeholder="Enter name" formControlName="name">
+                    <span class="text-danger"
+                        *ngIf="(trainerFormControl.name?.touched || submitted) && trainerFormControl.name.errors?.required">
+                        Name is required
+                    </span>
                 </div>
             </div>
 
@@ -38,6 +42,10 @@
                     <label for="phone">Phone</label>
                     <input type="text" class="form-control" formControlName="phone" id="phone"
                         aria-describedby="phoneHelp" placeholder="Enter phone">
+                        <span class="text-danger"
+                        *ngIf="(trainerFormControl.phone?.touched || submitted) && trainerFormControl.phone.errors?.required">
+                        Phone Number is required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -45,6 +53,10 @@
                     <label for="email">Email</label>
                     <input type="email" class="form-control" formControlName="email" id="email"
                         aria-describedby="emailHelp" placeholder="Enter email">
+                    <span class="text-danger"
+                        *ngIf="(trainerFormControl.email.touched || submitted) && trainerFormControl.email.errors?.required">
+                        Email is required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -58,6 +70,6 @@
         <button type="submit" class="btn btn-primary">Submit</button>
         <button class="btn btn-primary" type="reset">Clear</button>
         <button class="btn btn-primary" (click)="navigateToParent()">Back</button>
-        
+
     </form>
 </div>
