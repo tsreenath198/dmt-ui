@@ -28,6 +28,10 @@
                     <label for="phone">Phone</label>
                     <input type="text" class="form-control" formControlName="phone" id="phone"
                         aria-describedby="phoneHelp" placeholder="Enter phone">
+                    <span class="text-danger"
+                        *ngIf="(traineeFormControl.phone.touched || submitted) && traineeFormControl.phone.errors?.required">
+                        Phone Number is required
+                    </span>
                 </div>
             </div>
         </div>
@@ -41,6 +45,10 @@
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(traineeFormControl.clientId.touched || submitted) && traineeFormControl.clientId.errors?.required">
+                        Please Select Client
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -52,6 +60,10 @@
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(traineeFormControl.technologyId.touched || submitted) && traineeFormControl.technologyId.errors?.required">
+                        Please Select Technology
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -92,8 +104,8 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="batch">Status</label>
-                    <select class="custom-select" formControlName="batchId">
+                    <label for="status">Status</label>
+                    <select class="custom-select" formControlName="status">
                         <option selected>Select Status of Trainee</option>
                         <option value="1">Not Started</option>
                         <option value="2">In Progress</option>
@@ -103,8 +115,8 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="batch">Paid Status</label>
-                    <select class="custom-select" formControlName="batchId">
+                    <label for="paidStatus">Paid Status</label>
+                    <select class="custom-select" formControlName="paidStatus">
                         <option selected>Select Status of Payment</option>
                         <option value="1">Not Started</option>
                         <option value="2">In Progress</option>
@@ -112,17 +124,24 @@
                         <option value="2">Payment Pending</option>
                         <option value="3">Closed</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(traineeFormControl.paidStatus.touched || submitted) && traineeFormControl.paidStatus.errors?.required">
+                        Please Select Paid Status
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="batch">Received Status</label>
-                    <select class="custom-select" formControlName="batchId">
+                    <label for="receivedStatus">Received Status</label>
+                    <select class="custom-select" formControlName="receivedStatus">
                         <option selected>Select Status of Payment</option>
                         <option value="1">Yes</option>
                         <option value="2">No</option>
-
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(traineeFormControl.receivedStatus.touched || submitted) && traineeFormControl.receivedStatus.errors?.required">
+                        Please Select Received Status 
+                    </span>
                 </div>
             </div>
         </div>

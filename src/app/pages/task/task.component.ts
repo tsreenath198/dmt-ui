@@ -38,7 +38,7 @@ export class TaskComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.taskDataSource = this.taskDataSource.filter(technology => technology.id !== id);
+          this.taskDataSource = this.taskDataSource.filter(task => task.id !== id);
           this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }

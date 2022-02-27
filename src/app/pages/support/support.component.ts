@@ -40,7 +40,7 @@ export class SupportComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.supportDataSource = this.supportDataSource.filter(technology => technology.id !== id);
+          this.supportDataSource = this.supportDataSource.filter(support => support.id !== id);
           this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }

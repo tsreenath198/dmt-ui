@@ -41,7 +41,7 @@ public routeConstants = new RouteConstants();
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.courseDataSourse = this.courseDataSourse.filter(technology => technology.id !== id);
+          this.courseDataSourse = this.courseDataSourse.filter(course => course.id !== id);
           this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }

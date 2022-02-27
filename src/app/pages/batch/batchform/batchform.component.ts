@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NotificationService } from 'app/services/notification/notification.service';
 
@@ -13,6 +13,7 @@ export class BatchformComponent implements OnInit {
   constructor(private fb:FormBuilder,
     private router:Router, private toastr:NotificationService) { }
   public batchForm:FormGroup;
+  submitted = true;
 
   ngOnInit(): void {
     this.buildForm();
@@ -20,7 +21,7 @@ export class BatchformComponent implements OnInit {
   buildForm() {
     this.batchForm = this.fb.group({
       
-      batch: [''],
+      batch: ['', Validators.required],
       technologyId: [''],
       traineeId: [''],
       startDate: [''],
@@ -34,11 +35,21 @@ export class BatchformComponent implements OnInit {
       description: [''],
     });
   }
+ 
 createForm(){
-  console.log(this.batchForm.value);
+  this.submitted = true;
+  if(this.batchForm){
   this.toastr.showSuccess("Submitted Successfully !!", "")
+  console.table(this.batchForm.value);
+  }
+  else{
+    this.toastr.showError("Please enter the details", "")
+  }
 }
 navigateToParent() {
   this.router.navigate(['/dmt/batch']);
 }
+  get batchFormControl(){
+    return this.batchForm.controls;
+  }
 }

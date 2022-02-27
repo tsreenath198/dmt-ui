@@ -6,6 +6,10 @@
                     <label for="batch">Batch</label>
                     <input type="text" class="form-control" id="batch" aria-describedby="Help"
                         placeholder="Enter Batch number" formControlName="batch">
+                        <span class="text-danger"
+                        *ngIf="(batchFormControl.batch.touched || submitted) && batchFormControl.batch.errors?.required">
+                        Batch Number is required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">

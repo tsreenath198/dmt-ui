@@ -54,7 +54,7 @@ public routeConstants = new RouteConstants();
       .then((confirmed) => {
         
         if (confirmed) {
-          this.traineeDataSource = this.traineeDataSource.filter(technology => technology.id !== id);;
+          this.traineeDataSource = this.traineeDataSource.filter(trainee => trainee.id !== id);;
           this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }

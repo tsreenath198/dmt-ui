@@ -41,7 +41,7 @@ export class EmployeeComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.employeeDataSource = this.employeeDataSource.filter(technology => technology.id !== id);
+          this.employeeDataSource = this.employeeDataSource.filter(employee => employee.id !== id);
           this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }

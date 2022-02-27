@@ -43,7 +43,7 @@ export class BatchComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : '+ id)
       .then((confirmed) => {
         if (confirmed) {
-          this.batchDataSource = this.batchDataSource.filter(technology => technology.id !== id);
+          this.batchDataSource = this.batchDataSource.filter(batch => batch.id !== id);
           this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }

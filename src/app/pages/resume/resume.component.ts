@@ -41,7 +41,7 @@ export class ResumeComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.resumeDataSource = this.resumeDataSource.filter(technology => technology.id !== id);
+          this.resumeDataSource = this.resumeDataSource.filter(resume => resume.id !== id);
           this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }

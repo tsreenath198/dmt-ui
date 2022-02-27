@@ -21,18 +21,18 @@ export class TraineeFormComponent implements OnInit {
   }
   buildForm() {
     this.traineeForm = this.fb.group({
-      name: new FormControl('', [Validators.required ,Validators.minLength(3)]),
-      clientId: [''],
+      name: ['',Validators.required],
+      clientId: ['', Validators.required],
       skypeId: [''],
       alternativePhone: [''],
       email: ['', Validators.required],
-      technologyId: [''],
+      technologyId: ['', Validators.required],
       timeZone  : [''],
-      phone: [''],
+      phone: ['', Validators.required],
       batchId: [''],
       status: [''],
-      paidStatus: [''],
-      receivedStatus: [''],
+      paidStatus: ['', Validators.required],
+      receivedStatus: ['', Validators.required],
       id: [''],
       description: [''],
     });

@@ -40,7 +40,7 @@ export class SupportInteractionComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : ' + id)
       .then((confirmed) => {
         if (confirmed) {
-          this.supportinteractionDataSource = this.supportinteractionDataSource.filter(technology => technology.id !== id);
+          this.supportinteractionDataSource = this.supportinteractionDataSource.filter(supportInteraction => supportInteraction.id !== id);
           this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }

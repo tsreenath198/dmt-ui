@@ -45,7 +45,7 @@ export class TrainerComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : '+ id)
       .then((confirmed) => {
         if (confirmed) {
-          this.trainerDataSource = this.trainerDataSource.filter(technology => technology.id !== id);;
+          this.trainerDataSource = this.trainerDataSource.filter(trainer => trainer.id !== id);;
           this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }

@@ -41,7 +41,7 @@ export class ClientComponent implements OnInit {
     this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to Delete Id : '+ id)
       .then((confirmed) => {
         if (confirmed) {
-          this.clientDataSource = this.clientDataSource.filter(technology => technology.id !== id);
+          this.clientDataSource = this.clientDataSource.filter(client => client.id !== id);
           this.toastr.showSuccess("Deleted successfully !!", "")
         }
       }
