@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-salary-form',
@@ -9,27 +10,38 @@ import { Router } from '@angular/router';
 })
 export class SalaryFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder,
-    private router:Router) { }
-  public salaryForm:FormGroup;
+  constructor(private fb: FormBuilder,
+    private router: Router, private toastr: NotificationService) { }
+  public salaryForm: FormGroup;
+  submitted = false;
 
   ngOnInit(): void {
     this.buildForm();
   }
   buildForm() {
     this.salaryForm = this.fb.group({
-      
-      employeeId: [''],
-      month: [''],
-      year: [''],
-      salary  : [''],
+
+      employeeId: ['', Validators.required],
+      month: ['', Validators.required],
+      year: ['', Validators.required],
+      salary: [''],
       description: [''],
     });
   }
-createForm(){
-  console.log(this.salaryForm.value)
-}
-navigateToParent() {
-  this.router.navigate(['/dmt/salary']);
-}
+  createForm() {
+    this.submitted = true;
+    if (this.salaryForm) {
+      this.toastr.showSuccess("Submitted Successfully !!", "")
+      console.table(this.salaryForm.value);
+    }
+    else {
+      this.toastr.showError("Please enter the details", "")
+    }
+  }
+  navigateToParent() {
+    this.router.navigate(['/dmt/salary']);
+  }
+  get salaryFormControl(){
+    return this.salaryForm.controls
+  }
 }

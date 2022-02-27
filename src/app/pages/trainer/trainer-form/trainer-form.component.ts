@@ -22,8 +22,8 @@ submitted= false;
   buildForm() {
     this.trainerForm = this.fb.group({
       name: ['', Validators.required],
-      technologyId: [''],
-      employeeId: [''],
+      technologyId: ['', Validators.required],
+      employeeId: ['',Validators.required],
       phone: ['', Validators.required],
       email: ['', Validators.required],
       description: [''],

@@ -10,13 +10,21 @@
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(salaryFormControl.employeeId.touched || submitted) && salaryFormControl.employeeId.errors?.required">
+                        Please Select Employee
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="month">Month</label>
-                    <input type="month" class="form-control" formControlName="month" id="month"
-                        aria-describedby="Help" placeholder="Enter the month">
+                    <input type="month" class="form-control" formControlName="month" id="month" aria-describedby="Help"
+                        placeholder="Enter the month">
+                    <span class="text-danger"
+                        *ngIf="(salaryFormControl.month.touched || submitted) && salaryFormControl.month.errors?.required">
+                        Month is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -24,6 +32,10 @@
                     <label for="year">Year</label>
                     <input type="month" class="form-control" formControlName="year" id="year" aria-describedby="Help"
                         placeholder="Enter the year">
+                    <span class="text-danger"
+                        *ngIf="(salaryFormControl.year.touched || submitted) && salaryFormControl.year.errors?.required">
+                        Year is Required
+                    </span>
                 </div>
             </div>
         </div>
@@ -31,8 +43,8 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="salary">Salary</label>
-                    <input type="text" class="form-control" formControlName="salary" id="salary"
-                        aria-describedby="Help" placeholder="Enter the salary">
+                    <input type="text" class="form-control" formControlName="salary" id="salary" aria-describedby="Help"
+                        placeholder="Enter the salary">
                 </div>
             </div>
             <div class="col-md-4">

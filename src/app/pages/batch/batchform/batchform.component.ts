@@ -22,15 +22,15 @@ export class BatchformComponent implements OnInit {
     this.batchForm = this.fb.group({
       
       batch: ['', Validators.required],
-      technologyId: [''],
-      traineeId: [''],
-      startDate: [''],
-      endDate: [''],
+      technologyId: ['', Validators.required],
+      trainerId: ['', Validators.required],
+      startDate: ['', Validators.required],
+      endDate: ['', Validators.required],
       durationField  : [''],
       allottedTime: [''],
-      status: [''],
-      paidStatus: [''],
-      receivedStatus: [''],
+      status: ['', Validators.required],
+      paidStatus: ['', Validators.required],
+      receivedStatus: ['', Validators.required],
       id:[''],
       description: [''],
     });

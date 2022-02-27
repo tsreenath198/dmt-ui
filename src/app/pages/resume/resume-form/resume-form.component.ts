@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-resume-form',
@@ -11,8 +12,9 @@ export class ResumeFormComponent implements OnInit {
   ;
 
   constructor(private fb: FormBuilder,
-    private router:Router) { }
+    private router: Router, private toastr: NotificationService) { }
   public resumeForm: FormGroup;
+  submitted = false;
 
   ngOnInit(): void {
     this.buildForm();
@@ -21,19 +23,31 @@ export class ResumeFormComponent implements OnInit {
   buildForm() {
     this.resumeForm = this.fb.group({
       employeeId: [''],
-      traineeId: [''],
+      traineeId: ['', Validators.required],
       date: [''],
-      paidStatus: [''],
-      receivedStatus: [''],
+      paidStatus: ['', Validators.required],
+      receivedStatus: ['', Validators.required],
       description: [''],
       id: [''],
     });
   }
 
   createForm() {
-    console.log(this.resumeForm.value);
+    this.submitted = true;
+    if (this.resumeForm) {
+      this.toastr.showSuccess("Submitted Successfully !!", "")
+      console.table(this.resumeForm.value);
+    }
+    else {
+      this.toastr.showError("Please enter the details", "")
+    }
   }
   navigateToParent() {
     this.router.navigate(['/dmt/resume']);
+  }
+
+  
+  get resumeFormControl() {
+    return this.resumeForm.controls
   }
 }

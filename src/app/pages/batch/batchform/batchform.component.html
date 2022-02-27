@@ -6,7 +6,7 @@
                     <label for="batch">Batch</label>
                     <input type="text" class="form-control" id="batch" aria-describedby="Help"
                         placeholder="Enter Batch number" formControlName="batch">
-                        <span class="text-danger"
+                    <span class="text-danger"
                         *ngIf="(batchFormControl.batch.touched || submitted) && batchFormControl.batch.errors?.required">
                         Batch Number is required
                     </span>
@@ -21,17 +21,25 @@
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(batchFormControl.technologyId.touched || submitted) && batchFormControl.technologyId.errors?.required">
+                        Batch Number is required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="traineeId">Trainer</label>
-                    <select class="custom-select" formControlName="traineeId">
+                    <label for="trainerId">Trainer</label>
+                    <select class="custom-select" formControlName="trainerId">
                         <option selected>Open this select menu</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(batchFormControl.trainerId.touched || submitted) && batchFormControl.trainerId.errors?.required">
+                        Please Select Trainer
+                    </span>
                 </div>
             </div>
         </div>
@@ -42,6 +50,10 @@
                     <input type="date" class="form-control" formControlName="startDate" id="startDate"
                         aria-describedby="Help" placeholder="Enter Start Date ">
                 </div>
+                <span class="text-danger"
+                        *ngIf="(batchFormControl.startDate.touched || submitted) && batchFormControl.startDate.errors?.required">
+                        Please Enter Batch Start's Date
+                    </span>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
@@ -49,6 +61,10 @@
                     <input type="date" class="form-control" formControlName="endDate" id="endDate"
                         aria-describedby="Help" placeholder="Enter End Date ">
                 </div>
+                <span class="text-danger"
+                        *ngIf="(batchFormControl.endDate.touched || submitted) && batchFormControl.endDate.errors?.required">
+                        Please Enter Batch End's Date
+                    </span>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
@@ -56,7 +72,7 @@
                     <input type="text" class="form-control" formControlName="durationField" id="durationField"
                         aria-describedby="phoneHelp" placeholder="Enter duration time">
                 </div>
-            </div>  
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -68,6 +84,10 @@
                         <option value="2">In Progress</option>
                         <option value="3">Closed</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(batchFormControl.status.touched || submitted) && batchFormControl.status.errors?.required">
+                        Select Status
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -81,6 +101,10 @@
                         <option value="2">Payment Pending</option>
                         <option value="3">Closed</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(batchFormControl.paidStatus.touched || submitted) && batchFormControl.paidStatus.errors?.required">
+                        Select Paid Status
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -90,8 +114,11 @@
                         <option selected>Select Status of Payment</option>
                         <option value="1">Yes</option>
                         <option value="2">No</option>
-                        
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(batchFormControl.receivedStatus.touched || submitted) && batchFormControl.receivedStatus.errors?.required">
+                        Select Received Status
+                    </span>
                 </div>
             </div>
         </div>

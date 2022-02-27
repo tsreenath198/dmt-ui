@@ -1,6 +1,6 @@
 [
     {
-        "Endclient":"Endclient",
+        "endClient":"Endclient",
         "quetion":"quetion",
         "answers":"answers",
         "id":"1",
@@ -8,7 +8,7 @@
         "activeFlag":"0"
     },
     {
-        "Endclient":"2",
+        "endClient":"Endclient",
         "quetion":"quetion",
         "answers":"answers",
         "id":"2",
@@ -16,7 +16,7 @@
         "activeFlag":"0"
     },
     {
-        "Endclient":"3",
+        "endClient":"EndClient",
         "quetion":"quetion",
         "answers":"answers",
         "id":"3",
@@ -24,7 +24,7 @@
         "activeFlag":"0"
     },
     {
-        "Endclient":"4",
+        "endClient":"Endclient",
         "quetion":"quetion",
         "answers":"answers",
         "id":"4",
@@ -32,7 +32,7 @@
         "activeFlag":"0"
     },
     {
-        "Endclient":"5",
+        "endClient":"Endclient",
         "quetion":"quetion",
         "answers":"answers",
         "id":"5",

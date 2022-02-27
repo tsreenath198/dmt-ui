@@ -13,6 +13,7 @@ export class ClientFormComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private router:Router , private toastr:NotificationService) { }
   public clientForm: FormGroup;
+  submitted = false;
 
   ngOnInit(): void {
     this.buildForm();
@@ -23,19 +24,28 @@ export class ClientFormComponent implements OnInit {
       name: ['', Validators.required],
       address: [''],
       description: [''],
-      contact: [''],
-      email: [''],
-      designation: [''],
-      phone: [''],
+      contact: ['', Validators.required],
+      email: ['', Validators.required],
+      designation: ['', Validators.required],
+      phone: ['', Validators.required],
     });
   }
 
   createForm() {
-    console.log(this.clientForm.value);
-    this.toastr.showSuccess("Submitted Successfully !!", "")
+    this.submitted = true;
+  if(this.clientForm){
+  this.toastr.showSuccess("Submitted Successfully !!", "")
+  console.table(this.clientForm.value);
+  }
+  else{
+    this.toastr.showError("Please enter the details", "")
+  }
   }
   navigateToParent() {
     this.router.navigate(['/dmt/client']);
+  }
+  get clientFormControl(){
+    return this.clientForm.controls
   }
 }
 

@@ -10,6 +10,10 @@
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(supportFormControl.trainerId.touched || submitted) && supportFormControl.trainerId.errors?.required">
+                        Please Select Trainer
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -21,6 +25,10 @@
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(supportFormControl.traineeId.touched || submitted) && supportFormControl.traineeId.errors?.required">
+                        Please Select Trainee
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -37,6 +45,10 @@
                     <label for="startDate">Start Date</label>
                     <input type="date" class="form-control" formControlName="startDate" id="startDate"
                         aria-describedby="Help" placeholder="Enter Start Date ">
+                        <span class="text-danger"
+                        *ngIf="(supportFormControl.startDate.touched || submitted) && supportFormControl.startDate.errors?.required">
+                        Start Date is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -44,6 +56,10 @@
                     <label for="endDate">End Date</label>
                     <input type="date" class="form-control" formControlName="endDate" id="endDate"
                         aria-describedby="Help" placeholder="Enter End Date ">
+                        <span class="text-danger"
+                        *ngIf="(supportFormControl.endDate.touched || submitted) && supportFormControl.endDate.errors?.required">
+                        Paid Status is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -77,6 +93,10 @@
                         <option value="2">Payment Pending</option>
                         <option value="3">Closed</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(supportFormControl.paidStatus.touched || submitted) && supportFormControl.paidStatus.errors?.required">
+                        Paid Status is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -86,8 +106,11 @@
                         <option selected>Select Status of Payment</option>
                         <option value="1">Yes</option>
                         <option value="2">No</option>
-                        
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(supportFormControl.receivedStatus.touched || submitted) && supportFormControl.receivedStatus.errors?.required">
+                        Received Status is Required
+                    </span>
                 </div>
             </div>
         </div>
@@ -99,8 +122,11 @@
                         <option selected>Select Paid By </option>
                         <option value="1">Consultant</option>
                         <option value="2">Consultency</option>
-                        
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(supportFormControl.paidStatus.touched || submitted) && supportFormControl.paidStatus.errors?.required">
+                       Paid By is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">

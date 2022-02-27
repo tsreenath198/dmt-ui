@@ -3,13 +3,13 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="client">Client</label>
-                    <select class="custom-select" formControlName="clientId">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+                    <label for="endClient">End Client</label>
+                    <input type="text" class="form-control" formControlName="endClient" id="endClient"
+                        aria-describedby="Help" placeholder="Enter Name of End Client">
+                    <span class="text-danger"
+                        *ngIf="(quetionFormControl.endClient.touched || submitted) && quetionFormControl.endClient.errors?.required">
+                        Name is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -17,6 +17,10 @@
                     <label for="quetion">Quetion</label>
                     <input type="text" class="form-control" formControlName="quetion" id="quetion"
                         aria-describedby="Help" placeholder="Enter the quetion">
+                    <span class="text-danger"
+                        *ngIf="(quetionFormControl.quetion.touched || submitted) && quetionFormControl.quetion.errors?.required">
+                        Quetion is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">

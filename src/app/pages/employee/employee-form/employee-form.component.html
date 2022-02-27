@@ -8,7 +8,7 @@
                         placeholder="Enter Invoice No" formControlName="invoiceNo">
                 </div>
             </div>
-            
+
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="traineeId">Trainee</label>
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="row"> 
+        <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="receivedAmount">Received Amount</label>
@@ -64,6 +64,10 @@
                     <label for="name">Employee Name</label>
                     <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
                         placeholder="Enter Name" formControlName="name">
+                    <span class="text-danger"
+                        *ngIf="(employeeFormControl.name.touched || submitted) && employeeFormControl.name.errors?.required">
+                        name is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -71,6 +75,10 @@
                     <label for="phone">Phone</label>
                     <input type="phone" class="form-control" formControlName="phone" id="phone"
                         aria-describedby="phoneHelp" placeholder="Enter phone">
+                    <span class="text-danger"
+                        *ngIf="(employeeFormControl.phone.touched || submitted) && employeeFormControl.phone.errors?.required">
+                        Phone Number is Required
+                    </span>
                 </div>
             </div>
         </div>
@@ -80,6 +88,10 @@
                     <label for="email">Email</label>
                     <input type="email" class="form-control" formControlName="email" id="email"
                         aria-describedby="emailHelp" placeholder="Enter email">
+                    <span class="text-danger"
+                        *ngIf="(employeeFormControl.email.touched || submitted) && employeeFormControl.email.errors?.required">
+                        Email is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">

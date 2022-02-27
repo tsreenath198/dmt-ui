@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup,  } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-quetion-form',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 export class QuetionFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
-    private router:Router) { }
+    private router: Router, private toastr: NotificationService) { }
   public quetionForm: FormGroup;
+  submitted = true;
 
   ngOnInit(): void {
     this.buildForm();
@@ -19,17 +21,27 @@ export class QuetionFormComponent implements OnInit {
 
   buildForm() {
     this.quetionForm = this.fb.group({
-      clientId: [''],
-      quetion: [''],
+      endClient: ['', Validators.required],
+      quetion: ['', Validators.required],
       answers: [''],
-      description: ['']                                                                                                                   
+      description: ['']
     });
   }
 
-  createForm(){
-    console.log(this.quetionForm.value);
+  createForm() {
+    this.submitted = true;
+    if (this.quetionForm) {
+      this.toastr.showSuccess("Submitted Successfully !!", "")
+      console.table(this.quetionForm.value);
+    }
+    else {
+      this.toastr.showError("Please enter the details", "")
+    }
   }
-  navigateToParent(){
+  navigateToParent() {
     this.router.navigate(['/dmt/quetion'])
+  }
+  get quetionFormControl() {
+    return this.quetionForm.controls;
   }
 }

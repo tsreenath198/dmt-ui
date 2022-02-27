@@ -10,6 +10,10 @@
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(resumeFormControl.traineeId.touched || submitted) && resumeFormControl.traineeId.errors?.required">
+                        Please Select Trainee
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -43,6 +47,10 @@
                         <option value="1">Payment Pending</option>
                         <option value="2">Closed</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(resumeFormControl.paidStatus.touched || submitted) && resumeFormControl.paidStatus.errors?.required">
+                        Paid Status is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -53,6 +61,10 @@
                         <option value="1">Yes</option>
                         <option value="2">No</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(resumeFormControl.receivedStatus.touched || submitted) && resumeFormControl.receivedStatus.errors?.required">
+                        Received Status is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">

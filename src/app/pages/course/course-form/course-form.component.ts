@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-course-form',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 export class CourseFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
-    private router:Router) { }
+    private router:Router, private toastr:NotificationService) { }
   public courseForm: FormGroup;
+  submitted = false;
 
   ngOnInit(): void {
     this.buildForm();
@@ -20,16 +22,26 @@ export class CourseFormComponent implements OnInit {
   buildForm() {
     this.courseForm = this.fb.group({
       name: ['', Validators.required],
-      technologyId: [''],
+      technologyId: ['', Validators.required],
       estimatedHours: [''],
       description: [''],
     });
   }
 
   createForm() {
-    console.log(this.courseForm.value);
+    this.submitted = true;
+    if(this.courseForm){
+    this.toastr.showSuccess("Submitted Successfully !!", "")
+    console.table(this.courseForm.value);
+    }
+    else{
+      this.toastr.showError("Please enter the details", "")
+    }
   }
   navigateToParent(){
     this.router.navigate(['/dmt/course'])
+  }
+  get courseFormControl(){
+    return this.courseForm.controls;
   }
 }

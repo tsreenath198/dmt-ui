@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-employee-form',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 export class EmployeeFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
-    private router:Router) { }
+    private router: Router, private toastr: NotificationService) { }
   public employeeForm: FormGroup;
+  submitted = false;
 
   ngOnInit(): void {
     this.buildForm();
@@ -27,17 +29,27 @@ export class EmployeeFormComponent implements OnInit {
       receivedDate: [''],
       supportStartDate: [''],
       supportEndDate: [''],
-      phone: [''],
-      email: [''],
-      id:[''],
+      phone: ['', Validators.required],
+      email: ['', Validators.required],
+      id: [''],
       description: [''],
     });
   }
 
   createForm() {
-    console.log(this.employeeForm.value);
+    this.submitted = true;
+    if (this.employeeForm) {
+      this.toastr.showSuccess("Submitted Successfully !!", "")
+      console.table(this.employeeForm.value);
+    }
+    else {
+      this.toastr.showError("Please enter the details", "")
+    }
   }
   navigateToParent() {
     this.router.navigate(['/dmt/employee']);
+  }
+  get employeeFormControl() {
+    return this.employeeForm.controls;
   }
 }

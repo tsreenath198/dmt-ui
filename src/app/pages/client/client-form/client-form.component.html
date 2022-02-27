@@ -6,6 +6,10 @@
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
                         placeholder="Enter name" formControlName="name">
+                    <span class="text-danger"
+                        *ngIf="(clientFormControl.name.touched || submitted) && clientFormControl.name.errors?.required">
+                        Name is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -31,6 +35,10 @@
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
                         placeholder="Enter name" formControlName="name">
+                    <span class="text-danger"
+                        *ngIf="(clientFormControl.name.touched || submitted) && clientFormControl.name.errors?.required">
+                        Name is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-3">
@@ -38,6 +46,10 @@
                     <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" aria-describedby="Help"
                         placeholder="Enter Email" formControlName="email">
+                    <span class="text-danger"
+                        *ngIf="(clientFormControl.email.touched || submitted) && clientFormControl.email.errors?.required">
+                        Email is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-3">
@@ -45,6 +57,10 @@
                     <label for="designation">Designation</label>
                     <input type="text" class="form-control" id="designation" aria-describedby="Help"
                         placeholder="Enter Designation" formControlName="designation">
+                    <span class="text-danger"
+                        *ngIf="(clientFormControl.designation.touched || submitted) && clientFormControl.designation.errors?.required">
+                        Designation is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-3">
@@ -52,6 +68,10 @@
                     <label for="phone">Phone</label>
                     <input type="text" class="form-control" id="phone" aria-describedby="Help"
                         placeholder="Enter Phone Number" formControlName="phone">
+                    <span class="text-danger"
+                        *ngIf="(clientFormControl.phone.touched || submitted) && clientFormControl.phone.errors?.required">
+                        Phone Number is Required
+                    </span>
                 </div>
             </div>
         </div>

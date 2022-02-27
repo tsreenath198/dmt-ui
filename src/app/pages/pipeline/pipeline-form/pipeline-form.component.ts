@@ -20,9 +20,9 @@ export class PipelineFormComponent implements OnInit {
   buildForm() {
     this.pipelineForm = this.fb.group({
       name: ['', Validators.required],
-      phone: [''],
-      email: [''],
-      requirements: [''],
+      phone: ['', Validators.required],
+      email: ['', Validators.required],
+      requirements: ['', Validators.required],
       description: [''],
     });
   }
@@ -32,6 +32,9 @@ export class PipelineFormComponent implements OnInit {
   }
   navigateToParent(){
     this.router.navigate(['/dmt/pipeline'])
+  }
+  get pipelineFormControl(){
+    return this.pipelineForm.controls;
   }
 }
 

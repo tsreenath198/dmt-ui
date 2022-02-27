@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-task-form',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 export class TaskFormComponent implements OnInit {
 
   constructor(private fb:FormBuilder,
-    private router:Router) { }
+    private router:Router, private toastr:NotificationService) { }
   public taskForm:FormGroup;
+  submitted = true;
 
   ngOnInit(): void {
     this.buildForm();
@@ -19,7 +21,7 @@ export class TaskFormComponent implements OnInit {
   buildForm() {
     this.taskForm = this.fb.group({
       id:[''],
-      employeeId: [''],
+      employeeId: ['', Validators.required],
       category: [''],
       status: [''],
       estimatedTime  : [''],
@@ -28,9 +30,19 @@ export class TaskFormComponent implements OnInit {
     });
   }
 createForm(){
-  console.log(this.taskForm.value)
+  this.submitted = true;
+    if (this.taskForm) {
+      this.toastr.showSuccess("Submitted Successfully !!", "")
+      console.table(this.taskForm.value);
+    }
+    else {
+      this.toastr.showError("Please enter the details", "")
+    }
 }
 navigateToParent(){
   this.router.navigate(['/dmt/task'])
 }
+ get taskFormControl(){
+   return this.taskForm.controls
+ }
 }

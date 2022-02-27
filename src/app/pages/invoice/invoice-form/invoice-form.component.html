@@ -4,8 +4,12 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="no">Invoise No </label>
-                    <input type="text" class="form-control" formControlName="no" id="no"
-                        aria-describedby="Help" placeholder="Enter Invoise No ">
+                    <input type="text" class="form-control" formControlName="no" id="no" aria-describedby="Help"
+                        placeholder="Enter Invoise No ">
+                    <span class="text-danger"
+                        *ngIf="(invoiceFormControl.no.touched || submitted) && invoiceFormControl.no.errors?.required">
+                        Invoice Number is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -40,13 +44,21 @@
                     <label for="receivedDate">Received Date</label>
                     <input type="date" class="form-control" formControlName="receivedDate" id="receivedDate"
                         aria-describedby="Help" placeholder="Enter Received Date">
+                    <span class="text-danger"
+                        *ngIf="(invoiceFormControl.receivedDate.touched || submitted) && invoiceFormControl.receivedDate.errors?.required">
+                        Received Date is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="supportStartDate">Support Start Date</label>
-                    <input type="date" class="form-control" formControlName="supportStartDate" id="supportStartDate" aria-describedby="Help"
-                        placeholder="Enter Support Started Date">
+                    <input type="date" class="form-control" formControlName="supportStartDate" id="supportStartDate"
+                        aria-describedby="Help" placeholder="Enter Support Started Date">
+                    <span class="text-danger"
+                        *ngIf="(invoiceFormControl.supportStartDate.touched || submitted) && invoiceFormControl.supportStartDate.errors?.required">
+                        Support Start Date is Required
+                    </span>
                 </div>
             </div>
         </div>
@@ -54,8 +66,12 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="supportEndDate">Support End Date</label>
-                    <input type="date" class="form-control" formControlName="supportEndDate" id="supportEndDate" aria-describedby="Help"
-                        placeholder="Enter Support Ended Date">
+                    <input type="date" class="form-control" formControlName="supportEndDate" id="supportEndDate"
+                        aria-describedby="Help" placeholder="Enter Support Ended Date">
+                    <span class="text-danger"
+                        *ngIf="(invoiceFormControl.supportEndDate.touched || submitted) && invoiceFormControl.supportEndDate.errors?.required">
+                        Support End Date is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="employee">Employee</label>
+                    <label for="employeeId">Employee</label>
                     <select class="custom-select" formControlName="employeeId">
                         <option selected>Open this select menu</option>
                         <option value="1">One</option>
@@ -14,13 +14,17 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="trainee">Trainee</label>
+                    <label for="traineeId">Trainee</label>
                     <select class="custom-select" formControlName="traineeId">
                         <option selected>Open this select menu</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(interviewFormControl.traineeId.touched || submitted) && interviewFormControl.traineeId.errors?.required">
+                        Please Select Trainee
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -32,6 +36,10 @@
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(interviewFormControl.clientId.touched || submitted) && interviewFormControl.clientId.errors?.required">
+                        Please Select Client
+                    </span>
                 </div>
             </div>
         </div>
@@ -41,6 +49,10 @@
                     <label for="interviewDate">Interview Date</label>
                     <input type="date" class="form-control" formControlName="interviewDate" id="interviewDate"
                         aria-describedby="Help" placeholder="Enter Interview Date ">
+                    <span class="text-danger"
+                        *ngIf="(interviewFormControl.interviewDate.touched || submitted) && interviewFormControl.interviewDate.errors?.required">
+                        Interview Date is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -81,6 +93,10 @@
                         <option value="2">Payment Pending</option>
                         <option value="3">Closed</option>
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(interviewFormControl.paidStatus.touched || submitted) && interviewFormControl.paidStatus.errors?.required">
+                        Paid Status is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -90,8 +106,11 @@
                         <option selected>Select Status of Payment</option>
                         <option value="1">Yes</option>
                         <option value="2">No</option>
-                        
                     </select>
+                    <span class="text-danger"
+                        *ngIf="(interviewFormControl.receivedStatus.touched || submitted) && interviewFormControl.receivedStatus.errors?.required">
+                        Received Status is Required
+                    </span>
                 </div>
             </div>
         </div>

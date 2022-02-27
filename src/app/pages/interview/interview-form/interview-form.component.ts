@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NotificationService } from 'app/services/notification/notification.service';
 
@@ -13,6 +13,7 @@ export class InterviewFormComponent implements OnInit {
   constructor(private fb:FormBuilder,
     private router:Router,private toastr:NotificationService) { }
   public interviewForm:FormGroup;
+  submitted = true;
 
   ngOnInit(): void {
     this.buildForm();
@@ -21,25 +22,34 @@ export class InterviewFormComponent implements OnInit {
     this.interviewForm = this.fb.group({
       
       employeeId: [''],
-      traineeId: [''],
+      traineeId: ['', Validators.required],
       technologyId:[''],
-      clientId: [''],
-      interviewDate: [''],
+      clientId: ['', Validators.required],
+      interviewDate: ['' , Validators.required],
       endClient: [''],
       allotedTime  : [''],
       status: [''],
-      paidStatus: [''],
-      receivedStatus: [''],
+      paidStatus: ['', Validators.required],
+      receivedStatus: ['', Validators.required],
       id: [''],
       description: [''],
 
     });
   }
 createForm(){
-  console.log(this.interviewForm.value);
+  this.submitted = true;
+  if(this.interviewForm){
   this.toastr.showSuccess("Submitted Successfully !!", "")
+  console.table(this.interviewForm.value);
+  }
+  else{
+    this.toastr.showError("Please enter the details", "")
+  }
 }
 navigateToParent() {
   this.router.navigate(['/dmt/interview']);
+}
+get interviewFormControl(){
+  return this.interviewForm.controls;
 }
 }

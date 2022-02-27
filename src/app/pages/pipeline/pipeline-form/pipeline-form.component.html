@@ -7,12 +7,20 @@
                     <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
                         placeholder="Enter name" formControlName="name">
                 </div>
+                <span class="text-danger"
+                    *ngIf="(pipelineFormControl.name.touched || submitted) && pipelineFormControl.name.errors?.required">
+                    Name is Required
+                </span>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="phone">Phone</label>
                     <input type="text" class="form-control" formControlName="phone" id="phone"
                         aria-describedby="phoneHelp" placeholder="Enter phone">
+                    <span class="text-danger"
+                        *ngIf="(pipelineFormControl.phone.touched || submitted) && pipelineFormControl.phone.errors?.required">
+                        Phone Number is Required
+                    </span>
                 </div>
             </div>
             <div class="col-md-4">
@@ -20,9 +28,13 @@
                     <label for="email">Email</label>
                     <input type="email" class="form-control" formControlName="email" id="email"
                         aria-describedby="emailHelp" placeholder="Enter email">
+                    <span class="text-danger"
+                        *ngIf="(pipelineFormControl.email.touched || submitted) && pipelineFormControl.email.errors?.required">
+                        Email is Required
+                    </span>
                 </div>
-            </div>    
-        </div> 
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
