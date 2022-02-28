@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-pipeline-form',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 export class PipelineFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
-    private router:Router) { }
+    private router:Router, private toastr:NotificationService) { }
   public pipelineForm: FormGroup;
+  submitted = false;
 
   ngOnInit(): void {
     this.buildForm();
@@ -28,7 +30,14 @@ export class PipelineFormComponent implements OnInit {
   }
 
   createForm() {
-    console.log(this.pipelineForm.value);
+    this.submitted = true;
+    if (this.pipelineForm.valid) {
+      this.toastr.showSuccess("Submitted Successfully !!", "")
+      console.table(this.pipelineForm.value);
+    }
+    else {
+      this.toastr.showError("Please enter the details", "")
+    }
   }
   navigateToParent(){
     this.router.navigate(['/dmt/pipeline'])

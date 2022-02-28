@@ -30,7 +30,7 @@ export class CourseFormComponent implements OnInit {
 
   createForm() {
     this.submitted = true;
-    if(this.courseForm){
+    if(this.courseForm.valid){
     this.toastr.showSuccess("Submitted Successfully !!", "")
     console.table(this.courseForm.value);
     }

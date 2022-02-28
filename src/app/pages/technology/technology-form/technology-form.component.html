@@ -7,7 +7,7 @@
                     <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
                         placeholder="Enter name" formControlName="name">
                     <span class="text-danger"
-                        *ngIf="(technologyFormControl.name?.touched || submitted) && technologyFormControl.name.errors?.required">
+                        *ngIf="(technologyFormControl.name.touched || submitted) && technologyFormControl.name.errors?.required">
                         Name is required
                     </span>
                 </div>

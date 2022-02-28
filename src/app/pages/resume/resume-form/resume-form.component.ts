@@ -34,7 +34,7 @@ export class ResumeFormComponent implements OnInit {
 
   createForm() {
     this.submitted = true;
-    if (this.resumeForm) {
+    if (this.resumeForm.valid) {
       this.toastr.showSuccess("Submitted Successfully !!", "")
       console.table(this.resumeForm.value);
     }

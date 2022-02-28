@@ -45,7 +45,7 @@
                     <label for="startDate">Start Date</label>
                     <input type="date" class="form-control" formControlName="startDate" id="startDate"
                         aria-describedby="Help" placeholder="Enter Start Date ">
-                        <span class="text-danger"
+                    <span class="text-danger"
                         *ngIf="(supportFormControl.startDate.touched || submitted) && supportFormControl.startDate.errors?.required">
                         Start Date is Required
                     </span>
@@ -56,7 +56,7 @@
                     <label for="endDate">End Date</label>
                     <input type="date" class="form-control" formControlName="endDate" id="endDate"
                         aria-describedby="Help" placeholder="Enter End Date ">
-                        <span class="text-danger"
+                    <span class="text-danger"
                         *ngIf="(supportFormControl.endDate.touched || submitted) && supportFormControl.endDate.errors?.required">
                         Paid Status is Required
                     </span>
@@ -68,7 +68,7 @@
                     <input type="text" class="form-control" formControlName="endClient" id="endClient"
                         aria-describedby="Help" placeholder="Enter End client ">
                 </div>
-            </div>  
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -125,7 +125,7 @@
                     </select>
                     <span class="text-danger"
                         *ngIf="(supportFormControl.paidStatus.touched || submitted) && supportFormControl.paidStatus.errors?.required">
-                       Paid By is Required
+                        Paid By is Required
                     </span>
                 </div>
             </div>

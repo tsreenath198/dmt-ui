@@ -38,7 +38,7 @@ export class BatchformComponent implements OnInit {
  
 createForm(){
   this.submitted = true;
-  if(this.batchForm){
+  if(this.batchForm.valid){
   this.toastr.showSuccess("Submitted Successfully !!", "")
   console.table(this.batchForm.value);
   }

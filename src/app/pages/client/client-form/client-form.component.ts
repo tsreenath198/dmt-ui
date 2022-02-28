@@ -33,7 +33,7 @@ export class ClientFormComponent implements OnInit {
 
   createForm() {
     this.submitted = true;
-  if(this.clientForm){
+  if(this.clientForm.valid){
   this.toastr.showSuccess("Submitted Successfully !!", "")
   console.table(this.clientForm.value);
   }
@@ -45,7 +45,7 @@ export class ClientFormComponent implements OnInit {
     this.router.navigate(['/dmt/client']);
   }
   get clientFormControl(){
-    return this.clientForm.controls
+    return this.clientForm.controls;
   }
 }
 

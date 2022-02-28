@@ -31,7 +31,7 @@ export class TaskFormComponent implements OnInit {
   }
 createForm(){
   this.submitted = true;
-    if (this.taskForm) {
+    if (this.taskForm.valid) {
       this.toastr.showSuccess("Submitted Successfully !!", "")
       console.table(this.taskForm.value);
     }

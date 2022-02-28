@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-supportinteraction-form',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 export class SupportinteractionFormComponent implements OnInit {
 
   constructor(private fb:FormBuilder,
-    private router:Router) { }
+    private router:Router, private toastr:NotificationService) { }
   public supportinteractionForm:FormGroup;
+  submitted = false;
 
   ngOnInit(): void {
     this.buildForm();
@@ -19,18 +21,28 @@ export class SupportinteractionFormComponent implements OnInit {
   buildForm() {
     this.supportinteractionForm = this.fb.group({
       
-      traineeId: [''],
-      trainerId: [''],
+      traineeId: ['', Validators.required],
+      trainerId: ['', Validators.required],
       date: [''],
-      lead: [''],
+      lead: ['', Validators.required],
       count: [''],
       description: [''],
     });
   }
 createForm(){
-  console.log(this.supportinteractionForm.value)
+  this.submitted = true;
+    if (this.supportinteractionForm.valid) {
+      this.toastr.showSuccess("Submitted Successfully !!", "")
+      console.table(this.supportinteractionForm.value);
+    }
+    else {
+      this.toastr.showError("Please enter the details", "")
+    }
 }
 navigateToParent(){
   this.router.navigate(['/dmt/supportinteraction'])
+}
+get supportinteractionFormControl(){
+  return this.supportinteractionForm.controls
 }
 }

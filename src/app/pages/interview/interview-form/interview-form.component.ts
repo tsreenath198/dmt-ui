@@ -38,7 +38,7 @@ export class InterviewFormComponent implements OnInit {
   }
 createForm(){
   this.submitted = true;
-  if(this.interviewForm){
+  if(this.interviewForm.valid){
   this.toastr.showSuccess("Submitted Successfully !!", "")
   console.table(this.interviewForm.value);
   }

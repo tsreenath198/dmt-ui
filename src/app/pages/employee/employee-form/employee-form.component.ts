@@ -38,7 +38,7 @@ export class EmployeeFormComponent implements OnInit {
 
   createForm() {
     this.submitted = true;
-    if (this.employeeForm) {
+    if (this.employeeForm.valid) {
       this.toastr.showSuccess("Submitted Successfully !!", "")
       console.table(this.employeeForm.value);
     }

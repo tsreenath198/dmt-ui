@@ -30,7 +30,7 @@ export class SalaryFormComponent implements OnInit {
   }
   createForm() {
     this.submitted = true;
-    if (this.salaryForm) {
+    if (this.salaryForm.valid) {
       this.toastr.showSuccess("Submitted Successfully !!", "")
       console.table(this.salaryForm.value);
     }

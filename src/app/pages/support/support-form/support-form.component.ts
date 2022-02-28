@@ -37,7 +37,7 @@ export class SupportFormComponent implements OnInit {
   }
   createForm() {
     this.submitted = true;
-    if (this.supportForm) {
+    if (this.supportForm.valid) {
       this.toastr.showSuccess("Submitted Successfully !!", "")
       console.table(this.supportForm.value);
     }

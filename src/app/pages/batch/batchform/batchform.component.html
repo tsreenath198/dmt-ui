@@ -49,22 +49,22 @@
                     <label for="startDate">Start Date</label>
                     <input type="date" class="form-control" formControlName="startDate" id="startDate"
                         aria-describedby="Help" placeholder="Enter Start Date ">
-                </div>
-                <span class="text-danger"
+                    <span class="text-danger"
                         *ngIf="(batchFormControl.startDate.touched || submitted) && batchFormControl.startDate.errors?.required">
                         Please Enter Batch Start's Date
                     </span>
+                </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="endDate">End Date</label>
                     <input type="date" class="form-control" formControlName="endDate" id="endDate"
                         aria-describedby="Help" placeholder="Enter End Date ">
-                </div>
-                <span class="text-danger"
+                    <span class="text-danger"
                         *ngIf="(batchFormControl.endDate.touched || submitted) && batchFormControl.endDate.errors?.required">
                         Please Enter Batch End's Date
                     </span>
+                </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">

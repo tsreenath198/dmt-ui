@@ -30,7 +30,7 @@ export class QuetionFormComponent implements OnInit {
 
   createForm() {
     this.submitted = true;
-    if (this.quetionForm) {
+    if (this.quetionForm.valid) {
       this.toastr.showSuccess("Submitted Successfully !!", "")
       console.table(this.quetionForm.value);
     }
