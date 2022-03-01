@@ -55,7 +55,7 @@ public routeConstants = new RouteConstants();
         
         if (confirmed) {
           this.traineeDataSource = this.traineeDataSource.filter(trainee => trainee.id !== id);;
-          this.toastr.showSuccess("Deleted successfully !!", "Trainee")
+          this.toastr.showSuccess("Deleted successfully", "Trainee")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

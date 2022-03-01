@@ -53,7 +53,7 @@ export class TechnologyComponent implements OnInit {
       .then((confirmed) => {
         if (confirmed) {
           this.technologyDataSource = this.technologyDataSource.filter(technology => technology.id !== id);
-          this.toastr.showSuccess("Deleted successfully !!", "Technology")
+          this.toastr.showSuccess("Deleted successfully", "Technology")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

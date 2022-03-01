@@ -32,11 +32,11 @@ export class SupportinteractionFormComponent implements OnInit {
 createForm(){
   this.submitted = true;
     if (this.supportinteractionForm.valid) {
-      this.toastr.showSuccess("Submitted Successfully !!", "")
+      this.toastr.showSuccess("Submitted Successfully", "Support Interaction")
       console.table(this.supportinteractionForm.value);
     }
     else {
-      this.toastr.showError("Please enter the details", "")
+      this.toastr.showError("Please enter the details", "Support Interaction")
     }
 }
 navigateToParent(){

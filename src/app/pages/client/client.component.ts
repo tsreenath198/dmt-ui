@@ -42,7 +42,7 @@ export class ClientComponent implements OnInit {
       .then((confirmed) => {
         if (confirmed) {
           this.clientDataSource = this.clientDataSource.filter(client => client.id !== id);
-          this.toastr.showSuccess("Deleted successfully !!", "Client")
+          this.toastr.showSuccess("Deleted successfully", "Client")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

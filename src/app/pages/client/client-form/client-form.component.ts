@@ -34,11 +34,11 @@ export class ClientFormComponent implements OnInit {
   createForm() {
     this.submitted = true;
   if(this.clientForm.valid){
-  this.toastr.showSuccess("Submitted Successfully !!", "")
+  this.toastr.showSuccess("Submitted Successfully", "Client")
   console.table(this.clientForm.value);
   }
   else{
-    this.toastr.showError("Please enter the details", "")
+    this.toastr.showError("Please enter the details", "Client")
   }
   }
   navigateToParent() {

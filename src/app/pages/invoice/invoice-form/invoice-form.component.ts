@@ -33,12 +33,12 @@ export class InvoiceFormComponent implements OnInit {
   }
   createForm() {
     this.submitted = true;
-    if (this.invoiceForm) {
-      this.toastr.showSuccess("Submitted Successfully !!", "")
+    if (this.invoiceForm.valid) {
+      this.toastr.showSuccess("Submitted Successfully !!", "Invoice")
       console.table(this.invoiceForm.value);
     }
     else {
-      this.toastr.showError("Please enter the details", "")
+      this.toastr.showError("Please enter the details", "Invoice")
     }
   }
   navigateToParent() {

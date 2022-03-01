@@ -34,11 +34,11 @@ submitted= false;
   createForm() {
     this.submitted = true;
     if (this.trainerForm.valid) {
-      this.toastr.showSuccess("Submitted Successfully !!", "")
+      this.toastr.showSuccess("Submitted Successfully", "Trainer")
       console.table(this.trainerForm.value)
     }
     else{
-      this.toastr.showError("Please Enter the details !!", "")
+      this.toastr.showError("Please Enter the details", "Trainer")
     }
   }
  navigateToParent(){

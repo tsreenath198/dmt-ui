@@ -39,11 +39,11 @@ export class BatchformComponent implements OnInit {
 createForm(){
   this.submitted = true;
   if(this.batchForm.valid){
-  this.toastr.showSuccess("Submitted Successfully !!", "")
+  this.toastr.showSuccess("Submitted Successfully", "Batch")
   console.table(this.batchForm.value);
   }
   else{
-    this.toastr.showError("Please enter the details", "")
+    this.toastr.showError("Please enter the details", "Batch")
   }
 }
 navigateToParent() {

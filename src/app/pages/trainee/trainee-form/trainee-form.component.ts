@@ -40,11 +40,11 @@ export class TraineeFormComponent implements OnInit {
 createForm(){
   this.submitted = true;
     if (this.traineeForm.valid) {
-      this.toastr.showSuccess("Submitted Successfully !!", "")
+      this.toastr.showSuccess("Submitted Successfully", "Trainee")
       console.table(this.traineeForm.value)
     }
     else{
-      this.toastr.showError("Please Enter the details !!", "")
+      this.toastr.showError("Please Enter the details", "Trainee")
     }
 }
   navigateToParent(){

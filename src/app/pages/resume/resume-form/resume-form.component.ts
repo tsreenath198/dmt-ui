@@ -35,11 +35,11 @@ export class ResumeFormComponent implements OnInit {
   createForm() {
     this.submitted = true;
     if (this.resumeForm.valid) {
-      this.toastr.showSuccess("Submitted Successfully !!", "")
+      this.toastr.showSuccess("Submitted Successfully", "Resume")
       console.table(this.resumeForm.value);
     }
     else {
-      this.toastr.showError("Please enter the details", "")
+      this.toastr.showError("Please enter the details", "Resume")
     }
   }
   navigateToParent() {

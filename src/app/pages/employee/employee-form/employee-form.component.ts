@@ -39,11 +39,11 @@ export class EmployeeFormComponent implements OnInit {
   createForm() {
     this.submitted = true;
     if (this.employeeForm.valid) {
-      this.toastr.showSuccess("Submitted Successfully !!", "")
+      this.toastr.showSuccess("Submitted Successfully", "Employee")
       console.table(this.employeeForm.value);
     }
     else {
-      this.toastr.showError("Please enter the details", "")
+      this.toastr.showError("Please enter the details", "Employee")
     }
   }
   navigateToParent() {

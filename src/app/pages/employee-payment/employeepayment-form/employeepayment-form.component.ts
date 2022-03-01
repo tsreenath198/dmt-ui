@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-employeepayment-form',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class EmployeepaymentFormComponent implements OnInit {
 
   constructor(private fb:FormBuilder,
-    private router:Router) { }
+    private router:Router, private toastr:NotificationService) { }
   public employeePaymentForm:FormGroup;
 
   ngOnInit(): void {
@@ -30,6 +31,7 @@ export class EmployeepaymentFormComponent implements OnInit {
   }
 createForm(){
   console.log(this.employeePaymentForm.value)
+  this.toastr.showSuccess("Submitted Successfully !!", "Invoice")
 }
   navigateToParent(){
     this.router.navigate(['/dmt/employeepayment'])

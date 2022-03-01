@@ -27,11 +27,11 @@ export class TechnologyFormComponent implements OnInit {
   createForm() {
     this.submitted = true;
     if (this.technologyForm.valid) {
-      this.toastr.showSuccess("Submitted Successfully !!", "")
+      this.toastr.showSuccess("Submitted Successfully","Technology")
       console.table(this.technologyForm.value)
     }
     else{
-      this.toastr.showError("Please Enter the details !!", "")
+      this.toastr.showError("Please Enter the details","Technology")
     }
   }
   navigateToParent() {

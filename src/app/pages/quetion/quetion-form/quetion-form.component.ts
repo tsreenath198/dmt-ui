@@ -31,11 +31,11 @@ export class QuetionFormComponent implements OnInit {
   createForm() {
     this.submitted = true;
     if (this.quetionForm.valid) {
-      this.toastr.showSuccess("Submitted Successfully !!", "")
+      this.toastr.showSuccess("Submitted Successfully", "Quetion")
       console.table(this.quetionForm.value);
     }
     else {
-      this.toastr.showError("Please enter the details", "")
+      this.toastr.showError("Please enter the details", "Quetion")
     }
   }
   navigateToParent() {

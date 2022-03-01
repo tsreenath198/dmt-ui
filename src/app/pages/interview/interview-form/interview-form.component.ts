@@ -39,11 +39,11 @@ export class InterviewFormComponent implements OnInit {
 createForm(){
   this.submitted = true;
   if(this.interviewForm.valid){
-  this.toastr.showSuccess("Submitted Successfully !!", "")
+  this.toastr.showSuccess("Submitted Successfully", "Interview")
   console.table(this.interviewForm.value);
   }
   else{
-    this.toastr.showError("Please enter the details", "")
+    this.toastr.showError("Please enter the details", "Interview")
   }
 }
 navigateToParent() {

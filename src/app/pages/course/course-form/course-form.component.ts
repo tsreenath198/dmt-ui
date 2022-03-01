@@ -31,11 +31,11 @@ export class CourseFormComponent implements OnInit {
   createForm() {
     this.submitted = true;
     if(this.courseForm.valid){
-    this.toastr.showSuccess("Submitted Successfully !!", "")
+    this.toastr.showSuccess("Submitted Successfully", "Course")
     console.table(this.courseForm.value);
     }
     else{
-      this.toastr.showError("Please enter the details", "")
+      this.toastr.showError("Please enter the details", "Course")
     }
   }
   navigateToParent(){

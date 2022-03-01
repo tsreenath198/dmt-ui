@@ -43,7 +43,7 @@ export class InterviewComponent implements OnInit {
       .then((confirmed) => {
         if (confirmed) {
           this.interviewDataSource = this.interviewDataSource.filter(interview => interview.id !== id);
-          this.toastr.showSuccess("Deleted successfully !!","Interview")
+          this.toastr.showSuccess("Deleted successfully","Interview")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

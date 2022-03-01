@@ -38,7 +38,7 @@ public routeConstants = new RouteConstants();
       .then((confirmed) => {
         if (confirmed) {
           this.pipelineDataSource = this.pipelineDataSource.filter(pipeline => pipeline.id !== id);
-          this.toastr.showSuccess("Deleted successfully !!", "Pipeline")
+          this.toastr.showSuccess("Deleted successfully", "Pipeline")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

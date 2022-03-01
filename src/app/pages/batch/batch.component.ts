@@ -44,7 +44,7 @@ export class BatchComponent implements OnInit {
       .then((confirmed) => {
         if (confirmed) {
           this.batchDataSource = this.batchDataSource.filter(batch => batch.id !== id);
-          this.toastr.showSuccess("Deleted successfully !!", "Batch")
+          this.toastr.showSuccess("Deleted successfully", "Batch")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

@@ -32,11 +32,11 @@ export class TaskFormComponent implements OnInit {
 createForm(){
   this.submitted = true;
     if (this.taskForm.valid) {
-      this.toastr.showSuccess("Submitted Successfully !!", "")
+      this.toastr.showSuccess("Submitted Successfully", "Task")
       console.table(this.taskForm.value);
     }
     else {
-      this.toastr.showError("Please enter the details", "")
+      this.toastr.showError("Please enter the details", "Task")
     }
 }
 navigateToParent(){

@@ -38,11 +38,11 @@ export class SupportFormComponent implements OnInit {
   createForm() {
     this.submitted = true;
     if (this.supportForm.valid) {
-      this.toastr.showSuccess("Submitted Successfully !!", "")
+      this.toastr.showSuccess("Submitted Successfully", "support")
       console.table(this.supportForm.value);
     }
     else {
-      this.toastr.showError("Please enter the details", "")
+      this.toastr.showError("Please enter the details", "support")
     }
   }
   navigateToParent() {
