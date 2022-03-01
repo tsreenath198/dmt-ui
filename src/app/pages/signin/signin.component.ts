@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'app/authentication/authentication.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 
 @Component({
   selector: 'app-signin',
@@ -18,7 +19,8 @@ export class SigninComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private toastr:NotificationService
   ) {
   }
 
@@ -49,5 +51,6 @@ export class SigninComponent implements OnInit {
     this.authenticationService.login(this.f.username.value, this.f.password.value);
     this.loading = false;
     this.router.navigate(['/dmt/technology']);
+    this.toastr.showSuccess("Log In Successfull !!", "")
   }
 }
