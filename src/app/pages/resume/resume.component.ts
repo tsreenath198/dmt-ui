@@ -42,7 +42,7 @@ export class ResumeComponent implements OnInit {
       .then((confirmed) => {
         if (confirmed) {
           this.resumeDataSource = this.resumeDataSource.filter(resume => resume.id !== id);
-          this.toastr.showSuccess("Deleted successfully !!", "")
+          this.toastr.showSuccess("Deleted successfully !!", "Resume")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

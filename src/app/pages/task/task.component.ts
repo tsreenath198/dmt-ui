@@ -39,7 +39,7 @@ export class TaskComponent implements OnInit {
       .then((confirmed) => {
         if (confirmed) {
           this.taskDataSource = this.taskDataSource.filter(task => task.id !== id);
-          this.toastr.showSuccess("Deleted successfully !!", "")
+          this.toastr.showSuccess("Deleted successfully !!", "Task")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

@@ -46,7 +46,7 @@ export class TrainerComponent implements OnInit {
       .then((confirmed) => {
         if (confirmed) {
           this.trainerDataSource = this.trainerDataSource.filter(trainer => trainer.id !== id);;
-          this.toastr.showSuccess("Deleted successfully !!", "")
+          this.toastr.showSuccess("Deleted successfully !!", "Trainer")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))

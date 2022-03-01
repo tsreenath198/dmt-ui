@@ -41,7 +41,7 @@ export class SupportComponent implements OnInit {
       .then((confirmed) => {
         if (confirmed) {
           this.supportDataSource = this.supportDataSource.filter(support => support.id !== id);
-          this.toastr.showSuccess("Deleted successfully !!", "")
+          this.toastr.showSuccess("Deleted successfully !!", "Support")
         }
       }
       ).catch(() => console.log('User dismissed the dialog '))
