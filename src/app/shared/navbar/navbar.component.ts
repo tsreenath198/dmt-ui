@@ -94,6 +94,5 @@ export class NavbarComponent implements OnInit {
   }
   logout() {
     this.router.navigate(['/signin']);
-    this.toastr.showSuccess("Logged Out Successfully !!", "DMT")
   }
 }
