@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Paper Dashboard Angular - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/data-management-tool
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/data-management-tool/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 .tim-row {
   margin-bottom: 20px;
 }
@@ -206,3 +189,22 @@
 }
 i{padding: 5px;}
 @import '~ngx-toastr/toastr.css';
+
+
+#mySidenav a{
+  position: relative; /* Position them relative to the browser window */
+  left:5px; /* Position them outside of the screen */
+  transition: all 0.2s; /* Add transition on hover *
+  width: 100px; /* Set a specific width */
+  font-size: 10px; /* Increase font size */
+}
+#mySidenav a:hover {
+  left: 0; /* On mouse-over, make the elements appear as they should */
+}
+#mySidenav{
+  top: 200px;
+}
+
+th, td {
+  padding: 15px;
+}

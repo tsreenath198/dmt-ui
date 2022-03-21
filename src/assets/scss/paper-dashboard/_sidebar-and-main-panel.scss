@@ -39,7 +39,7 @@
 
     .navbar-minimize{
       position: absolute;
-      right: 20px;
+      right: 10px;
       top: 2px;
       opacity: 1;
 
@@ -61,36 +61,36 @@
     }
 
     .nav{
-        margin-top: 20px;
+        margin-top: 10px;
         display: block;
 
         .caret{
-            top: 14px;
+            top: 10px;
             position: absolute;
             right: 10px;
         }
 
         li{
             > a + div .nav li > a{
-                margin-top: 7px;
+                margin-top: 5px;
             }
 
             > a{
-                margin: 10px 15px 0;
+                margin: 5px 5px 0;
                 color: $white-color;
                 display: block;
                 text-decoration: none;
                 position: relative;
                 text-transform: uppercase;
                 cursor: pointer;
-                font-size: 12px;
-                padding: 10px 8px;
+                font-size: 14px;
+                padding: 5px 5px;
                 line-height: 30px;
                 opacity: .7;
             }
 
             .nav > li > a{
-              padding: 5px 8px;
+              padding: 5px 5px;
             }
 
             &.active > a,
@@ -105,11 +105,11 @@
         }
 
         i{
-            font-size: 24px;
+            font-size: 20px;
             float: left;
-            margin-right: 12px;
-            line-height: 30px;
-            width: 34px;
+            margin-right: 10px;
+            line-height: 25px;
+            width: 26px;
             text-align: center;
             color: $opacity-5;
             position: relative;

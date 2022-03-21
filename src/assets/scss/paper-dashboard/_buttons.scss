@@ -6,9 +6,9 @@
     line-height: $line-height;
     text-transform: uppercase;
     border: none;
-    margin: 10px 1px;
+    margin: 10px 5px;
     border-radius: $border-radius-small;
-    padding: $padding-btn-vertical $padding-btn-horizontal;
+    padding: 10px 15px;
     cursor: pointer;
 
     @include btn-styles($default-color, $default-states-color);
@@ -80,11 +80,11 @@
             left: 50%;
             transform: translate(-12px, -12px);
             line-height: 1.5626rem;
-            width: 24px;
+            width: 12px;
         }
 
         &.btn-neutral {
-          font-size: 20px;
+          font-size: 10px;
         }
     }
 

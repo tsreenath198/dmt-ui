@@ -1,8 +1,8 @@
 .navbar{
     padding-top: $navbar-padding-base;
     padding-bottom: $navbar-padding-base;
-    min-height: 53px;
-    margin-bottom: 20px;
+    min-height: 20px;
+    margin-bottom: 15px;
 
     a{
         vertical-align: middle;
@@ -66,13 +66,13 @@
         margin: 0;
         line-height: 1.8em;
         font-size: 1em;
-        font-weight: 400;
+        font-weight: 200;
     }
 
     &.navbar-absolute{
         position: absolute;
         width: 100%;
-        padding-top: 10px;
+        padding-top: 0px;
         z-index: 1029;
     }
 
@@ -116,8 +116,8 @@
             left: 0;
             right: 0;
             margin: 0 auto;
-            width: 49px;
-            top: -4px;
+            width: 25px;
+            top: -2px;
         }
 
         .nav-link.btn{
@@ -180,7 +180,7 @@
 
     .logo-container{
         width: 27px;
-        height: 27px;
+        height: 25px;
         overflow: hidden;
         margin: 0 auto;
         border-radius: 50%;
@@ -196,8 +196,8 @@
     }
 
     .navbar-toggler{
-        width: 37px;
-        height: 27px;
+        width: 25px;
+        height: 20px;
         vertical-align: middle;
         outline: 0;
         cursor: pointer;

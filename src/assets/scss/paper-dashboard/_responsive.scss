@@ -127,7 +127,12 @@
             right: 0;
             @include transform-translate-x(260px);
         }
-
+        .navbar-collapse{
+          .main-panel{
+              left: 0;
+              @include transform-translate-x(260px);
+          }
+  
         .sidebar{
             @include transform-translate-x(0px);
         }
@@ -547,4 +552,5 @@
         padding: 15px;
       }
     }
+}
 }
