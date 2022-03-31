@@ -196,15 +196,16 @@ i{padding: 5px;}
   left:5px; /* Position them outside of the screen */
   transition: all 0.2s; /* Add transition on hover *
   width: 100px; /* Set a specific width */
-  font-size: 10px; /* Increase font size */
+  font-size: 11px; /* Increase font size */
+  font: weight 900;
 }
 #mySidenav a:hover {
   left: 0; /* On mouse-over, make the elements appear as they should */
 }
 #mySidenav{
-  top: 200px;
+  top: 100px;
 }
 
 th, td {
-  padding: 15px;
+  padding: 12px;
 }
