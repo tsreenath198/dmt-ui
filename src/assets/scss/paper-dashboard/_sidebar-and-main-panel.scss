@@ -163,16 +163,17 @@
         a.logo-mini{
             opacity: 1;
             float: left;
-            width: 55px;
-            text-align: center;
-            margin-left: 10px;
-            margin-right: 10px;
+            width: 50px;
+            height: 42px;
+            text-align: right;
+            margin-left: 30px;
+            margin-right: 8px;
         }
 
         a.logo-normal{
             display: block;
-            opacity: 1;
-            padding: 1px 0px 2px;
+            opacity: 4;
+            padding: 1px 0px 1px;
             @include transform-translate-x(0px);
         }
 
@@ -192,21 +193,22 @@
             font-size: 22px;
             margin: 8px 8px;
             color: $white-color;
-            line-height: 14px;
+            line-height: 12px;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
         .simple-text{
             text-transform: uppercase;
-            padding: 0;
+            padding:0px;
             display: block;
             white-space: nowrap;
-            font-size: 17px;
+            font-size: 22px;
             color: $white-color;
             text-decoration: none;
             font-weight: 500;
-            line-height: 37px;
+            line-height: 35px;
             overflow: hidden;
+            text-align: initial;
         }
     }
 
