@@ -26,7 +26,7 @@ import { SigninComponent } from "./pages/signin/signin.component";
   imports: [
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 10000,
+      timeOut: 700,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
